@@ -14,10 +14,20 @@ class Fence extends Component {
       <div className="container">
         <h1>Fence and Deck Utah</h1>
         <Tabs>
-          <TabList>
-            <Tab>Title 1</Tab>
-            <Tab>Title 2</Tab>
-            <Tab>Title 3</Tab>
+          <TabList
+            style={{
+              fontSize: "20px",
+              display: "flex",
+              justifyContent: "space-around"
+            }}
+          >
+            <Tab>Post Cap</Tab>
+            <Tab>Post Sleeve</Tab>
+            <Tab>Post Skirt</Tab>
+            <Tab>Cap Rail</Tab>
+            <Tab>Top Rail</Tab>
+            <Tab>Bottom Rail</Tab>
+            <Tab>Baluster</Tab>
           </TabList>
 
           <TabPanel>
@@ -25,6 +35,21 @@ class Fence extends Component {
           </TabPanel>
           <TabPanel>
             <h2>Any content 2</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Any content 3</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Any content 4</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Any content 5</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Any content 6</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Any content 7</h2>
           </TabPanel>
         </Tabs>
         {/*<div className="fence">
