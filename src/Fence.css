@@ -1,0 +1,36 @@
+.color {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid rgb(107, 107, 107);
+}
+
+.color:hover {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.block {
+  display: "flex";
+  flex-direction: "column";
+  margin: 20px;
+}
+
+.tab-panel {
+  display: flex;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 65px;
+}

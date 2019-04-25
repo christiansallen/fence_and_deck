@@ -1,7 +1,167 @@
 import React, { Component } from "react";
-import "./App.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import TabColors from "./TabColors.js";
+
+//1x6 Caps
+import CharcoalCap from "./Images/1x6_Charcoal.png";
+import FirepitCap from "./Images/1x6_Firepit.png";
+import GravelpathCap from "./Images/1x6_Gravelpath.png";
+import HavanagoldCap from "./Images/1x6_Havanagold.png";
+import IslandmistCap from "./Images/1x6_Islandmist.png";
+import LavarockCap from "./Images/1x6_Lavarock.png";
+import MaderiaCap from "./Images/1x6_Maderia.png";
+import PebblegreyCap from "./Images/1x6_Pebblegrey.png";
+import RopeswingCap from "./Images/1x6_Ropeswing.png";
+import SaddleCap from "./Images/1x6_Saddle.png";
+import SpicedrumCap from "./Images/1x6_Spicedrum.png";
+import TikitorchCap from "./Images/1x6_Tikitorch.png";
+import TreehouseCap from "./Images/1x6_Treehouse.png";
+import VintagelanternCap from "./Images/1x6_Vintagelantern.png";
+import WhiteCap from "./Images/1x6_White.png";
+import WinchestergrayCap from "./Images/1x6_Winchestergray.png";
+import WoodlandbrownCap from "./Images/1x6_Woodlandbrown.png";
+
+//2x4 Caps
+import TwoHavanagold from "./Images/2x4_Havanagold.png";
+import TwoIslandmist from "./Images/2x4_Islandmist.png";
+import TwoLavarock from "./Images/2x4_Lavarock.png";
+import TwoSpicedrum from "./Images/2x4_Spicedrum.png";
+import TwoTikitorch from "./Images/2x4_Tikitorch.png";
+
+//Borders where's charcoal??????
+import BorderFirepit from "./Images/Border_Firepit.png";
+import BorderGravelpath from "./Images/Border_Gravelpath.png";
+import BorderHavanagold from "./Images/Border_Havanagold.png";
+import BorderIslandmist from "./Images/Border_Islandmist.png";
+import BorderMaderia from "./Images/Border_Maderia.png";
+import BorderPebblegray from "./Images/Border_Pebblegray.png";
+import BorderRopeswing from "./Images/Border_Ropeswing.png";
+import BorderSaddle from "./Images/Border_Saddle.png";
+import BorderSpicedrum from "./Images/Border_Spicedrum.png";
+import BorderTikitorch from "./Images/Border_Tikitorch.png";
+import BorderTreehouse from "./Images/Border_Treehouse.png";
+import BorderVintagelantern from "./Images/Border_Vintagelantern.png";
+import BorderWinchestergray from "./Images/Border_Winchestergray.png";
+import BorderWoodlandbrown from "./Images/Border_Woodlandbrown.png";
+
+//Crowns
+import CrownFirepit from "./Images/Crown_Firepit.png";
+import CrownGravelpath from "./Images/Crown_Gravelpath.png";
+import CrownHavanagold from "./Images/Crown_Havanagold.png";
+import CrownIslandmist from "./Images/Crown_Islandmist.png";
+import CrownLavarock from "./Images/Crown_Lavarock.png";
+import CrownRopeswing from "./Images/Crown_Ropeswing.png";
+import CrownSpicedrum from "./Images/Crown_Spicedrum.png";
+import CrownTikitorch from "./Images/Crown_Tikitorch.png";
+import CrownTreehouse from "./Images/Crown_Treehouse.png";
+import CrownVintagelantern from "./Images/Crown_Vintagelantern.png";
+
+//Decks
+import DeckFirepit from "./Images/Deck_Firepit.png";
+import DeckGravelpath from "./Images/Deck_Gravelpath.png";
+import DeckHavanagold from "./Images/Deck_Havanagold.png";
+import DeckLavarock from "./Images/Deck_Lavarock.png";
+import DeckPebblegray from "./Images/Deck_Pebblegray.png";
+import DeckRopeswing from "./Images/Deck_Ropeswing.png";
+import DeckSaddle from "./Images/Deck_Saddle.png";
+import DeckSpicedrum from "./Images/Deck_Spicedrum.png";
+import DeckTikitorch from "./Images/Deck_Tikitorch.png";
+import DeckTreehouse from "./Images/Deck_Treehouse.png";
+import DeckVintagelantern from "./Images/Deck_Vintagelantern.png";
+import DeckWinchestergray from "./Images/Deck_Winchestergray.png";
+import DeckWoodlandbrown from "./Images/Deck_Woodlandbrown.png";
+import DeckIslandmist from "./Images/Deck_Islandmist.png";
+import DeckMaderia from "./Images/Deck_Maderia.png";
+
+//Fascias
+import FasciaFirepit from "./Images/Fascia_Firepit.png";
+import FasciaGravelpath from "./Images/Fascia_Gravelpath.png";
+import FasciaHavanagold from "./Images/Fascia_Havanagold.png";
+import FasciaLavarock from "./Images/Fascia_Lavarock.png";
+import FasciaPebblegray from "./Images/Fascia_Pebblegray.png";
+import FasciaRopeswing from "./Images/Fascia_Ropeswing.png";
+import FasciaSaddle from "./Images/Fascia_Saddle.png";
+import FasciaSpicedrum from "./Images/Fascia_Spicedrum.png";
+import FasciaTikitorch from "./Images/Fascia_Tikitorch.png";
+import FasciaTreehouse from "./Images/Fascia_Treehouse.png";
+import FasciaVintagelantern from "./Images/Fascia_Vintagelantern.png";
+import FasciaWinchestergray from "./Images/Fascia_Winchestergray.png";
+import FasciaWoodlandbrown from "./Images/Fascia_Woodlandbrown.png";
+import FasciaIslandmist from "./Images/Fascia_Islandmist.png";
+import FasciaMaderia from "./Images/Fascia_Maderia.png";
+
+//Flats
+import FlatCharcoal from "./Images/Flat_Charcoal.png";
+import FlatFirepit from "./Images/Flat_Firepit.png";
+import FlatGravelpath from "./Images/Flat_Gravelpath.png";
+import FlatHavanagold from "./Images/Flat_Havanagold.png";
+import FlatWhite from "./Images/Flat_White.png";
+import FlatRopeswing from "./Images/Flat_Ropeswing.png";
+import FlatVintagelantern from "./Images/Flat_Vintagelantern.png";
+
+//Iron
+import IronBronze from "./Images/Iron_Bronze.png";
+import IronCharcoal from "./Images/Iron_Charcoal.png";
+import IronPosts from "./Images/Iron_Posts.png";
+import IronWhite from "./Images/Iron_White.png";
+import IronGuardRail from "./Images/IronGuardRail.png";
+
+//Pyramid
+import PyramidCharcoal from "./Images/Pyramid_Charcoal.png";
+import PyramidFirepit from "./Images/Pyramid_Firepit.png";
+import PyramidGravelpath from "./Images/Pyramid_Gravelpath.png";
+import PyramidHavanagold from "./Images/Pyramid_Havanagold.png";
+import PyramidWhite from "./Images/Pyramid_White.png";
+import PyramidRopeswing from "./Images/Pyramid_Ropeswing.png";
+import PyramidVintagelantern from "./Images/Pyramid_Vintagelantern.png";
+
+//Rail
+import RailCharcoal from "./Images/Rail_Charcoal.png";
+import RailFirepit from "./Images/Rail_Firepit.png";
+import RailGravelpath from "./Images/Rail_Gravelpath.png";
+import RailHavanagold from "./Images/Rail_Havanagold.png";
+import RailWhite from "./Images/Rail_White.png";
+import RailRopeswing from "./Images/Rail_Ropeswing.png";
+import RailVintagelantern from "./Images/Rail_Vintagelantern.png";
+
+//Skirt
+import SkirtCharcoal from "./Images/Skirt_Charcoal.png";
+import SkirtFirepit from "./Images/Skirt_Firepit.png";
+import SkirtGravelpath from "./Images/Skirt_Gravelpath.png";
+import SkirtHavanagold from "./Images/Skirt_Havanagold.png";
+import SkirtWhite from "./Images/Skirt_White.png";
+import SkirtRopeswing from "./Images/Skirt_Ropeswing.png";
+import SkirtVintagelantern from "./Images/Skirt_Vintagelantern.png";
+
+//Short Post
+import SpostCharcoal from "./Images/Spost_Charcoal.png";
+import SpostFirepit from "./Images/Spost_Firepit.png";
+import SpostGravelpath from "./Images/Spost_Gravelpath.png";
+import SpostHavanagold from "./Images/Spost_Havanagold.png";
+import SpostWhite from "./Images/Spost_White.png";
+import SpostRopeswing from "./Images/Spost_Ropeswing.png";
+import SpostVintagelantern from "./Images/Spost_Vintagelantern.png";
+
+//Tall Post
+import TpostCharcoal from "./Images/Tpost_Charcoal.png";
+import TpostFirepit from "./Images/Tpost_Firepit.png";
+import TpostGravelpath from "./Images/Tpost_Gravelpath.png";
+import TpostHavanagold from "./Images/Tpost_Havanagold.png";
+import TpostWhite from "./Images/Tpost_White.png";
+import TpostRopeswing from "./Images/Tpost_Ropeswing.png";
+import TpostVintagelantern from "./Images/Tpost_Vintagelantern.png";
+
+//Trex Fences
+import TrexCharcoal from "./Images/Trex_Charcoal.png";
+import TrexFirepit from "./Images/Trex_Firepit.png";
+import TrexGravelpath from "./Images/Trex_Gravelpath.png";
+import TrexHavanagold from "./Images/Trex_Havanagold.png";
+import TrexWhite from "./Images/Trex_White.png";
+import TrexRopeswing from "./Images/Trex_Ropeswing.png";
+import TrexLavarock from "./Images/Trex_Lavarock.png";
+
+import "./Fence.css";
 
 class Fence extends Component {
   constructor(props) {
@@ -13,6 +173,18 @@ class Fence extends Component {
     return (
       <div className="container">
         <h1>Fence and Deck Utah</h1>
+        <img
+          src={TrexWhite}
+          alt="trex white"
+          style={{
+            position: "absolute",
+            marginLeft: "35px",
+            marginTop: "20px"
+          }}
+        />
+        <img src={SpostCharcoal} alt="Short post charcoal" />
+        <img src={CharcoalCap} alt="charcoal cap" />
+
         <Tabs>
           <TabList
             style={{
@@ -31,116 +203,39 @@ class Fence extends Component {
           </TabList>
 
           <TabPanel>
-            <h2>Any content 1</h2>
+            <TabColors />
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
+            <TabColors />
           </TabPanel>
           <TabPanel>
-            <h2>Any content 3</h2>
+            <TabColors />
           </TabPanel>
           <TabPanel>
-            <h2>Any content 4</h2>
+            <TabColors />
           </TabPanel>
           <TabPanel>
-            <h2>Any content 5</h2>
+            <TabColors />
           </TabPanel>
           <TabPanel>
-            <h2>Any content 6</h2>
+            <TabColors />
           </TabPanel>
           <TabPanel>
-            <h2>Any content 7</h2>
+            <TabColors />
           </TabPanel>
         </Tabs>
-        {/*<div className="fence">
-          <h2> Fence </h2>
-          <img src={fence} alt="fence-1" className="fence-img" />
-        </div>
 
-        <div className="builder">
-          <div className="top-rails">
-            <h2>1x6</h2>
-            <img src={oneSix} alt="1x6-1" className="top-rail-img" />
-            <h2>2x4</h2>
-            <img src={twoFour} alt="2x4-1" className="top-rail-img"/>
-          </div>
-          <div className="crown-rail">
-            <h2> Crown Rails</h2>
-            <img src={crownRail} alt="crownRail-1" className="crown-rail-img" />
-          </div>
-
-          <div className="flat-cap">
-            <h2> Flat Cap </h2>
-            <img src={flatCap} alt="flatCap-1" className="flat-cap-img" />
-          </div>
-
-          <div className="iron-baluster">
-            <h2> Iron Baluster </h2>
-            <img
-              src={whiteIron}
-              alt="iron-baluster-1"
-              className="iron-baluster-img"
-            />
-          </div>
-
-          <div className="baluster">
-            <h2> Baluster </h2>
-            <img src={baluster} alt="baluster" className="baluster-img" />
-          </div>
-
-          <div className="iron-post">
-            <h2> Iron Post </h2>
-            <img src={ironPost} alt="iron-post" className="iron-post-img" />
-          </div>
-
-          <div className="iron-rail">
-            <h2> Iron Rail </h2>
-            <img src={ironRail} alt="iron-rail" className="iron-rail-img" />
-          </div>
-
-          <div className="pyramid-cap">
-            <h2> Pyramid Cap </h2>
-            <img
-              src={pyramidCap}
-              alt="pyramid-cap"
-              className="pyramid-cap-img"
-            />
-          </div>
-
-          <div className="short-post">
-            <h2> Short Post</h2>
-            <img src={shortPost} alt="short-post" className="short-post-img" />
-          </div>
-
-          <div className="skirt">
-            <h2> Skirts</h2>
-            <img src={skirt} alt="skirt" className="skirt-img" />
-          </div>
-
-          <div className="tall-post">
-            <h2> Tall Post </h2>
-            <img src={tallPost} alt="tall-post" className="tall-post-img" />
-          </div>
-
-          <div className="rail">
-            <h2> Rail </h2>
-            <img src={rail} alt="rail" className="rail-img" />
-          </div>
-
-          <div className="deck-border">
-            <h2> Deck Border</h2>
-            <img
-              src={deckBorder}
-              alt="deck-border-1"
-              className="deck-border-img"
-            />
-          </div>
-
-          <div className="deck">
-            <h2> Decks</h2>
-            <img src={deck} alt="deck-1" className="deck-img" />
-          </div>
-    </div>*/}
+        <img src={TwoHavanagold} alt="trex white" />
+        <img src={BorderFirepit} alt="Border Firepit" />
+        <img src={CrownFirepit} alt="Crown firepit" />
+        <img src={DeckFirepit} alt="Deck firepit" />
+        <img src={FasciaFirepit} alt="Fascia Firepit" />
+        <img src={FlatCharcoal} alt="Flat Charcoal" />
+        <img src={IronBronze} alt="Iron bronze" />
+        <img src={PyramidCharcoal} alt="Pyramid Charcoal" />
+        <img src={RailCharcoal} alt="Rail Charcoal" />
+        <img src={SkirtCharcoal} alt="Skirt Charcoal" />
+        <img src={TpostCharcoal} alt="Tall Post charcoal" />
       </div>
     );
   }
