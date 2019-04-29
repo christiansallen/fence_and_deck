@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import "react-tabs/style/react-tabs.css";
 
+import BeachduneColor from "./Images/Color_Beachdune.png";
+import ClamshellColor from "./Images/Color_Clamshell.png";
+import CoastalbluffColor from "./Images/Color_Coastalbluff.png";
+import FoggywharfColor from "./Images/Color_Foggywharf.png";
+import RockyharborColor from "./Images/Color_Rockyharbor.png";
+import SunsetcoveColor from "./Images/Color_Sunsetcove.png";
+import ToastedsandColor from "./Images/Color_Toastedsand.png";
 import CharcoalColor from "./Images/Color_Charcoal.png";
 import FirepitColor from "./Images/Color_Firepit.png";
 import GravelpathColor from "./Images/Color_Gravelpath.png";
@@ -26,17 +33,34 @@ class TabColors extends Component {
     super(props);
     this.state = {};
   }
+
+  changeColorItem = (props) => {
+    this.props.changeItem();
+    this.props.tabColor();
+  }
+
   render() {
     return (
       <div className="tab-container">
         <div className="block">
-          <img src={RopeswingColor} alt="rope swing color" className="color" />
+          <img src={RopeswingColor} alt="rope swing color" className="color" value='Ropeswing' 
+          onClick={this.changeColorItem}/>
           <p className="name">Rope Swing</p>
+        </div>
+
+        <div className="block">
+          <img src={ToastedsandColor} alt="Toastedsand color" className="color" />
+          <p className="name">Toasted Sand</p>
         </div>
 
         <div className="block">
           <img src={SaddleColor} alt="saddle color" className="color" />
           <p className="name">Saddle</p>
+        </div>
+
+        <div className="block">
+          <img src={BeachduneColor} alt="Beachdune color" className="color" />
+          <p className="name">Beach Dune</p>
         </div>
 
         <div className="block">
@@ -73,6 +97,12 @@ class TabColors extends Component {
           <p className="name">Lava Rock</p>
         </div>
 
+
+        <div className="block">
+          <img src={SunsetcoveColor} alt="Sunsetcove color" className="color" />
+          <p className="name">Sunset Cove</p>
+        </div>
+
         <div className="block">
           <img src={MaderiaColor} alt="maderia color" className="color" />
           <p className="name">Maderia</p>
@@ -93,12 +123,27 @@ class TabColors extends Component {
         </div>
 
         <div className="block">
+          <img src={FoggywharfColor} alt="Foggywharf color" className="color" />
+          <p className="name">Foggy Wharf</p>
+        </div>
+
+        <div className="block">
           <img
             src={GravelpathColor}
             alt="gravel path color"
             className="color"
           />
           <p className="name">Gravel Path</p>
+        </div>
+
+        <div className="block">
+          <img src={CoastalbluffColor} alt="Coastalbluff color" className="color" />
+          <p className="name">Coastal Bluff</p>
+        </div>
+
+        <div className="block">
+          <img src={RockyharborColor} alt="Rockyharbor color" className="color" />
+          <p className="name">Rocky Harbor</p>
         </div>
 
         <div className="block">
@@ -117,6 +162,11 @@ class TabColors extends Component {
             className="color"
           />
           <p className="name">Pebble Grey</p>
+        </div>
+
+        <div className="block">
+          <img src={ClamshellColor} alt="Clamshell color" className="color" />
+          <p className="name">Clamshell</p>
         </div>
 
         <div className="block">
@@ -141,6 +191,7 @@ class TabColors extends Component {
           <img src={CharcoalColor} alt="charcoal color" className="color" />
           <p className="name">Charcoal</p>
         </div>
+ 
       </div>
     );
   }

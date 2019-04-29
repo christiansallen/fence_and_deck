@@ -29,17 +29,24 @@ import TwoLavarock from "./Images/2x4_Lavarock.png";
 import TwoSpicedrum from "./Images/2x4_Spicedrum.png";
 import TwoTikitorch from "./Images/2x4_Tikitorch.png";
 
-//Borders where's charcoal??????
+//Borders
+import BorderBeachdune from "./Images/Border_Beachdune.png";
+import BorderClamshell from "./Images/Border_Clamshell.png";
+import BorderCoastalbluff from "./Images/Border_Coastalbluff.png";
 import BorderFirepit from "./Images/Border_Firepit.png";
+import BorderFoggywharf from "./Images/Border_Foggywharf.png";
 import BorderGravelpath from "./Images/Border_Gravelpath.png";
 import BorderHavanagold from "./Images/Border_Havanagold.png";
 import BorderIslandmist from "./Images/Border_Islandmist.png";
 import BorderMaderia from "./Images/Border_Maderia.png";
 import BorderPebblegray from "./Images/Border_Pebblegray.png";
+import BorderRockyharbor from "./Images/Border_Rockyharbor.png";
 import BorderRopeswing from "./Images/Border_Ropeswing.png";
 import BorderSaddle from "./Images/Border_Saddle.png";
 import BorderSpicedrum from "./Images/Border_Spicedrum.png";
+import BorderSunsetcove from "./Images/Border_Sunsetcove.png";
 import BorderTikitorch from "./Images/Border_Tikitorch.png";
+import BorderToastedsand from "./Images/Border_Toastedsand.png";
 import BorderTreehouse from "./Images/Border_Treehouse.png";
 import BorderVintagelantern from "./Images/Border_Vintagelantern.png";
 import BorderWinchestergray from "./Images/Border_Winchestergray.png";
@@ -58,15 +65,22 @@ import CrownTreehouse from "./Images/Crown_Treehouse.png";
 import CrownVintagelantern from "./Images/Crown_Vintagelantern.png";
 
 //Decks
+import DeckBeachdune from "./Images/Deck_Beachdune.png";
+import DeckClamshell from "./Images/Deck_Clamshell.png";
+import DeckCoastalbluff from "./Images/Deck_Coastalbluff.png";
 import DeckFirepit from "./Images/Deck_Firepit.png";
+import DeckFoggywharf from "./Images/Deck_Foggywharf.png";
 import DeckGravelpath from "./Images/Deck_Gravelpath.png";
 import DeckHavanagold from "./Images/Deck_Havanagold.png";
 import DeckLavarock from "./Images/Deck_Lavarock.png";
 import DeckPebblegray from "./Images/Deck_Pebblegray.png";
+import DeckRockyharbor from "./Images/Deck_Rockyharbor.png";
 import DeckRopeswing from "./Images/Deck_Ropeswing.png";
 import DeckSaddle from "./Images/Deck_Saddle.png";
 import DeckSpicedrum from "./Images/Deck_Spicedrum.png";
+import DeckSunsetcove from "./Images/Deck_Sunsetcove.png";
 import DeckTikitorch from "./Images/Deck_Tikitorch.png";
+import DeckToastedsand from "./Images/Deck_Toastedsand.png";
 import DeckTreehouse from "./Images/Deck_Treehouse.png";
 import DeckVintagelantern from "./Images/Deck_Vintagelantern.png";
 import DeckWinchestergray from "./Images/Deck_Winchestergray.png";
@@ -75,15 +89,22 @@ import DeckIslandmist from "./Images/Deck_Islandmist.png";
 import DeckMaderia from "./Images/Deck_Maderia.png";
 
 //Fascias
+import FasciaBeachdune from "./Images/Fascia_Beachdune.png";
+import FasciaClamshell from "./Images/Fascia_Clamshell.png";
+import FasciaCoastalbluff from "./Images/Fascia_Coastalbluff.png";
 import FasciaFirepit from "./Images/Fascia_Firepit.png";
+import FasciaFoggywharf from "./Images/Fascia_Foggywharf.png";
 import FasciaGravelpath from "./Images/Fascia_Gravelpath.png";
 import FasciaHavanagold from "./Images/Fascia_Havanagold.png";
 import FasciaLavarock from "./Images/Fascia_Lavarock.png";
 import FasciaPebblegray from "./Images/Fascia_Pebblegray.png";
+import FasciaRockyharbor from "./Images/Fascia_Rockyharbor.png";
 import FasciaRopeswing from "./Images/Fascia_Ropeswing.png";
 import FasciaSaddle from "./Images/Fascia_Saddle.png";
 import FasciaSpicedrum from "./Images/Fascia_Spicedrum.png";
+import FasciaSunsetcove from "./Images/Fascia_Sunsetcove.png";
 import FasciaTikitorch from "./Images/Fascia_Tikitorch.png";
+import FasciaToastedsand from "./Images/Fascia_Toastedsand.png";
 import FasciaTreehouse from "./Images/Fascia_Treehouse.png";
 import FasciaVintagelantern from "./Images/Fascia_Vintagelantern.png";
 import FasciaWinchestergray from "./Images/Fascia_Winchestergray.png";
@@ -166,15 +187,45 @@ import "./Fence.css";
 class Fence extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      cap: CharcoalCap,
+      two: TwoHavanagold,
+      sPost: SpostWhite,
+      trex: TrexWhite,
+      border: BorderFirepit,
+      crown: CrownFirepit,
+      flat: FlatCharcoal,
+      deck: DeckFirepit,
+      fascia: FasciaFirepit,
+      iron: IronBronze,
+      pyramid: PyramidCharcoal,
+      rail: RailCharcoal,
+      skirt: SkirtCharcoal,
+      tPost: TpostCharcoal,
+        color: SpostWhite,
+        item: ''
+    };
   }
+
+//Run two functions. One for color change. One for state change.
+  tabColor = (color) => {
+    console.log('tab color');
+    console.log(color);
+    this.setState({color: color})
+  }
+
+  changeItem = (item) => {
+      console.log('change item');
+      this.setState({item: item})
+  }
+
 
   render() {
     return (
       <div className="container">
         <h1>Fence and Deck Utah</h1>
         <img
-          src={TrexWhite}
+          src={this.state.trex}
           alt="trex white"
           style={{
             position: "absolute",
@@ -182,8 +233,8 @@ class Fence extends Component {
             marginTop: "20px"
           }}
         />
-        <img src={SpostCharcoal} alt="Short post charcoal" />
-        <img src={CharcoalCap} alt="charcoal cap" />
+        <img src={this.state.color} alt="Short post charcoal" />
+        <img src={this.state.cap} alt="charcoal cap" />
 
         <Tabs>
           <TabList
@@ -203,39 +254,38 @@ class Fence extends Component {
           </TabList>
 
           <TabPanel>
-            <TabColors />
+            <TabColors tabColor={() => this.tabColor(SpostRopeswing)} changeItem={()=> this.changeItem()}/> 
           </TabPanel>
           <TabPanel>
-            <TabColors />
+            <TabColors tabColor={()=> this.tabColor(this.state.color)}/>
           </TabPanel>
           <TabPanel>
-            <TabColors />
+            <TabColors tabColor={this.tabColor}/>
           </TabPanel>
           <TabPanel>
-            <TabColors />
+            <TabColors tabColor={this.tabColor}/>
           </TabPanel>
           <TabPanel>
-            <TabColors />
+            <TabColors tabColor={this.tabColor}/>
           </TabPanel>
           <TabPanel>
-            <TabColors />
+            <TabColors tabColor={this.tabColor}/>
           </TabPanel>
           <TabPanel>
-            <TabColors />
+            <TabColors tabColor={this.tabColor}/>
           </TabPanel>
         </Tabs>
 
-        <img src={TwoHavanagold} alt="trex white" />
-        <img src={BorderFirepit} alt="Border Firepit" />
-        <img src={CrownFirepit} alt="Crown firepit" />
-        <img src={DeckFirepit} alt="Deck firepit" />
-        <img src={FasciaFirepit} alt="Fascia Firepit" />
-        <img src={FlatCharcoal} alt="Flat Charcoal" />
-        <img src={IronBronze} alt="Iron bronze" />
-        <img src={PyramidCharcoal} alt="Pyramid Charcoal" />
-        <img src={RailCharcoal} alt="Rail Charcoal" />
-        <img src={SkirtCharcoal} alt="Skirt Charcoal" />
-        <img src={TpostCharcoal} alt="Tall Post charcoal" />
+        <img src={this.state.border} alt="Border Firepit" />
+        <img src={this.state.crown} alt="Crown firepit" />
+        <img src={this.state.deck} alt="Deck firepit" />
+        <img src={this.state.fascia} alt="Fascia Firepit" />
+        <img src={this.state.flat} alt="Flat Charcoal" />
+        <img src={this.state.iron} alt="Iron bronze" />
+        <img src={this.state.pyramid} alt="Pyramid Charcoal" />
+        <img src={this.state.rail} alt="Rail Charcoal" />
+        <img src={this.state.skirt} alt="Skirt Charcoal" />
+        <img src={this.state.tPost} alt="Tall Post charcoal" />
       </div>
     );
   }
