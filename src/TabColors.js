@@ -24,7 +24,7 @@ import TreehouseColor from "./Images/Color_Treehouse.png";
 import VintagelanternColor from "./Images/Color_Vintagelantern.png";
 import WhiteColor from "./Images/Color_White.png";
 import WinchestergrayColor from "./Images/Color_Winchestergray.png";
-import WoodlandbrownColor from "./Images/Color_Charcoal.png";
+import WoodlandbrownColor from "./Images/Color_Woodlandbrown.png";
 
 import "./Fence.css";
 
@@ -35,7 +35,6 @@ class TabColors extends Component {
   }
 
   changeColorItem = (props) => {
-    this.props.changeItem();
     this.props.tabColor();
   }
 
@@ -43,8 +42,8 @@ class TabColors extends Component {
     return (
       <div className="tab-container">
         <div className="block">
-          <img src={RopeswingColor} alt="rope swing color" className="color" value='Ropeswing' 
-          onClick={this.changeColorItem}/>
+          <img src={RopeswingColor} alt="rope swing color" className="color"
+          onClick={()=>this.changeColorItem('Ropeswing')}/>
           <p className="name">Rope Swing</p>
         </div>
 
@@ -106,6 +105,15 @@ class TabColors extends Component {
         <div className="block">
           <img src={MaderiaColor} alt="maderia color" className="color" />
           <p className="name">Maderia</p>
+        </div>
+
+                <div className="block">
+          <img
+            src={WoodlandbrownColor}
+            alt="Woodland Brown color"
+            className="color"
+          />
+          <p className="name">Woodland Brown</p>
         </div>
 
         <div className="block">
@@ -176,15 +184,6 @@ class TabColors extends Component {
             className="color"
           />
           <p className="name">Winchester Gray</p>
-        </div>
-
-        <div className="block">
-          <img
-            src={WoodlandbrownColor}
-            alt="Woodland Brown color"
-            className="color"
-          />
-          <p className="name">Woodland Brown</p>
         </div>
 
         <div className="block">

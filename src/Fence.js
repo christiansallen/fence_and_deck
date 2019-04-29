@@ -191,101 +191,148 @@ class Fence extends Component {
       cap: CharcoalCap,
       two: TwoHavanagold,
       sPost: SpostWhite,
-      trex: TrexWhite,
-      border: BorderFirepit,
-      crown: CrownFirepit,
-      flat: FlatCharcoal,
-      deck: DeckFirepit,
-      fascia: FasciaFirepit,
-      iron: IronBronze,
-      pyramid: PyramidCharcoal,
-      rail: RailCharcoal,
-      skirt: SkirtCharcoal,
       tPost: TpostCharcoal,
-        color: SpostWhite,
-        item: ''
+      trex: TrexWhite,
+      border: BorderBeachdune,
+      crown: CrownIslandmist,
+      flat: FlatCharcoal,
+      deck: DeckBeachdune,
+      fascia: FasciaBeachdune,
+      iron: IronBronze,
+      pyramid: PyramidWhite,
+      rail: RailWhite,
+      skirt: SkirtWhite,
+
+      color: SpostWhite,
+      item: ""
     };
   }
 
-//Run two functions. One for color change. One for state change.
-  tabColor = (color) => {
-    console.log('tab color');
+  //What needs to be done: All "colors" are actually imgs. Need to combine item name and color name and then parse it from string to object? Need to get item name first and then the color after. Need to combine all components to make one image of fence and deck.
+
+  //Run three functions. One for color change. One for state change. One for combined color/item to make the img.
+  tabColor = color => {
     console.log(color);
-    this.setState({color: color})
-  }
+    this.setState({ color: color });
+  };
 
-  changeItem = (item) => {
-      console.log('change item');
-      this.setState({item: item})
-  }
-
+  changeItem = item => {
+    console.log(item);
+  };
 
   render() {
     return (
       <div className="container">
-        <h1>Fence and Deck Utah</h1>
-        <img
-          src={this.state.trex}
-          alt="trex white"
-          style={{
-            position: "absolute",
-            marginLeft: "35px",
-            marginTop: "20px"
-          }}
-        />
-        <img src={this.state.color} alt="Short post charcoal" />
-        <img src={this.state.cap} alt="charcoal cap" />
+        <h1 style={{ marginBottom: "60px" }}>Fence and Deck Utah</h1>
 
-        <Tabs>
-          <TabList
-            style={{
-              fontSize: "20px",
-              display: "flex",
-              justifyContent: "space-around"
-            }}
-          >
-            <Tab>Post Cap</Tab>
-            <Tab>Post Sleeve</Tab>
-            <Tab>Post Skirt</Tab>
-            <Tab>Cap Rail</Tab>
-            <Tab>Top Rail</Tab>
-            <Tab>Bottom Rail</Tab>
-            <Tab>Baluster</Tab>
-          </TabList>
+        <div className="fence-container">
+          <img src={this.state.trex} alt="trex white" className="trex" />
+          <img
+            src={this.state.color}
+            alt="Short post charcoal"
+            className="short-post"
+          />
 
-          <TabPanel>
-            <TabColors tabColor={() => this.tabColor(SpostRopeswing)} changeItem={()=> this.changeItem()}/> 
-          </TabPanel>
-          <TabPanel>
-            <TabColors tabColor={()=> this.tabColor(this.state.color)}/>
-          </TabPanel>
-          <TabPanel>
-            <TabColors tabColor={this.tabColor}/>
-          </TabPanel>
-          <TabPanel>
-            <TabColors tabColor={this.tabColor}/>
-          </TabPanel>
-          <TabPanel>
-            <TabColors tabColor={this.tabColor}/>
-          </TabPanel>
-          <TabPanel>
-            <TabColors tabColor={this.tabColor}/>
-          </TabPanel>
-          <TabPanel>
-            <TabColors tabColor={this.tabColor}/>
-          </TabPanel>
-        </Tabs>
+          <img src={this.state.rail} alt="Rail Charcoal" className="rail" />
 
-        <img src={this.state.border} alt="Border Firepit" />
-        <img src={this.state.crown} alt="Crown firepit" />
-        <img src={this.state.deck} alt="Deck firepit" />
-        <img src={this.state.fascia} alt="Fascia Firepit" />
+          <img src={this.state.skirt} alt="Skirt White" className="skirt" />
+          <img
+            src={this.state.border}
+            alt="Border Firepit"
+            className="fence-border"
+          />
+
+          <img
+            src={this.state.pyramid}
+            alt="Pyramid Charcoal"
+            className="pyramid"
+          />
+
+          <img src={this.state.crown} alt="Crown firepit" className="crown" />
+
+          <img src={this.state.deck} alt="Deck firepit" className="deck" />
+          <img
+            src={this.state.fascia}
+            alt="Fascia Firepit"
+            className="fascia"
+          />
+
+          <Tabs>
+            <TabList
+              style={{
+                fontSize: "20px",
+                display: "flex",
+                justifyContent: "space-around",
+                marginTop: "230px"
+              }}
+            >
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Post Cap
+              </Tab>
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Post Sleeve
+              </Tab>
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Post Skirt
+              </Tab>
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Cap Rail
+              </Tab>
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Top/Bottom Rail
+              </Tab>
+              <Tab onClick={() => this.changeItem()} value="Baluster">
+                Baluster
+              </Tab>
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Deck
+              </Tab>
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Border
+              </Tab>
+              <Tab onClick={this.changeItem} value="Post Cap">
+                Fascia
+              </Tab>
+            </TabList>
+
+            {/*changeItem parameter should be the tab that's selected.*/}
+            <TabPanel>
+              <TabColors
+                tabColor={() => this.tabColor(SpostRopeswing)}
+                changeItem={() => this.changeItem()}
+              />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={() => this.tabColor(this.state.color)} />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={this.tabColor} />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={this.tabColor} />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={this.tabColor} />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={this.tabColor} />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={this.tabColor} />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={this.tabColor} />
+            </TabPanel>
+            <TabPanel>
+              <TabColors tabColor={this.tabColor} />
+            </TabPanel>
+          </Tabs>
+
+          {/*<img src={this.state.cap} alt="charcoal cap" className='cap'/>
         <img src={this.state.flat} alt="Flat Charcoal" />
         <img src={this.state.iron} alt="Iron bronze" />
-        <img src={this.state.pyramid} alt="Pyramid Charcoal" />
-        <img src={this.state.rail} alt="Rail Charcoal" />
-        <img src={this.state.skirt} alt="Skirt Charcoal" />
-        <img src={this.state.tPost} alt="Tall Post charcoal" />
+        <img src={this.state.tPost} alt="Tall Post charcoal" />*/}
+        </div>
       </div>
     );
   }
