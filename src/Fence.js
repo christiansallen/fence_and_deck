@@ -3,26 +3,26 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import TabColors from "./TabColors.js";
 
-//1x6 Caps
-import CharcoalCap from "./Images/1x6_Charcoal.png";
-import FirepitCap from "./Images/1x6_Firepit.png";
-import GravelpathCap from "./Images/1x6_Gravelpath.png";
-import HavanagoldCap from "./Images/1x6_Havanagold.png";
-import IslandmistCap from "./Images/1x6_Islandmist.png";
-import LavarockCap from "./Images/1x6_Lavarock.png";
-import MaderiaCap from "./Images/1x6_Maderia.png";
-import PebblegreyCap from "./Images/1x6_Pebblegrey.png";
-import RopeswingCap from "./Images/1x6_Ropeswing.png";
-import SaddleCap from "./Images/1x6_Saddle.png";
-import SpicedrumCap from "./Images/1x6_Spicedrum.png";
-import TikitorchCap from "./Images/1x6_Tikitorch.png";
-import TreehouseCap from "./Images/1x6_Treehouse.png";
-import VintagelanternCap from "./Images/1x6_Vintagelantern.png";
-import WhiteCap from "./Images/1x6_White.png";
-import WinchestergrayCap from "./Images/1x6_Winchestergray.png";
-import WoodlandbrownCap from "./Images/1x6_Woodlandbrown.png";
+//1x6 Cap Rails
+import OneCharcoal from "./Images/1x6_Charcoal.png";
+import OneFirepit from "./Images/1x6_Firepit.png";
+import OneGravelpath from "./Images/1x6_Gravelpath.png";
+import OneHavanagold from "./Images/1x6_Havanagold.png";
+import OneIslandmist from "./Images/1x6_Islandmist.png";
+import OneLavarock from "./Images/1x6_Lavarock.png";
+import OneMaderia from "./Images/1x6_Maderia.png";
+import OnePebblegrey from "./Images/1x6_Pebblegrey.png";
+import OneRopeswing from "./Images/1x6_Ropeswing.png";
+import OneSaddle from "./Images/1x6_Saddle.png";
+import OneSpicedrum from "./Images/1x6_Spicedrum.png";
+import OneTikitorch from "./Images/1x6_Tikitorch.png";
+import OneTreehouse from "./Images/1x6_Treehouse.png";
+import OneVintagelantern from "./Images/1x6_Vintagelantern.png";
+import OneWhite from "./Images/1x6_White.png";
+import OneWinchestergray from "./Images/1x6_Winchestergray.png";
+import OneWoodlandbrown from "./Images/1x6_Woodlandbrown.png";
 
-//2x4 Caps
+//2x4 Cap Rails
 import TwoHavanagold from "./Images/2x4_Havanagold.png";
 import TwoIslandmist from "./Images/2x4_Islandmist.png";
 import TwoLavarock from "./Images/2x4_Lavarock.png";
@@ -184,11 +184,217 @@ import TrexLavarock from "./Images/Trex_Lavarock.png";
 
 import "./Fence.css";
 
+const tabs = [
+  { name: "Post Cap" },
+  { name: "Post Sleeve" },
+  { name: "Post Skirt" },
+  { name: "Cap Rail" },
+  { name: "Top/Bottom Rail" },
+  { name: "Baluster" },
+  { name: "Deck" },
+  { name: "Border" },
+  { name: "Fascia" }
+];
+
+const OneImg = [
+  { name: "OneCharcoal" },
+  { name: "OneFirepit" },
+  { name: "OneGravelpath" },
+  { name: "OneHavanagold" },
+  { name: "OneIslandmist" },
+  { name: "OneLavarock" },
+  { name: "OneMaderia" },
+  { name: "OnePebblegrey" },
+  { name: "OneRopeswing" },
+  { name: "OneSaddle" },
+  { name: "OneSpicedrum" },
+  { name: "OneTikitorch" },
+  { name: "OneTreehouse" },
+  { name: "OneVintagelantern" },
+  { name: "OneWhite" },
+  { name: "OneWinchestergray" },
+  { name: "OneWoodlandbrown" }
+];
+
+const TwoImg = [
+  { name: "TwoHavanagold" },
+  { name: "TwoIslandmist" },
+  { name: "TwoLavarock" },
+  { name: "TwoSpicedrum" },
+  { name: "TwoTikitorch" }
+];
+
+const BorderImg = [
+  { name: "BorderBeachdune" },
+  { name: "BorderClamshell" },
+  { name: "BorderCoastalbluff" },
+  { name: "BorderFirepit" },
+  { name: "BorderFoggywharf" },
+  { name: "BorderGravelpath" },
+  { name: "BorderHavanagold" },
+  { name: "BorderLavarock" },
+  { name: "BorderPebblegray" },
+  { name: "BorderRockyharbor" },
+  { name: "BorderRopeswing" },
+  { name: "BorderSaddle" },
+  { name: "BorderSpicedrum" },
+  { name: "BorderSunsetcove" },
+  { name: "BorderTikitorch" },
+  { name: "BorderToastedsand" },
+  { name: "BorderTreehouse" },
+  { name: "BorderVintagelantern" },
+  { name: "BorderWinchestergray" },
+  { name: "BorderWoodlandbrown" },
+  { name: "BorderIslandmist" },
+  { name: "BorderMaderia" }
+];
+
+const CrownImg = [
+  { name: "CrownCharcoal" },
+  { name: "CrownFirepit" },
+  { name: "CrownGravelpath" },
+  { name: "CrownHavanagold" },
+  { name: "CrownWhite" },
+  { name: "CrownRopeswing" },
+  { name: "CrownSpicedrum" },
+  { name: "CrownTikitorch" },
+  { name: "CrownTreehouse" },
+  { name: "CrownVintagelantern" }
+];
+
+const DeckImg = [
+  { name: "DeckBeachdune" },
+  { name: "DeckClamshell" },
+  { name: "DeckCoastalbluff" },
+  { name: "DeckFirepit" },
+  { name: "DeckFoggywharf" },
+  { name: "DeckGravelpath" },
+  { name: "DeckHavanagold" },
+  { name: "DeckLavarock" },
+  { name: "DeckPebblegray" },
+  { name: "DeckRockyharbor" },
+  { name: "DeckRopeswing" },
+  { name: "DeckSaddle" },
+  { name: "DeckSpicedrum" },
+  { name: "DeckSunsetcove" },
+  { name: "DeckTikitorch" },
+  { name: "DeckToastedsand" },
+  { name: "DeckTreehouse" },
+  { name: "DeckVintagelantern" },
+  { name: "DeckWinchestergray" },
+  { name: "DeckWoodlandbrown" },
+  { name: "DeckIslandmist" },
+  { name: "DeckMaderia" }
+];
+
+const FasciaImg = [
+  { name: "FasciaBeachdune" },
+  { name: "FasciaClamshell" },
+  { name: "FasciaCoastalbluff" },
+  { name: "FasciaFirepit" },
+  { name: "FasciaFoggywharf" },
+  { name: "FasciaGravelpath" },
+  { name: "FasciaHavanagold" },
+  { name: "FasciaLavarock" },
+  { name: "FasciaPebblegray" },
+  { name: "FasciaRockyharbor" },
+  { name: "FasciaRopeswing" },
+  { name: "FasciaSaddle" },
+  { name: "FasciaSpicedrum" },
+  { name: "FasciaSunsetcove" },
+  { name: "FasciaTikitorch" },
+  { name: "FasciaToastedsand" },
+  { name: "FasciaTreehouse" },
+  { name: "FasciaVintagelantern" },
+  { name: "FasciaWinchestergray" },
+  { name: "FasciaWoodlandbrown" },
+  { name: "FasciaIslandmist" },
+  { name: "FasciaMaderia" }
+];
+
+const FlatsImg = [
+  { name: "FlatsCharcoal" },
+  { name: "FlatsFirepit" },
+  { name: "FlatsGravelpath" },
+  { name: "FlatsHavanagold" },
+  { name: "FlatsWhite" },
+  { name: "FlatsRopeswing" },
+  { name: "FlatsVintagelantern" }
+];
+
+const IronImg = [
+  { name: "IronBronze" },
+  { name: "IronCharcoal" },
+  { name: "IronPosts" },
+  { name: "IronWhite" },
+  { name: "IronGuardRail" }
+];
+
+const PyramidImg = [
+  { name: "PyramidCharcoal" },
+  { name: "PyramidFirepit" },
+  { name: "PyramidGravelpath" },
+  { name: "PyramidHavanagold" },
+  { name: "PyramidWhite" },
+  { name: "PyramidRopeswing" },
+  { name: "PyramidVintagelantern" }
+];
+
+const RailImg = [
+  { name: "RailCharcoal" },
+  { name: "RailFirepit" },
+  { name: "RailGravelpath" },
+  { name: "RailHavanagold" },
+  { name: "RailWhite" },
+  { name: "RailRopeswing" },
+  { name: "RailVintagelantern" }
+];
+
+const SkirtImg = [
+  { name: "SkirtCharcoal" },
+  { name: "SkirtFirepit" },
+  { name: "SkirtGravelpath" },
+  { name: "SkirtHavanagold" },
+  { name: "SkirtWhite" },
+  { name: "SkirtRopeswing" },
+  { name: "SkirtVintagelantern" }
+];
+
+const SpostImg = [
+  { name: "SpostCharcoal" },
+  { name: "SpostFirepit" },
+  { name: "SpostGravelpath" },
+  { name: "SpostHavanagold" },
+  { name: "SpostWhite" },
+  { name: "SpostRopeswing" },
+  { name: "SpostVintagelantern" }
+];
+
+const TpostImg = [
+  { name: "TpostCharcoal" },
+  { name: "TpostFirepit" },
+  { name: "TpostGravelpath" },
+  { name: "TpostHavanagold" },
+  { name: "TpostWhite" },
+  { name: "TpostRopeswing" },
+  { name: "TpostVintagelantern" }
+];
+
+const TrexImg = [
+  { name: "TrexCharcoal" },
+  { name: "TrexFirepit" },
+  { name: "TrexGravelpath" },
+  { name: "TrexHavanagold" },
+  { name: "TrexWhite" },
+  { name: "TrexRopeswing" },
+  { name: "TrexLavarock" }
+];
+
 class Fence extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cap: CharcoalCap,
+      cap: OneCharcoal,
       two: TwoHavanagold,
       sPost: SpostWhite,
       tPost: TpostCharcoal,
@@ -202,137 +408,152 @@ class Fence extends Component {
       pyramid: PyramidWhite,
       rail: RailWhite,
       skirt: SkirtWhite,
-
-      color: SpostWhite,
-      item: ""
+      item: "",
+      tabs,
+      activeTab: "Post Cap",
+      ironStyle: false,
+      compositeStyle: true,
+      twoStyle: false,
+      oneStyle: true
     };
   }
 
-  //What needs to be done: All "colors" are actually imgs. Need to combine item name and color name and then parse it from string to object? Need to get item name first and then the color after. Need to combine all components to make one image of fence and deck.
-
-  //Run three functions. One for color change. One for state change. One for combined color/item to make the img.
-  tabColor = color => {
-    console.log(color);
-    this.setState({ color: color });
+  changeItem = name => {
+    this.setState({
+      activeTab: name
+    });
   };
 
-  changeItem = item => {
-    console.log(item);
+  handleTabColors = name => {
+    const { activeTab } = this.state;
+    // get index or name of tabcolors
+    // check which tab they're in
+    console.log(activeTab);
+    console.log(name);
+    const fullName = { activeTab, name };
+    console.log(fullName);
   };
 
   render() {
+    const { tabs } = this.state;
     return (
       <div className="container">
-        <h1 style={{ marginBottom: "60px" }}>Fence and Deck Utah</h1>
+        {/* Main image up top */}
+        <h1 style={{ marginBottom: "40px" }}>Fence and Deck Utah</h1>
 
-        <div className="fence-container">
-          <img src={this.state.trex} alt="trex white" className="trex" />
-          <img
-            src={this.state.color}
-            alt="Short post charcoal"
-            className="short-post"
-          />
+        <div className="top-section">
+          <div className="fence-options">
+            <h3>Pick your fence options below:</h3>
+            <div className="options">
+              <h4 className="option-title">Posts:</h4>
+              <div className="option-container">
+                <div className="option">1x6 Posts</div>
+                <div className="option">2x4 Posts</div>
+              </div>
+            </div>
+            <div className="options">
+              <h4 className="option-title">Balusters:</h4>
+              <div className="option-container">
+                <div className="option">Composite</div>
+                <div className="option">Iron</div>
+              </div>
+            </div>
+            <div className="options">
+              <h4 className="option-title">Post Cap:</h4>
+              <div className="option-container">
+                <div className="option">Flat</div>
+                <div className="option">Pyramid</div>
+              </div>
+            </div>
+          </div>
 
-          <img src={this.state.rail} alt="Rail Charcoal" className="rail" />
+          <div className="fence-container">
+            <img src={this.state.trex} alt="trex white" className="trex" />
+            <img
+              src={this.state.sPost}
+              alt="Short post charcoal"
+              className="short-post"
+            />
 
-          <img src={this.state.skirt} alt="Skirt White" className="skirt" />
-          <img
-            src={this.state.border}
-            alt="Border Firepit"
-            className="fence-border"
-          />
+            <img src={this.state.rail} alt="Rail Charcoal" className="rail" />
 
-          <img
-            src={this.state.pyramid}
-            alt="Pyramid Charcoal"
-            className="pyramid"
-          />
+            <img src={this.state.skirt} alt="Skirt White" className="skirt" />
+            <img
+              src={this.state.border}
+              alt="Border Firepit"
+              className="fence-border"
+            />
 
-          <img src={this.state.crown} alt="Crown firepit" className="crown" />
+            <img
+              src={this.state.pyramid}
+              alt="Pyramid Charcoal"
+              className="pyramid"
+            />
 
-          <img src={this.state.deck} alt="Deck firepit" className="deck" />
-          <img
-            src={this.state.fascia}
-            alt="Fascia Firepit"
-            className="fascia"
-          />
+            <img src={this.state.crown} alt="Crown firepit" className="crown" />
 
-          <Tabs>
-            <TabList
-              style={{
-                fontSize: "20px",
-                display: "flex",
-                justifyContent: "space-around",
-                marginTop: "230px"
-              }}
-            >
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Post Cap
-              </Tab>
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Post Sleeve
-              </Tab>
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Post Skirt
-              </Tab>
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Cap Rail
-              </Tab>
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Top/Bottom Rail
-              </Tab>
-              <Tab onClick={() => this.changeItem()} value="Baluster">
-                Baluster
-              </Tab>
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Deck
-              </Tab>
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Border
-              </Tab>
-              <Tab onClick={this.changeItem} value="Post Cap">
-                Fascia
-              </Tab>
-            </TabList>
+            <img src={this.state.deck} alt="Deck firepit" className="deck" />
+            <img
+              src={this.state.fascia}
+              alt="Fascia Firepit"
+              className="fascia"
+            />
+          </div>
+        </div>
 
-            {/*changeItem parameter should be the tab that's selected.*/}
-            <TabPanel>
-              <TabColors
-                tabColor={() => this.tabColor(SpostRopeswing)}
-                changeItem={() => this.changeItem()}
-              />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={() => this.tabColor(this.state.color)} />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={this.tabColor} />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={this.tabColor} />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={this.tabColor} />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={this.tabColor} />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={this.tabColor} />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={this.tabColor} />
-            </TabPanel>
-            <TabPanel>
-              <TabColors tabColor={this.tabColor} />
-            </TabPanel>
-          </Tabs>
+        <Tabs>
+          <TabList
+            style={{
+              fontSize: "20px",
+              display: "flex",
+              justifyContent: "space-around",
+              marginTop: "230px"
+            }}
+          >
+            {tabs.map((tab, idx) => {
+              return (
+                <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                  {tab.name}
+                </Tab>
+              );
+            })}
+          </TabList>
 
-          {/*<img src={this.state.cap} alt="charcoal cap" className='cap'/>
+          {/*changeItem parameter should be the tab that's selected.*/}
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+          <TabPanel>
+            <TabColors handleTabColors={this.handleTabColors} />
+          </TabPanel>
+        </Tabs>
+
+        {/*<img src={this.state.cap} alt="charcoal cap" className='cap'/>
         <img src={this.state.flat} alt="Flat Charcoal" />
         <img src={this.state.iron} alt="Iron bronze" />
         <img src={this.state.tPost} alt="Tall Post charcoal" />*/}
-        </div>
       </div>
     );
   }

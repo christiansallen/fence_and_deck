@@ -3,11 +3,12 @@
   height: 70px;
   border-radius: 10px;
   border: 1px solid rgb(107, 107, 107);
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
 }
 
 .color:hover {
-  width: 75px;
-  height: 75px;
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -99,4 +100,50 @@
   position: absolute;
   margin-left: -366px;
   margin-top: -28px;
+}
+
+.options {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.option-container {
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.option-title {
+  padding: 10px;
+  width: 150px;
+  align-content: flex-start;
+  display: flex;
+}
+
+.option {
+  border: 1px solid green;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.top-section {
+  display: flex;
+  margin-bottom: -280px;
+}
+
+.fence-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 375px;
 }
