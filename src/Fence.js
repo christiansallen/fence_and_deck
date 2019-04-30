@@ -394,7 +394,7 @@ class Fence extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cap: OneCharcoal,
+      one: OneCharcoal,
       two: TwoHavanagold,
       sPost: SpostWhite,
       tPost: TpostCharcoal,
@@ -410,11 +410,11 @@ class Fence extends Component {
       skirt: SkirtWhite,
       item: "",
       tabs,
-      activeTab: "Post Cap",
-      ironStyle: false,
-      compositeStyle: true,
-      twoStyle: false,
+      activeTab: "PostCap",
       oneStyle: true,
+      twoStyle: false,
+      compositeStyle: true,
+      ironStyle: false,
       flatStyle: true,
       pyramidStyle: false
     };
@@ -454,12 +454,43 @@ class Fence extends Component {
     const { activeTab } = this.state;
     // get index or name of tabcolors
     // check which tab they're in
+    this.setState(prevState => ({
+      activeTab: prevState.activeTab
+    }));
     console.log(activeTab);
     console.log(name);
     console.log(activeTab + name);
   };
 
+  toggleStyle = () => {
+    console.log("toggled");
+    this.setState(prevState => ({
+      oneStyle: !prevState.oneStyle
+    }));
+    console.log(this.state.oneStyle);
+  };
+
   render() {
+    const clicked = {
+      backgroundColor: "green",
+      color: "white"
+    };
+
+    const notClicked = {
+      backgroundColor: "white",
+      color: "black"
+    };
+
+    const clickedBtn = this.state.oneStyle
+      ? clicked
+      : this.state.twoStyle === true && this.state.oneStyle === false;
+    const clickedBtn2 = this.state.compositeStyle
+      ? clicked
+      : this.state.ironStyle === true;
+    const clickedBtn3 = this.state.flatStyle
+      ? clicked
+      : this.state.pyramidStyle === true;
+
     const { tabs } = this.state;
     return (
       <div className="container">
@@ -472,21 +503,31 @@ class Fence extends Component {
             <div className="options">
               <h4 className="option-title">Posts:</h4>
               <div className="option-container">
-                <div className="option">1x6 Posts</div>
+                <div
+                  className="option"
+                  style={clickedBtn}
+                  onClick={this.toggleStyle}
+                >
+                  1x6 Posts
+                </div>
                 <div className="option">2x4 Posts</div>
               </div>
             </div>
             <div className="options">
               <h4 className="option-title">Balusters:</h4>
               <div className="option-container">
-                <div className="option">Composite</div>
+                <div className="option" style={clickedBtn2}>
+                  Composite
+                </div>
                 <div className="option">Iron</div>
               </div>
             </div>
             <div className="options">
               <h4 className="option-title">Post Cap:</h4>
               <div className="option-container">
-                <div className="option">Flat</div>
+                <div className="option" style={clickedBtn3}>
+                  Flat
+                </div>
                 <div className="option">Pyramid</div>
               </div>
             </div>
