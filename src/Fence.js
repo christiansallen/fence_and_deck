@@ -185,11 +185,11 @@ import TrexLavarock from "./Images/Trex_Lavarock.png";
 import "./Fence.css";
 
 const tabs = [
-  { name: "Post Cap" },
-  { name: "Post Sleeve" },
-  { name: "Post Skirt" },
-  { name: "Cap Rail" },
-  { name: "Top/Bottom Rail" },
+  { name: "PostCap" },
+  { name: "PostSleeve" },
+  { name: "PostSkirt" },
+  { name: "CapRail" },
+  { name: "Rail" },
   { name: "Baluster" },
   { name: "Deck" },
   { name: "Border" },
@@ -414,9 +414,35 @@ class Fence extends Component {
       ironStyle: false,
       compositeStyle: true,
       twoStyle: false,
-      oneStyle: true
+      oneStyle: true,
+      flatStyle: true,
+      pyramidStyle: false
     };
   }
+
+  buttonStyles1 = () => {
+    if (this.state.oneStyle === true) {
+      this.setState({ twoStyle: false });
+    } else if (this.state.oneStyle === false) {
+      this.setState({ twoStyle: true });
+    }
+  };
+
+  buttonStyles2 = () => {
+    if (this.state.compositeStyle === true) {
+      this.setState({ ironStyle: false });
+    } else if (this.state.compositeStyle === false) {
+      this.setState({ ironStyle: true });
+    }
+  };
+
+  buttonStyles3 = () => {
+    if (this.state.flatStyle === true) {
+      this.setState({ pyramidStyle: false });
+    } else if (this.state.flatStyle === false) {
+      this.setState({ pyramidStyle: true });
+    }
+  };
 
   changeItem = name => {
     this.setState({
@@ -430,8 +456,7 @@ class Fence extends Component {
     // check which tab they're in
     console.log(activeTab);
     console.log(name);
-    const fullName = { activeTab, name };
-    console.log(fullName);
+    console.log(activeTab + name);
   };
 
   render() {
@@ -490,6 +515,8 @@ class Fence extends Component {
               className="pyramid"
             />
 
+            <img src={this.state.flat} alt="Flat Charcoal" className="flat" />
+
             <img src={this.state.crown} alt="Crown firepit" className="crown" />
 
             <img src={this.state.deck} alt="Deck firepit" className="deck" />
@@ -500,6 +527,8 @@ class Fence extends Component {
             />
           </div>
         </div>
+
+        <img src={this.state.iron} alt="Iron bronze" className="iron" />
 
         <Tabs>
           <TabList
@@ -551,8 +580,6 @@ class Fence extends Component {
         </Tabs>
 
         {/*<img src={this.state.cap} alt="charcoal cap" className='cap'/>
-        <img src={this.state.flat} alt="Flat Charcoal" />
-        <img src={this.state.iron} alt="Iron bronze" />
         <img src={this.state.tPost} alt="Tall Post charcoal" />*/}
       </div>
     );
