@@ -399,6 +399,7 @@ class Fence extends Component {
       crown: CrownIslandmist,
       sPost: SpostWhite,
       tPost: TpostCharcoal,
+      ironPosts: IronPosts,
       trex: TrexWhite,
       border: BorderBeachdune,
       flat: FlatCharcoal,
@@ -421,11 +422,12 @@ class Fence extends Component {
       ironStyle: false,
       flatStyle: true,
       pyramidStyle: false,
-      shortStyle: false,
-      tallStyle: true,
+      shortStyle: true,
+      tallStyle: false,
       postToggle: false,
       compositePostStyle: true,
-      ironPostStyle: false
+      ironPostStyle: false,
+      hidePostCaps: false
     };
   }
 
@@ -470,7 +472,10 @@ class Fence extends Component {
       compositeStyle: true,
       aluminumStyle: false,
       ironStyle: false,
-      postToggle: false
+      postToggle: false,
+      hidePostCaps: false,
+      compositePostStyle: true,
+      ironPostStyle: false
     });
   };
   toggleStyleBalusters2 = () => {
@@ -478,7 +483,10 @@ class Fence extends Component {
       compositeStyle: false,
       aluminumStyle: true,
       ironStyle: false,
-      postToggle: false
+      postToggle: false,
+      hidePostCaps: false,
+      compositePostStyle: true,
+      ironPostStyle: false
     });
   };
   toggleStyleBalusters3 = () => {
@@ -488,6 +496,22 @@ class Fence extends Component {
       ironStyle: true,
       postToggle: true
     });
+  };
+
+  togglePostStyle = () => {
+    if (this.state.compositePostStyle === true) {
+      this.setState({
+        compositePostStyle: false,
+        ironPostStyle: true,
+        hidePostCaps: true
+      });
+    } else {
+      this.setState({
+        ironPostStyle: false,
+        compositePostStyle: true,
+        hidePostCaps: false
+      });
+    }
   };
 
   toggleStylePostCap = () => {
@@ -526,14 +550,6 @@ class Fence extends Component {
     });
   };
 
-  togglePostButtonStyle = () => {
-    if (this.state.compositePostStyle === true) {
-      this.setState({ compositePostStyle: false, ironPostStyle: true });
-    } else {
-      this.setState({ compositePostStyle: true, ironPostStyle: false });
-    }
-  };
-
   render() {
     const clicked = {
       backgroundColor: "green",
@@ -543,14 +559,6 @@ class Fence extends Component {
     const notClicked = {
       backgroundColor: "white",
       color: "black"
-    };
-
-    const none = {
-      display: "none"
-    };
-
-    const display = {
-      display: "contents"
     };
 
     const clickedBtn1 = this.state.oneStyle ? clicked : notClicked;
@@ -564,10 +572,10 @@ class Fence extends Component {
     const clickedBtn3 = this.state.flatStyle ? clicked : notClicked;
     const clickedBtn33 = this.state.pyramidStyle ? clicked : notClicked;
 
-    const clickedBtn4 = this.state.compositePostStyle ? clicked : notClicked;
-    const clickedBtn44 = this.state.ironPostStyle ? clicked : notClicked;
-
-    const postStyleToggle = this.state.postToggle ? display : none;
+    const clickedBtn4 =
+      this.state.compositePostStyle === true ? clicked : notClicked;
+    const clickedBtn44 =
+      this.state.ironPostStyle === true ? clicked : notClicked;
 
     const { tabs } = this.state;
     return (
@@ -612,14 +620,14 @@ class Fence extends Component {
                 <div
                   className="option"
                   style={clickedBtn4}
-                  onClick={this.togglePostButtonStyle}
+                  onClick={this.togglePostStyle}
                 >
                   Composite
                 </div>
                 <div
                   className="option"
                   style={clickedBtn44}
-                  onClick={this.togglePostButtonStyle}
+                  onClick={this.togglePostStyle}
                 >
                   Iron
                 </div>
@@ -653,7 +661,7 @@ class Fence extends Component {
               </div>
             </div>
 
-            <div className="options">
+            <div className={this.state.hidePostCaps ? "none" : "options"}>
               <h4 className="option-title">Post Cap:</h4>
               <div className="option-container">
                 <div
@@ -693,14 +701,27 @@ class Fence extends Component {
               className={this.state.ironStyle ? "iron" : "none"}
             />
             <img
+              src={this.state.ironPosts}
+              alt="Iron Posts"
+              className={this.state.hidePostCaps ? "iron-posts" : "none"}
+            />
+            <img
               src={this.state.sPost}
               alt="Short post charcoal"
-              className={this.state.shortStyle ? "short-post" : "none"}
+              className={
+                this.state.shortStyle && !this.state.hidePostCaps
+                  ? "short-post"
+                  : "none"
+              }
             />
             <img
               src={this.state.tPost}
               alt="Tall Post charcoal"
-              className={this.state.tallStyle ? "tall-post" : "none"}
+              className={
+                this.state.tallStyle && !this.state.hidePostCaps
+                  ? "tall-post"
+                  : "none"
+              }
             />
 
             <img
@@ -708,7 +729,11 @@ class Fence extends Component {
               alt="Rail Charcoal"
               className="rail"
             />
-            <img src={this.state.skirt} alt="Skirt White" className="skirt" />
+            <img
+              src={this.state.skirt}
+              alt="Skirt White"
+              className={this.state.hidePostCaps ? "none" : "skirt"}
+            />
             <img
               src={this.state.border}
               alt="Border Firepit"
@@ -717,12 +742,20 @@ class Fence extends Component {
             <img
               src={this.state.pyramid}
               alt="Pyramid Charcoal"
-              className={this.state.pyramidStyle ? "pyramid" : "none"}
+              className={
+                this.state.pyramidStyle && !this.state.hidePostCaps
+                  ? "pyramid"
+                  : "none"
+              }
             />
             <img
               src={this.state.flat}
               alt="Flat Charcoal"
-              className={this.state.flatStyle ? "flat" : "none"}
+              className={
+                this.state.flatStyle && !this.state.hidePostCaps
+                  ? "flat"
+                  : "none"
+              }
             />
             <img
               src={this.state.crown}
