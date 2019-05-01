@@ -40,30 +40,33 @@
   height: 500px;
   position: relative;
   margin: auto;
+  padding-right: 30px;
 }
 
 .trex {
   position: absolute;
   margin-left: -91px;
+  margin-top: -3px;
 }
 
 .iron {
   position: absolute;
   z-index: -1;
   margin-left: -89px;
+  margin-top: -3px;
 }
 
 .one {
   position: absolute;
-  z-index: -1;
-  margin-top: -12px;
+  z-index: 1;
+  margin-top: -15px;
   margin-left: -126.5px;
 }
 
 .two {
   position: absolute;
-  z-index: -1;
-  margin-top: -14px;
+  z-index: 0;
+  margin-top: -15px;
   margin-left: -106px;
 }
 
@@ -119,7 +122,7 @@
 .rail {
   position: absolute;
   margin-left: -106px;
-  margin-top: -7px;
+  margin-top: -10px;
 }
 
 .pyramid {

@@ -401,13 +401,13 @@ class Fence extends Component {
       tPost: TpostCharcoal,
       ironPosts: IronPosts,
       trex: TrexWhite,
-      border: BorderBeachdune,
       flat: FlatCharcoal,
+      pyramid: PyramidCharcoal,
       deck: DeckBeachdune,
+      border: BorderBeachdune,
       fascia: FasciaBeachdune,
       aluminum: AluminumBronze,
       iron: AluminumCharcoal,
-      pyramid: PyramidCharcoal,
       rail: RailWhite,
       skirt: SkirtWhite,
       ironRail: IronGuardRail,
@@ -645,7 +645,7 @@ class Fence extends Component {
                   Crown Rail
                 </div>
                 <div
-                  className="option"
+                  className={this.state.ironPostStyle ? "none" : "option"}
                   style={clickedBtn1}
                   onClick={this.toggleStyleCaps1}
                 >
@@ -661,7 +661,13 @@ class Fence extends Component {
               </div>
             </div>
 
-            <div className={this.state.hidePostCaps ? "none" : "options"}>
+            <div
+              className={
+                this.state.hidePostCaps || this.state.oneStyle
+                  ? "none"
+                  : "options"
+              }
+            >
               <h4 className="option-title">Post Cap:</h4>
               <div className="option-container">
                 <div
@@ -743,7 +749,9 @@ class Fence extends Component {
               src={this.state.pyramid}
               alt="Pyramid Charcoal"
               className={
-                this.state.pyramidStyle && !this.state.hidePostCaps
+                this.state.pyramidStyle &&
+                !this.state.hidePostCaps &&
+                !this.state.oneStyle
                   ? "pyramid"
                   : "none"
               }
@@ -752,7 +760,9 @@ class Fence extends Component {
               src={this.state.flat}
               alt="Flat Charcoal"
               className={
-                this.state.flatStyle && !this.state.hidePostCaps
+                this.state.flatStyle &&
+                !this.state.hidePostCaps &&
+                !this.state.oneStyle
                   ? "flat"
                   : "none"
               }
