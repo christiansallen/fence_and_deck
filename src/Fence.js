@@ -13,6 +13,7 @@ import AluminumCharcoal from "./Images/Iron_Charcoal.png";
 import RailWhite from "./Images/Rail_White.png";
 import IronGuardRail from "./Images/IronGuardRail.png";
 import DeckGravelpath from "./Images/Deck_Gravelpath.png";
+import IronPosts from "./Images/Iron_Posts.png";
 
 class Fence extends Component {
   constructor(props) {
@@ -21,20 +22,26 @@ class Fence extends Component {
       one: OneHavanagold,
       two: TwoHavanagold,
       crown: imgData["Cap Rail"]["Islandmist"],
+
       sPost: imgData["Post Sleeve"]["White"],
       tPost: TpostCharcoal,
-      trex: imgData["Baluster"]["TrexWhite"],
-      border: imgData["Border"]["BorderBeachdune"],
-      deck: imgData["Deck"]["Beachdune"],
-      flat: imgData["Post Cap"]["Charcoal"],
-      pyramid: imgData["Post Cap"]["PyramidCharcoal"],
-      fascia: imgData["Fascia"]["FasciaBeachdune"],
+      ironPosts: IronPosts,
 
+      trex: imgData["Baluster"]["TrexWhite"],
       aluminum: AluminumBronze,
       iron: AluminumCharcoal,
-      rail: RailWhite,
+
+      flat: imgData["Post Cap"]["Charcoal"],
+      pyramid: imgData["Post Cap"]["PyramidCharcoal"],
       skirt: imgData["Post Skirt"]["White"],
+
+      rail: RailWhite,
       ironRail: IronGuardRail,
+
+      border: imgData["Border"]["BorderBeachdune"],
+      deck: imgData["Deck"]["Beachdune"],
+      fascia: imgData["Fascia"]["FasciaBeachdune"],
+
       item: "",
       tabs,
       activeTab: "Post Cap",
