@@ -45,13 +45,32 @@
 .trex {
   position: absolute;
   margin-left: 35px;
-  display: none;
 }
 
-.cap {
-  margin-top: -140px;
-  margin-left: -364px;
+.iron {
   position: absolute;
+  z-index: -1;
+  margin-left: 37px;
+}
+
+.one {
+  position: absolute;
+  z-index: -1;
+  margin-top: -12px;
+  margin-left: -364px;
+}
+
+.two {
+  position: absolute;
+  z-index: -1;
+  margin-top: -14px;
+  margin-left: -344.5px;
+}
+
+.crown {
+  position: absolute;
+  margin-left: -343.5px;
+  margin-top: -14px;
 }
 
 .fence-border {
@@ -68,15 +87,12 @@
   z-index: -1;
 }
 
-.iron {
-  position: absolute;
-  margin-top: -219px;
-  z-index: -1;
-  margin-left: 42px;
-}
-
 .short-post {
   margin-top: -15px;
+}
+
+.tall-post {
+  margin-top: -24px;
 }
 
 .fascia {
@@ -86,7 +102,6 @@
 }
 
 .skirt {
-  position: absolute;
   position: absolute;
   margin-left: -366px;
   margin-top: 149px;
@@ -98,16 +113,13 @@
   margin-top: -7px;
 }
 
-.crown {
-  position: absolute;
-  margin-left: -343.5px;
-  margin-top: -14px;
-}
-
 .pyramid {
   position: absolute;
   margin-left: -366px;
   margin-top: -28px;
+}
+
+.none {
   display: none;
 }
 
@@ -127,7 +139,7 @@
 .option-container {
   width: 250px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .option-title {
@@ -144,7 +156,7 @@
   font-size: 15px;
   cursor: pointer;
   font-weight: bold;
-  width: 100px;
+  width: 150px;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -160,5 +172,5 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 375px;
+  width: 400px;
 }

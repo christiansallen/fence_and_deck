@@ -121,11 +121,11 @@ import FlatWhite from "./Images/Flat_White.png";
 import FlatRopeswing from "./Images/Flat_Ropeswing.png";
 import FlatVintagelantern from "./Images/Flat_Vintagelantern.png";
 
-//Iron
-import IronBronze from "./Images/Iron_Bronze.png";
-import IronCharcoal from "./Images/Iron_Charcoal.png";
+//Iron/Aluminum
+import AluminumBronze from "./Images/Iron_Bronze.png";
+import AluminumCharcoal from "./Images/Iron_Charcoal.png";
 import IronPosts from "./Images/Iron_Posts.png";
-import IronWhite from "./Images/Iron_White.png";
+import AluminumWhite from "./Images/Iron_White.png";
 import IronGuardRail from "./Images/IronGuardRail.png";
 
 //Pyramid
@@ -185,10 +185,10 @@ import TrexLavarock from "./Images/Trex_Lavarock.png";
 import "./Fence.css";
 
 const tabs = [
-  { name: "PostCap" },
-  { name: "PostSleeve" },
-  { name: "PostSkirt" },
-  { name: "CapRail" },
+  { name: "Post Cap" },
+  { name: "Post Sleeve" },
+  { name: "Post Skirt" },
+  { name: "Cap Rail" },
   { name: "Rail" },
   { name: "Baluster" },
   { name: "Deck" },
@@ -323,10 +323,10 @@ const FlatsImg = [
 ];
 
 const IronImg = [
-  { name: "IronBronze" },
-  { name: "IronCharcoal" },
+  { name: "AluminumBronze" },
+  { name: "AluminumCharcoal" },
   { name: "IronPosts" },
-  { name: "IronWhite" },
+  { name: "AluminumWhite" },
   { name: "IronGuardRail" }
 ];
 
@@ -394,55 +394,40 @@ class Fence extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      one: OneCharcoal,
+      one: OneHavanagold,
       two: TwoHavanagold,
+      crown: CrownIslandmist,
       sPost: SpostWhite,
       tPost: TpostCharcoal,
       trex: TrexWhite,
       border: BorderBeachdune,
-      crown: CrownIslandmist,
       flat: FlatCharcoal,
       deck: DeckBeachdune,
       fascia: FasciaBeachdune,
-      iron: IronBronze,
-      pyramid: PyramidWhite,
+      aluminum: AluminumBronze,
+      iron: AluminumCharcoal,
+      pyramid: PyramidCharcoal,
       rail: RailWhite,
       skirt: SkirtWhite,
+      ironRail: IronGuardRail,
       item: "",
       tabs,
       activeTab: "PostCap",
-      oneStyle: true,
+      oneStyle: false,
       twoStyle: false,
+      crownStyle: true,
       compositeStyle: true,
+      aluminumStyle: false,
       ironStyle: false,
       flatStyle: true,
-      pyramidStyle: false
+      pyramidStyle: false,
+      shortStyle: false,
+      tallStyle: true,
+      postToggle: false,
+      compositePostStyle: true,
+      ironPostStyle: false
     };
   }
-
-  buttonStyles1 = () => {
-    if (this.state.oneStyle === true) {
-      this.setState({ twoStyle: false });
-    } else if (this.state.oneStyle === false) {
-      this.setState({ twoStyle: true });
-    }
-  };
-
-  buttonStyles2 = () => {
-    if (this.state.compositeStyle === true) {
-      this.setState({ ironStyle: false });
-    } else if (this.state.compositeStyle === false) {
-      this.setState({ ironStyle: true });
-    }
-  };
-
-  buttonStyles3 = () => {
-    if (this.state.flatStyle === true) {
-      this.setState({ pyramidStyle: false });
-    } else if (this.state.flatStyle === false) {
-      this.setState({ pyramidStyle: true });
-    }
-  };
 
   changeItem = name => {
     this.setState({
@@ -450,24 +435,103 @@ class Fence extends Component {
     });
   };
 
+  changeDeck = () => {
+    const newDeck = DeckGravelpath;
+    this.setState({
+      deck: newDeck
+    });
+  };
+
   handleTabColors = name => {
     const { activeTab } = this.state;
     // get index or name of tabcolors
     // check which tab they're in
-    this.setState(prevState => ({
-      activeTab: prevState.activeTab
-    }));
     console.log(activeTab);
     console.log(name);
     console.log(activeTab + name);
   };
 
-  toggleStyle = () => {
-    console.log("toggled");
-    this.setState(prevState => ({
-      oneStyle: !prevState.oneStyle
-    }));
-    console.log(this.state.oneStyle);
+  toggleStylePost = () => {
+    if (this.state.shortStyle === true) {
+      this.setState({
+        shortStyle: false,
+        tallStyle: true
+      });
+    } else {
+      this.setState({
+        shortStyle: true,
+        tallStyle: false
+      });
+    }
+  };
+
+  toggleStyleBalusters1 = () => {
+    this.setState({
+      compositeStyle: true,
+      aluminumStyle: false,
+      ironStyle: false,
+      postToggle: false
+    });
+  };
+  toggleStyleBalusters2 = () => {
+    this.setState({
+      compositeStyle: false,
+      aluminumStyle: true,
+      ironStyle: false,
+      postToggle: false
+    });
+  };
+  toggleStyleBalusters3 = () => {
+    this.setState({
+      compositeStyle: false,
+      aluminumStyle: false,
+      ironStyle: true,
+      postToggle: true
+    });
+  };
+
+  toggleStylePostCap = () => {
+    if (this.state.flatStyle === true) {
+      this.setState({
+        flatStyle: false,
+        pyramidStyle: true
+      });
+    } else {
+      this.setState({
+        flatStyle: true,
+        pyramidStyle: false
+      });
+    }
+  };
+
+  toggleStyleCaps1 = () => {
+    this.setState({
+      oneStyle: true,
+      twoStyle: false,
+      crownStyle: false
+    });
+  };
+  toggleStyleCaps2 = () => {
+    this.setState({
+      oneStyle: false,
+      twoStyle: true,
+      crownStyle: false
+    });
+  };
+  toggleStyleCaps3 = () => {
+    this.setState({
+      oneStyle: false,
+      twoStyle: false,
+      crownStyle: true
+    });
+  };
+
+  togglePostButtonStyle = () => {
+    if (this.state.compositePostStyle === true) {
+      this.setState({ compositePostStyle: false, ironPostStyle: true });
+    } else {
+      this.setState({ compositePostStyle: true, ironPostStyle: false });
+    }
   };
 
   render() {
@@ -481,15 +545,29 @@ class Fence extends Component {
       color: "black"
     };
 
-    const clickedBtn = this.state.oneStyle
-      ? clicked
-      : this.state.twoStyle === true && this.state.oneStyle === false;
-    const clickedBtn2 = this.state.compositeStyle
-      ? clicked
-      : this.state.ironStyle === true;
-    const clickedBtn3 = this.state.flatStyle
-      ? clicked
-      : this.state.pyramidStyle === true;
+    const none = {
+      display: "none"
+    };
+
+    const display = {
+      display: "contents"
+    };
+
+    const clickedBtn1 = this.state.oneStyle ? clicked : notClicked;
+    const clickedBtn11 = this.state.twoStyle ? clicked : notClicked;
+    const clickedBtn111 = this.state.crownStyle ? clicked : notClicked;
+
+    const clickedBtn2 = this.state.compositeStyle ? clicked : notClicked;
+    const clickedBtn22 = this.state.aluminumStyle ? clicked : notClicked;
+    const clickedBtn222 = this.state.ironStyle ? clicked : notClicked;
+
+    const clickedBtn3 = this.state.flatStyle ? clicked : notClicked;
+    const clickedBtn33 = this.state.pyramidStyle ? clicked : notClicked;
+
+    const clickedBtn4 = this.state.compositePostStyle ? clicked : notClicked;
+    const clickedBtn44 = this.state.ironPostStyle ? clicked : notClicked;
+
+    const postStyleToggle = this.state.postToggle ? display : none;
 
     const { tabs } = this.state;
     return (
@@ -499,67 +577,168 @@ class Fence extends Component {
 
         <div className="top-section">
           <div className="fence-options">
-            <h3>Pick your fence options below:</h3>
+            <h3>Pick your railing options below:</h3>
+
             <div className="options">
-              <h4 className="option-title">Posts:</h4>
+              <h4 className="option-title">Baluster:</h4>
               <div className="option-container">
                 <div
                   className="option"
-                  style={clickedBtn}
-                  onClick={this.toggleStyle}
+                  style={clickedBtn2}
+                  onClick={this.toggleStyleBalusters1}
                 >
-                  1x6 Posts
-                </div>
-                <div className="option">2x4 Posts</div>
-              </div>
-            </div>
-            <div className="options">
-              <h4 className="option-title">Balusters:</h4>
-              <div className="option-container">
-                <div className="option" style={clickedBtn2}>
                   Composite
                 </div>
-                <div className="option">Iron</div>
+                <div
+                  className="option"
+                  style={clickedBtn22}
+                  onClick={this.toggleStyleBalusters2}
+                >
+                  Aluminum
+                </div>
+                <div
+                  className="option"
+                  style={clickedBtn222}
+                  onClick={this.toggleStyleBalusters3}
+                >
+                  Iron
+                </div>
               </div>
             </div>
+
+            <div className={this.state.postToggle ? "options" : "none"}>
+              <h4 className="option-title">Post Style:</h4>
+              <div className="option-container">
+                <div
+                  className="option"
+                  style={clickedBtn4}
+                  onClick={this.togglePostButtonStyle}
+                >
+                  Composite
+                </div>
+                <div
+                  className="option"
+                  style={clickedBtn44}
+                  onClick={this.togglePostButtonStyle}
+                >
+                  Iron
+                </div>
+              </div>
+            </div>
+
+            <div className="options">
+              <h4 className="option-title">Cap Rail:</h4>
+              <div className="option-container">
+                <div
+                  className="option"
+                  style={clickedBtn111}
+                  onClick={this.toggleStyleCaps3}
+                >
+                  Crown Rail
+                </div>
+                <div
+                  className="option"
+                  style={clickedBtn1}
+                  onClick={this.toggleStyleCaps1}
+                >
+                  1x6 Cap Rail
+                </div>
+                <div
+                  className="option"
+                  style={clickedBtn11}
+                  onClick={this.toggleStyleCaps2}
+                >
+                  2x4 Cap Rail
+                </div>
+              </div>
+            </div>
+
             <div className="options">
               <h4 className="option-title">Post Cap:</h4>
               <div className="option-container">
-                <div className="option" style={clickedBtn3}>
+                <div
+                  className="option"
+                  style={clickedBtn3}
+                  onClick={this.toggleStylePostCap}
+                >
                   Flat
                 </div>
-                <div className="option">Pyramid</div>
+                <div
+                  className="option"
+                  style={clickedBtn33}
+                  onClick={this.toggleStylePostCap}
+                >
+                  Pyramid
+                </div>
               </div>
             </div>
           </div>
 
+          {/*FENCE IMAGE*/}
           <div className="fence-container">
-            <img src={this.state.trex} alt="trex white" className="trex" />
+            {/*Rails*/}
+            <img
+              src={this.state.trex}
+              alt="trex white"
+              className={this.state.compositeStyle ? "trex" : "none"}
+            />
+            <img
+              src={this.state.aluminum}
+              alt="Iron bronze"
+              className={this.state.aluminumStyle ? "iron" : "none"}
+            />
+            <img
+              src={this.state.iron}
+              alt="Iron bronze"
+              className={this.state.ironStyle ? "iron" : "none"}
+            />
             <img
               src={this.state.sPost}
               alt="Short post charcoal"
-              className="short-post"
+              className={this.state.shortStyle ? "short-post" : "none"}
+            />
+            <img
+              src={this.state.tPost}
+              alt="Tall Post charcoal"
+              className={this.state.tallStyle ? "tall-post" : "none"}
             />
 
-            <img src={this.state.rail} alt="Rail Charcoal" className="rail" />
-
+            <img
+              src={this.state.ironStyle ? this.state.ironRail : this.state.rail}
+              alt="Rail Charcoal"
+              className="rail"
+            />
             <img src={this.state.skirt} alt="Skirt White" className="skirt" />
             <img
               src={this.state.border}
               alt="Border Firepit"
               className="fence-border"
             />
-
             <img
               src={this.state.pyramid}
               alt="Pyramid Charcoal"
-              className="pyramid"
+              className={this.state.pyramidStyle ? "pyramid" : "none"}
             />
-
-            <img src={this.state.flat} alt="Flat Charcoal" className="flat" />
-
-            <img src={this.state.crown} alt="Crown firepit" className="crown" />
-
+            <img
+              src={this.state.flat}
+              alt="Flat Charcoal"
+              className={this.state.flatStyle ? "flat" : "none"}
+            />
+            <img
+              src={this.state.crown}
+              alt="Crown firepit"
+              className={this.state.crownStyle ? "crown" : "none"}
+            />
+            <img
+              src={this.state.one}
+              alt="charcoal one"
+              className={this.state.oneStyle ? "one" : "none"}
+            />
+            <img
+              src={this.state.two}
+              alt="island mist two"
+              className={this.state.twoStyle ? "two" : "none"}
+            />
             <img src={this.state.deck} alt="Deck firepit" className="deck" />
             <img
               src={this.state.fascia}
@@ -568,8 +747,6 @@ class Fence extends Component {
             />
           </div>
         </div>
-
-        <img src={this.state.iron} alt="Iron bronze" className="iron" />
 
         <Tabs>
           <TabList
@@ -619,9 +796,6 @@ class Fence extends Component {
             <TabColors handleTabColors={this.handleTabColors} />
           </TabPanel>
         </Tabs>
-
-        {/*<img src={this.state.cap} alt="charcoal cap" className='cap'/>
-        <img src={this.state.tPost} alt="Tall Post charcoal" />*/}
       </div>
     );
   }
