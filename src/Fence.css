@@ -40,36 +40,39 @@
   height: 500px;
   position: relative;
   margin: auto;
+  padding-right: 30px;
 }
 
 .trex {
   position: absolute;
-  margin-left: 35px;
+  margin-left: -91px;
+  margin-top: -3px;
 }
 
 .iron {
   position: absolute;
   z-index: -1;
-  margin-left: 37px;
+  margin-left: -89px;
+  margin-top: -3px;
 }
 
 .one {
   position: absolute;
-  z-index: -1;
-  margin-top: -12px;
-  margin-left: -364px;
+  z-index: 1;
+  margin-top: -15px;
+  margin-left: -126.5px;
 }
 
 .two {
   position: absolute;
-  z-index: -1;
-  margin-top: -14px;
-  margin-left: -344.5px;
+  z-index: 0;
+  margin-top: -15px;
+  margin-left: -106px;
 }
 
 .crown {
   position: absolute;
-  margin-left: -343.5px;
+  margin-left: -106.5px;
   margin-top: -14px;
 }
 
@@ -77,45 +80,54 @@
   z-index: -1;
   position: absolute;
   margin-top: 85px;
-  margin-left: -560px;
+  margin-left: -322px;
 }
 
 .deck {
   position: absolute;
-  margin-left: -510px;
+  margin-left: -271px;
   margin-top: 100px;
   z-index: -1;
 }
 
 .short-post {
   margin-top: -15px;
+  position: absolute;
+  margin-left: -126px;
 }
 
 .tall-post {
   margin-top: -24px;
+  position: absolute;
+}
+
+.iron-posts {
+  margin-top: -26px;
+  margin-left: -120px;
+  position: absolute;
 }
 
 .fascia {
   position: absolute;
   margin-top: 253px;
-  margin-left: -558px;
+  margin-left: -321.5px;
 }
 
 .skirt {
   position: absolute;
-  margin-left: -366px;
+  margin-left: -128px;
   margin-top: 149px;
 }
 
 .rail {
   position: absolute;
-  margin-left: -344px;
-  margin-top: -7px;
+  margin-left: -106px;
+  margin-top: -10px;
 }
 
 .pyramid {
   position: absolute;
-  margin-left: -366px;
+  margin-left: -129px;
   margin-top: -28px;
 }
 
@@ -125,7 +137,7 @@
 
 .flat {
   position: absolute;
-  margin-left: -367px;
+  margin-left: -129px;
   margin-top: -24px;
 }
 
