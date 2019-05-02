@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { TabColorsData } from "./TabColorsData";
+import { imgData } from "./FenceData.js";
 
 import "react-tabs/style/react-tabs.css";
 import "./Fence.css";
@@ -18,7 +19,16 @@ class TabColors extends Component {
 
   render() {
     const { TabColorsData } = this.state;
-    const { handleTabColors } = this.props;
+    const { handleTabColors, activeTab } = this.props;
+    let testData;
+
+    if (activeTab === "Baluster") {
+      const test = Object.keys(imgData["Baluster"]);
+      console.log("first test", test);
+      console.log("tab colors data", TabColorsData);
+      const testing = TabColorsData.filter(x => test.includes(x.name));
+      console.log("final test", testing);
+    }
 
     return (
       <div className="tab-container">

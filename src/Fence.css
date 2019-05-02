@@ -51,7 +51,7 @@
 
 .iron {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   margin-left: -89px;
   margin-top: -3px;
 }
@@ -74,6 +74,7 @@
   position: absolute;
   margin-left: -106.5px;
   margin-top: -14px;
+  z-index: 2;
 }
 
 .fence-border {
@@ -123,6 +124,7 @@
   position: absolute;
   margin-left: -106px;
   margin-top: -10px;
+  z-index: 1;
 }
 
 .pyramid {

@@ -31,14 +31,13 @@ class Fence extends Component {
       pyramid: imgData["Post Cap"]["PyramidCharcoal"],
       skirt: imgData["Post Skirt"]["White"],
 
-      rail: imgData["Rail"]["Charcoal"],
+      rail: imgData["Rail"]["RailWhite"],
       ironRail: IronGuardRail,
 
       border: imgData["Border"]["BorderBeachdune"],
       deck: imgData["Deck"]["Beachdune"],
       fascia: imgData["Fascia"]["FasciaBeachdune"],
 
-      item: "",
       tabs,
       activeTab: "Post Cap",
       oneStyle: false,
@@ -471,34 +470,16 @@ class Fence extends Component {
           </TabList>
 
           {/*changeItem parameter should be the tab that's selected.*/}
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
-          <TabPanel>
-            <TabColors handleTabColors={this.handleTabColors} />
-          </TabPanel>
+          {tabs.map(tab => {
+            return (
+              <TabPanel>
+                <TabColors
+                  handleTabColors={this.handleTabColors}
+                  activeTab={this.state.activeTab}
+                />
+              </TabPanel>
+            );
+          })}
         </Tabs>
       </div>
     );
