@@ -17,22 +17,24 @@ class TabColors extends Component {
     this.props.tabColor();
   };
 
-  render() {
+  componentName = activeTab => {
     const { TabColorsData } = this.state;
-    const { handleTabColors, activeTab } = this.props;
-    let testData;
+    const test = Object.keys(imgData[activeTab]);
+    const newFenceOptions = test.map(x => x.split(/(?=[A-Z])/)).map(x => x[1]);
+    const result = TabColorsData.filter(x => newFenceOptions.includes(x.name));
+    console.log("Active Tab", activeTab);
+    console.log("Tab Colors Data:", TabColorsData);
+    console.log("newFence", newFenceOptions);
+    console.log("result", result);
+    return result;
+  };
 
-    if (activeTab === "Baluster") {
-      const test = Object.keys(imgData["Baluster"]);
-      console.log("first test", test);
-      console.log("tab colors data", TabColorsData);
-      const testing = TabColorsData.filter(x => test.includes(x.name));
-      console.log("final test", testing);
-    }
+  render() {
+    const { handleTabColors, activeTab } = this.props;
 
     return (
       <div className="tab-container">
-        {TabColorsData.map((item, idx) => {
+        {this.componentName(activeTab).map((item, idx) => {
           return (
             <div
               className="block"

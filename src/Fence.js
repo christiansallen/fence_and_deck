@@ -15,11 +15,11 @@ class Fence extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      one: imgData["Cap Rail"]["OneCharcoal"],
+      one: imgData["Cap Rail"]["OneHavanagold"],
       two: imgData["Cap Rail"]["TwoHavanagold"],
-      crown: imgData["Cap Rail"]["Islandmist"],
+      crown: imgData["Cap Rail"]["CrownHavanagold"],
 
-      sPost: imgData["Post Sleeve"]["White"],
+      sPost: imgData["Post Sleeve"]["SpostWhite"],
       tPost: TpostCharcoal,
       ironPosts: IronPosts,
 
@@ -27,15 +27,15 @@ class Fence extends Component {
       aluminum: imgData["Baluster"]["AluminumBronze"],
       iron: AluminumCharcoal,
 
-      flat: imgData["Post Cap"]["Charcoal"],
-      pyramid: imgData["Post Cap"]["PyramidCharcoal"],
-      skirt: imgData["Post Skirt"]["White"],
+      flat: imgData["Post Cap"]["FlatWhite"],
+      pyramid: imgData["Post Cap"]["PyramidWhite"],
+      skirt: imgData["Post Skirt"]["SkirtWhite"],
 
       rail: imgData["Rail"]["RailWhite"],
       ironRail: IronGuardRail,
 
       border: imgData["Border"]["BorderBeachdune"],
-      deck: imgData["Deck"]["Beachdune"],
+      deck: imgData["Deck"]["DeckBeachdune"],
       fascia: imgData["Fascia"]["FasciaBeachdune"],
 
       tabs,
@@ -66,26 +66,25 @@ class Fence extends Component {
   handleTabColors = name => {
     const { activeTab } = this.state;
     if (activeTab === "Post Sleeve") {
-      console.log(typeof imgData["Post Sleeve"][`${name}`] !== "undefined");
       this.setState({
-        sPost: imgData["Post Sleeve"][`${name}`]
+        sPost: imgData["Post Sleeve"][`Spost${name}`]
       });
     } else if (activeTab === "Deck") {
       this.setState({
-        deck: imgData["Deck"][`${name}`]
+        deck: imgData["Deck"][`Deck${name}`]
       });
     } else if (activeTab === "Post Cap") {
       this.setState({
-        flat: imgData["Post Cap"][`${name}`],
+        flat: imgData["Post Cap"][`Flat${name}`],
         pyramid: imgData["Post Cap"][`Pyramid${name}`]
       });
     } else if (activeTab === "Post Skirt") {
       this.setState({
-        skirt: imgData["Post Skirt"][`${name}`]
+        skirt: imgData["Post Skirt"][`Skirt${name}`]
       });
     } else if (activeTab === "Cap Rail") {
       this.setState({
-        crown: imgData["Cap Rail"][`${name}`],
+        crown: imgData["Cap Rail"][`Crown${name}`],
         two: imgData["Cap Rail"][`Two${name}`],
         one: imgData["Cap Rail"][`One${name}`]
       });
