@@ -259,9 +259,39 @@ export const imgData = {
     Spicedrum: CrownSpicedrum,
     Tikitorch: CrownTikitorch,
     Treehouse: CrownTreehouse,
-    Vintagelantern: CrownVintagelantern
+    Vintagelantern: CrownVintagelantern,
+    TwoHavanagold: TwoHavanagold,
+    TwoIslandmist: TwoIslandmist,
+    TwoLavarock: TwoLavarock,
+    TwoSpicedrum: TwoSpicedrum,
+    TwoTikitorch: TwoTikitorch,
+    OneCharcoal: OneCharcoal,
+    OneFirepit: OneFirepit,
+    OneGravelpath: OneGravelpath,
+    OneHavanagold: OneHavanagold,
+    OneIslandmist: OneIslandmist,
+    OneLavarock: OneLavarock,
+    OneMaderia: OneMaderia,
+    OnePebblegrey: OnePebblegrey,
+    OneRopeswing: OneRopeswing,
+    OneSaddle: OneSaddle,
+    OneSpicedrum: OneSpicedrum,
+    OneTikitorch: OneTikitorch,
+    OneTreehouse: OneTreehouse,
+    OneVintagelantern: OneVintagelantern,
+    OneWhite: OneWhite,
+    OneWinchestergray: OneWinchestergray,
+    OneWoodlandbrown: OneWoodlandbrown
   },
-  Rail: {}, //------------------------ missing
+  Rail: {
+    RailCharcoal: RailCharcoal,
+    RailFirepit: RailFirepit,
+    RailGravelpath: RailGravelpath,
+    RailHavanagold: RailHavanagold,
+    RailWhite: RailWhite,
+    RailRopeswing: RailRopeswing,
+    RailVintagelantern: RailVintagelantern
+  },
   Baluster: {
     TrexCharcoal: TrexCharcoal,
     TrexFirepit: TrexFirepit,
@@ -269,7 +299,10 @@ export const imgData = {
     TrexHavanagold: TrexHavanagold,
     TrexWhite: TrexWhite,
     TrexRopeswing: TrexRopeswing,
-    TrexLavarock: TrexLavarock
+    TrexLavarock: TrexLavarock,
+    AluminumBronze: AluminumBronze,
+    AluminumCharcoal: AluminumCharcoal,
+    AluminumWhite: AluminumWhite
   },
   Border: {
     BorderBeachdune: BorderBeachdune,

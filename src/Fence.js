@@ -5,22 +5,18 @@ import TabColors from "./TabColors.js";
 
 import { tabs, imgData } from "./FenceData";
 
-import OneHavanagold from "./Images/1x6_Havanagold.png";
-import TwoHavanagold from "./Images/2x4_Havanagold.png";
+//Needed imports
 import TpostCharcoal from "./Images/Tpost_Charcoal.png";
-import AluminumBronze from "./Images/Iron_Bronze.png";
 import AluminumCharcoal from "./Images/Iron_Charcoal.png";
-import RailWhite from "./Images/Rail_White.png";
 import IronGuardRail from "./Images/IronGuardRail.png";
-import DeckGravelpath from "./Images/Deck_Gravelpath.png";
 import IronPosts from "./Images/Iron_Posts.png";
 
 class Fence extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      one: OneHavanagold,
-      two: TwoHavanagold,
+      one: imgData["Cap Rail"]["OneCharcoal"],
+      two: imgData["Cap Rail"]["TwoHavanagold"],
       crown: imgData["Cap Rail"]["Islandmist"],
 
       sPost: imgData["Post Sleeve"]["White"],
@@ -28,14 +24,14 @@ class Fence extends Component {
       ironPosts: IronPosts,
 
       trex: imgData["Baluster"]["TrexWhite"],
-      aluminum: AluminumBronze,
+      aluminum: imgData["Baluster"]["AluminumBronze"],
       iron: AluminumCharcoal,
 
       flat: imgData["Post Cap"]["Charcoal"],
       pyramid: imgData["Post Cap"]["PyramidCharcoal"],
       skirt: imgData["Post Skirt"]["White"],
 
-      rail: RailWhite,
+      rail: imgData["Rail"]["Charcoal"],
       ironRail: IronGuardRail,
 
       border: imgData["Border"]["BorderBeachdune"],
@@ -68,12 +64,6 @@ class Fence extends Component {
     });
   };
 
-  changeDeck = () => {
-    const newDeck = DeckGravelpath;
-    this.setState({
-      deck: newDeck
-    });
-  };
   handleTabColors = name => {
     const { activeTab } = this.state;
     if (activeTab === "Post Sleeve") {
@@ -96,11 +86,14 @@ class Fence extends Component {
       });
     } else if (activeTab === "Cap Rail") {
       this.setState({
-        crown: imgData["Cap Rail"][`${name}`]
+        crown: imgData["Cap Rail"][`${name}`],
+        two: imgData["Cap Rail"][`Two${name}`],
+        one: imgData["Cap Rail"][`One${name}`]
       });
     } else if (activeTab === "Baluster") {
       this.setState({
-        trex: imgData["Baluster"][`Trex${name}`]
+        trex: imgData["Baluster"][`Trex${name}`],
+        aluminum: imgData["Baluster"][`Aluminum${name}`]
       });
     } else if (activeTab === "Border") {
       this.setState({
@@ -109,6 +102,10 @@ class Fence extends Component {
     } else if (activeTab === "Fascia") {
       this.setState({
         fascia: imgData["Fascia"][`Fascia${name}`]
+      });
+    } else if (activeTab === "Rail") {
+      this.setState({
+        rail: imgData["Rail"][`Rail${name}`]
       });
     }
   };
@@ -241,7 +238,7 @@ class Fence extends Component {
     return (
       <div className="container">
         {/* Main image up top */}
-        <h1 style={{ marginBottom: "40px" }}>Fence and Deck Utah</h1>
+        <h1 style={{ marginBottom: "40px" }}>Design Your Own Railing</h1>
 
         <div className="top-section">
           <div className="fence-options">
@@ -392,7 +389,7 @@ class Fence extends Component {
 
             <img
               src={this.state.ironStyle ? this.state.ironRail : this.state.rail}
-              alt="Rail Charcoal"
+              alt="Rail White"
               className="rail"
             />
             <img
@@ -435,7 +432,11 @@ class Fence extends Component {
             <img
               src={this.state.one}
               alt="charcoal one"
-              className={this.state.oneStyle ? "one" : "none"}
+              className={
+                this.state.oneStyle && !this.state.ironPostStyle
+                  ? "one"
+                  : "none"
+              }
             />
             <img
               src={this.state.two}

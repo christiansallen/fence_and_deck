@@ -4,4 +4,6 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  z-index: -1000000;
+  background-color: rgb(235, 235, 235);
 }

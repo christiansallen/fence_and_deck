@@ -77,7 +77,6 @@
 }
 
 .fence-border {
-  z-index: -1;
   position: absolute;
   margin-top: 85px;
   margin-left: -322px;
@@ -87,13 +86,13 @@
   position: absolute;
   margin-left: -271px;
   margin-top: 100px;
-  z-index: -1;
 }
 
 .short-post {
   margin-top: -15px;
   position: absolute;
   margin-left: -126px;
+  z-index: 1;
 }
 
 .tall-post {
@@ -117,6 +116,7 @@
   position: absolute;
   margin-left: -128px;
   margin-top: 149px;
+  z-index: 2;
 }
 
 .rail {
