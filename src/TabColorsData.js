@@ -1,3 +1,5 @@
+//Need to add BronzeColor
+
 import BeachduneColor from "./Images/Color_Beachdune.png";
 import ClamshellColor from "./Images/Color_Clamshell.png";
 import CoastalbluffColor from "./Images/Color_Coastalbluff.png";

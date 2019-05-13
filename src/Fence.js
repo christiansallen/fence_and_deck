@@ -64,7 +64,7 @@ class Fence extends Component {
   };
 
   handleTabColors = name => {
-    const { activeTab } = this.state;
+    const { activeTab, aluminumStyle } = this.state;
     if (activeTab === "Post Sleeve") {
       this.setState({
         sPost: imgData["Post Sleeve"][`Spost${name}`]
@@ -88,10 +88,13 @@ class Fence extends Component {
         two: imgData["Cap Rail"][`Two${name}`],
         one: imgData["Cap Rail"][`One${name}`]
       });
-    } else if (activeTab === "Baluster") {
+    } else if (activeTab === "Baluster" && aluminumStyle === true) {
       this.setState({
-        trex: imgData["Baluster"][`Trex${name}`],
         aluminum: imgData["Baluster"][`Aluminum${name}`]
+      });
+    } else if (activeTab === "Baluster" && aluminumStyle === false) {
+      this.setState({
+        trex: imgData["Baluster"][`Trex${name}`]
       });
     } else if (activeTab === "Border") {
       this.setState({
@@ -475,6 +478,7 @@ class Fence extends Component {
                 <TabColors
                   handleTabColors={this.handleTabColors}
                   activeTab={this.state.activeTab}
+                  aluminum={this.state.aluminumStyle}
                 />
               </TabPanel>
             );
