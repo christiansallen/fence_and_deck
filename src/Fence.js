@@ -479,6 +479,9 @@ class Fence extends Component {
                   handleTabColors={this.handleTabColors}
                   activeTab={this.state.activeTab}
                   aluminum={this.state.aluminumStyle}
+                  oneStyle={this.state.oneStyle}
+                  twoStyle={this.state.twoStyle}
+                  crownStyle={this.state.crownStyle}
                 />
               </TabPanel>
             );

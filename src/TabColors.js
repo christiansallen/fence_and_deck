@@ -1,6 +1,30 @@
 import React, { Component } from "react";
 import { TabColorsData } from "./TabColorsData";
 import { imgData } from "./FenceData.js";
+import BeachduneColor from "./Images/Color_Beachdune.png";
+import ClamshellColor from "./Images/Color_Clamshell.png";
+import CoastalbluffColor from "./Images/Color_Coastalbluff.png";
+import FoggywharfColor from "./Images/Color_Foggywharf.png";
+import RockyharborColor from "./Images/Color_Rockyharbor.png";
+import SunsetcoveColor from "./Images/Color_Sunsetcove.png";
+import ToastedsandColor from "./Images/Color_Toastedsand.png";
+import CharcoalColor from "./Images/Color_Charcoal.png";
+import FirepitColor from "./Images/Color_Firepit.png";
+import GravelpathColor from "./Images/Color_Gravelpath.png";
+import HavanagoldColor from "./Images/Color_Havanagold.png";
+import IslandmistColor from "./Images/Color_Islandmist.png";
+import LavarockColor from "./Images/Color_Lavarock.png";
+import MaderiaColor from "./Images/Color_Maderia.png";
+import PebblegreyColor from "./Images/Color_Pebblegrey.png";
+import RopeswingColor from "./Images/Color_Ropeswing.png";
+import SaddleColor from "./Images/Color_Saddle.png";
+import SpicedrumColor from "./Images/Color_Spicedrum.png";
+import TikitorchColor from "./Images/Color_Tikitorch.png";
+import TreehouseColor from "./Images/Color_Treehouse.png";
+import VintagelanternColor from "./Images/Color_Vintagelantern.png";
+import WhiteColor from "./Images/Color_White.png";
+import WinchestergrayColor from "./Images/Color_Winchestergray.png";
+import WoodlandbrownColor from "./Images/Color_Woodlandbrown.png";
 
 import "react-tabs/style/react-tabs.css";
 import "./Fence.css";
@@ -19,21 +43,163 @@ class TabColors extends Component {
 
   componentName = activeTab => {
     const { TabColorsData } = this.state;
+    const { aluminum, oneStyle, twoStyle, crownStyle } = this.props;
     let test = Object.keys(imgData[activeTab]);
     let newFenceOptions = test.map(x => x.split(/(?=[A-Z])/)).map(x => x[1]);
     let result = TabColorsData.filter(x => newFenceOptions.includes(x.name));
 
-    if (activeTab === "Baluster" && this.props.aluminum === true) {
+    if (activeTab === "Baluster" && aluminum) {
       return [
         {
-          img:
-            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARsAAAEBCAYAAABIYAHcAAAABHNCSVQICAgIfAhkiAAAA3xJREFUeJzt1MFJA1EAANHvZjeQo0cLUHuxdGuINYgIhgjuWoWzEN+rYE5z9/z49HaYl9MA+APbtk1fH+8v83RYTsvx+LB3EHCb1vVnrGNM094hwP9gNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJOaxra/f1+v93iHA7fq8XM6/fSwXQJgT+zQAAAAASUVORK5CYII=",
+          img: CharcoalColor,
           name: "Charcoal"
         },
         {
-          img:
-            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARsAAAEBCAYAAABIYAHcAAAABHNCSVQICAgIfAhkiAAAA4tJREFUeJzt1LFJAwEAQNF4pEmnRYqsEW8B0SojCWYJQQRB3EB0DGfQAY4IcQSn8B/E9yb41T/b391+bcdxtQD4Az/H4/B4/7Bbbi/H1fXN1WbuIOA0TdO0eHl6Hoa5Q4D/wWyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkiYDZAwGyBhNkDCbICE2QAJswESZgMkzAZImA2QMBsgYTZAwmyAhNkACbMBEmYDJMwGSJgNkDAbIGE2QMJsgITZAAmzARJmAyTMBkgsD4fvj7fX94u5Q4DTdb5ef/4CRs4WtNWfCaEAAAAASUVORK5CYII=",
+          img: WhiteColor,
           name: "White"
+        }
+      ];
+    }
+
+    if (activeTab === "Cap Rail" && crownStyle) {
+      return [
+        {
+          img: FirepitColor,
+          name: "Firepit"
+        },
+        {
+          img: GravelpathColor,
+          name: "Gravelpath"
+        },
+        {
+          img: HavanagoldColor,
+          name: "Havanagold"
+        },
+        {
+          img: IslandmistColor,
+          name: "Islandmist"
+        },
+        {
+          img: LavarockColor,
+          name: "Lavarock"
+        },
+        {
+          img: RopeswingColor,
+          name: "Ropeswing"
+        },
+        {
+          img: SpicedrumColor,
+          name: "Spicedrum"
+        },
+        {
+          img: TikitorchColor,
+          name: "Tikitorch"
+        },
+        {
+          img: TreehouseColor,
+          name: "Treehouse"
+        },
+        {
+          img: VintagelanternColor,
+          name: "Vintagelantern"
+        }
+      ];
+    }
+
+    if (activeTab === "Cap Rail" && oneStyle) {
+      return [
+        {
+          img: CharcoalColor,
+          name: "Charcoal"
+        },
+        {
+          img: FirepitColor,
+          name: "Firepit"
+        },
+        {
+          img: GravelpathColor,
+          name: "Gravelpath"
+        },
+        {
+          img: HavanagoldColor,
+          name: "Havanagold"
+        },
+        {
+          img: IslandmistColor,
+          name: "Islandmist"
+        },
+        {
+          img: LavarockColor,
+          name: "Lavarock"
+        },
+        {
+          img: MaderiaColor,
+          name: "Maderia"
+        },
+        {
+          img: PebblegreyColor,
+          name: "Pebblegrey"
+        },
+        {
+          img: RopeswingColor,
+          name: "Ropeswing"
+        },
+        {
+          img: SaddleColor,
+          name: "Saddle"
+        },
+        {
+          img: SpicedrumColor,
+          name: "Spicedrum"
+        },
+        {
+          img: TikitorchColor,
+          name: "Tikitorch"
+        },
+        {
+          img: TreehouseColor,
+          name: "Treehouse"
+        },
+        {
+          img: VintagelanternColor,
+          name: "Vintagelantern"
+        },
+        {
+          img: WhiteColor,
+          name: "White"
+        },
+        {
+          img: WinchestergrayColor,
+          name: "Winchestergray"
+        },
+        {
+          img: WoodlandbrownColor,
+          name: "Woodlandbrown"
+        }
+      ];
+    }
+
+    if (activeTab === "Cap Rail" && twoStyle) {
+      return [
+        {
+          img: HavanagoldColor,
+          name: "Havanagold"
+        },
+        {
+          img: IslandmistColor,
+          name: "Islandmist"
+        },
+        {
+          img: LavarockColor,
+          name: "Lavarock"
+        },
+        {
+          img: SpicedrumColor,
+          name: "Spicedrum"
+        },
+        {
+          img: TikitorchColor,
+          name: "Tikitorch"
         }
       ];
     }
