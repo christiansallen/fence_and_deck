@@ -482,6 +482,8 @@ class Fence extends Component {
                   oneStyle={this.state.oneStyle}
                   twoStyle={this.state.twoStyle}
                   crownStyle={this.state.crownStyle}
+                  ironStyle={this.state.ironStyle}
+                  ironPostStyle={this.state.ironPostStyle}
                 />
               </TabPanel>
             );

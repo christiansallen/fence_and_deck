@@ -43,7 +43,14 @@ class TabColors extends Component {
 
   componentName = activeTab => {
     const { TabColorsData } = this.state;
-    const { aluminum, oneStyle, twoStyle, crownStyle } = this.props;
+    const {
+      aluminum,
+      oneStyle,
+      twoStyle,
+      crownStyle,
+      ironStyle,
+      ironPostStyle
+    } = this.props;
     let test = Object.keys(imgData[activeTab]);
     let newFenceOptions = test.map(x => x.split(/(?=[A-Z])/)).map(x => x[1]);
     let result = TabColorsData.filter(x => newFenceOptions.includes(x.name));
@@ -200,6 +207,29 @@ class TabColors extends Component {
         {
           img: TikitorchColor,
           name: "Tikitorch"
+        }
+      ];
+    }
+
+    if ((activeTab === "Baluster" || activeTab === "Rail") && ironStyle) {
+      return [
+        {
+          img: CharcoalColor,
+          name: "Charcoal"
+        }
+      ];
+    }
+
+    if (
+      (activeTab === "Post Skirt" ||
+        activeTab === "Post Sleeve" ||
+        activeTab === "Post Cap") &&
+      ironPostStyle
+    ) {
+      return [
+        {
+          img: CharcoalColor,
+          name: "Charcoal"
         }
       ];
     }
