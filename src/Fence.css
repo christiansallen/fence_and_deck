@@ -1,6 +1,6 @@
 .color {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 10px;
   border: 1px solid rgb(107, 107, 107);
   transition: all 0.2s ease-in-out;
@@ -13,9 +13,11 @@
 }
 
 .block {
-  display: "flex";
-  flex-direction: "column";
-  margin: 20px;
+  margin: 10px 15px 0px 15px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .tab-panel {
@@ -26,46 +28,49 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  padding-bottom: 110px;
+  z-index: 10;
 }
 
 .name {
-  font-size: 0.7rem;
+  font-size: 0.3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 65px;
+  width: 35px;
 }
 
 .fence-container {
   height: 500px;
   position: relative;
   margin: auto;
-  padding-right: 30px;
+  padding-top: 30px;
 }
 
 .trex {
   position: absolute;
   margin-left: -91px;
   margin-top: -3px;
+  z-index: 1;
 }
 
 .iron {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   margin-left: -89px;
   margin-top: -3px;
 }
 
 .one {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   margin-top: -15px;
   margin-left: -126.5px;
 }
 
 .two {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   margin-top: -15px;
   margin-left: -106px;
 }
@@ -73,27 +78,29 @@
 .crown {
   position: absolute;
   margin-left: -106.5px;
-  margin-top: -14px;
-  z-index: 2;
+  margin-top: -10px;
+  z-index: 5;
 }
 
 .fence-border {
   position: absolute;
   margin-top: 85px;
   margin-left: -322px;
+  z-index: 1;
 }
 
 .deck {
   position: absolute;
   margin-left: -271px;
   margin-top: 100px;
+  z-index: 1;
 }
 
 .short-post {
   margin-top: -15px;
   position: absolute;
   margin-left: -126px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .tall-post {
@@ -105,33 +112,35 @@
   margin-top: -26px;
   margin-left: -120px;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
 }
 
 .fascia {
   position: absolute;
   margin-top: 253px;
   margin-left: -321.5px;
+  z-index: 1;
 }
 
 .skirt {
   position: absolute;
   margin-left: -128px;
   margin-top: 149px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .rail {
   position: absolute;
   margin-left: -106px;
   margin-top: -10px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .pyramid {
   position: absolute;
   margin-left: -129px;
   margin-top: -28px;
+  z-index: 2;
 }
 
 .none {
@@ -142,6 +151,7 @@
   position: absolute;
   margin-left: -129px;
   margin-top: -24px;
+  z-index: 2;
 }
 
 .options {
@@ -179,7 +189,8 @@
 
 .top-section {
   display: flex;
-  margin-bottom: -280px;
+  margin-bottom: -330px;
+  padding-top: 15px;
 }
 
 .fence-options {

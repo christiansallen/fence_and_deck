@@ -1,5 +1,4 @@
 //1x6 Cap Rails
-import OneCharcoal from "./Images/1x6_Charcoal.png";
 import OneFirepit from "./Images/1x6_Firepit.png";
 import OneGravelpath from "./Images/1x6_Gravelpath.png";
 import OneHavanagold from "./Images/1x6_Havanagold.png";
@@ -13,7 +12,6 @@ import OneSpicedrum from "./Images/1x6_Spicedrum.png";
 import OneTikitorch from "./Images/1x6_Tikitorch.png";
 import OneTreehouse from "./Images/1x6_Treehouse.png";
 import OneVintagelantern from "./Images/1x6_Vintagelantern.png";
-import OneWhite from "./Images/1x6_White.png";
 import OneWinchestergray from "./Images/1x6_Winchestergray.png";
 import OneWoodlandbrown from "./Images/1x6_Woodlandbrown.png";
 
@@ -132,13 +130,13 @@ import IronPosts from "./Images/Iron_Posts.png";
 import IronGuardRail from "./Images/IronGuardRail.png";
 
 // Rail
-import RailCharcoal from "./Images/Rail_Charcoal.png";
-import RailFirepit from "./Images/Rail_Firepit.png";
-import RailGravelpath from "./Images/Rail_Gravelpath.png";
-import RailHavanagold from "./Images/Rail_Havanagold.png";
-import RailWhite from "./Images/Rail_White.png";
-import RailRopeswing from "./Images/Rail_Ropeswing.png";
-import RailVintagelantern from "./Images/Rail_Vintagelantern.png";
+import RailsCharcoal from "./Images/Rail_Charcoal.png";
+import RailsFirepit from "./Images/Rail_Firepit.png";
+import RailsGravelpath from "./Images/Rail_Gravelpath.png";
+import RailsHavanagold from "./Images/Rail_Havanagold.png";
+import RailsWhite from "./Images/Rail_White.png";
+import RailsRopeswing from "./Images/Rail_Ropeswing.png";
+import RailsVintagelantern from "./Images/Rail_Vintagelantern.png";
 
 //Skirt
 import SkirtCharcoal from "./Images/Skirt_Charcoal.png";
@@ -183,7 +181,7 @@ export const tabs = [
   { name: "Post Sleeve" },
   { name: "Post Skirt" },
   { name: "Cap Rail" },
-  { name: "Rail" },
+  { name: "Rails" },
   { name: "Baluster" },
   { name: "Deck" },
   { name: "Border" },
@@ -265,7 +263,6 @@ export const imgData = {
     TwoLavarock: TwoLavarock,
     TwoSpicedrum: TwoSpicedrum,
     TwoTikitorch: TwoTikitorch,
-    OneCharcoal: OneCharcoal,
     OneFirepit: OneFirepit,
     OneGravelpath: OneGravelpath,
     OneHavanagold: OneHavanagold,
@@ -279,18 +276,17 @@ export const imgData = {
     OneTikitorch: OneTikitorch,
     OneTreehouse: OneTreehouse,
     OneVintagelantern: OneVintagelantern,
-    OneWhite: OneWhite,
     OneWinchestergray: OneWinchestergray,
     OneWoodlandbrown: OneWoodlandbrown
   },
-  Rail: {
-    RailCharcoal: RailCharcoal,
-    RailFirepit: RailFirepit,
-    RailGravelpath: RailGravelpath,
-    RailHavanagold: RailHavanagold,
-    RailWhite: RailWhite,
-    RailRopeswing: RailRopeswing,
-    RailVintagelantern: RailVintagelantern
+  Rails: {
+    RailsCharcoal: RailsCharcoal,
+    RailsFirepit: RailsFirepit,
+    RailsGravelpath: RailsGravelpath,
+    RailsHavanagold: RailsHavanagold,
+    RailsWhite: RailsWhite,
+    RailsRopeswing: RailsRopeswing,
+    RailsVintagelantern: RailsVintagelantern
   },
   Baluster: {
     TrexCharcoal: TrexCharcoal,

@@ -116,10 +116,6 @@ class TabColors extends Component {
     if (activeTab === "Cap Rail" && oneStyle) {
       return [
         {
-          img: CharcoalColor,
-          name: "Charcoal"
-        },
-        {
           img: FirepitColor,
           name: "Firepit"
         },
@@ -171,10 +167,7 @@ class TabColors extends Component {
           img: VintagelanternColor,
           name: "Vintagelantern"
         },
-        {
-          img: WhiteColor,
-          name: "White"
-        },
+
         {
           img: WinchestergrayColor,
           name: "Winchestergray"
@@ -211,7 +204,7 @@ class TabColors extends Component {
       ];
     }
 
-    if ((activeTab === "Baluster" || activeTab === "Rail") && ironStyle) {
+    if ((activeTab === "Baluster" || activeTab === "Rails") && ironStyle) {
       return [
         {
           img: CharcoalColor,

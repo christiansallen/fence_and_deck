@@ -31,7 +31,7 @@ class Fence extends Component {
       pyramid: imgData["Post Cap"]["PyramidWhite"],
       skirt: imgData["Post Skirt"]["SkirtWhite"],
 
-      rail: imgData["Rail"]["RailWhite"],
+      rail: imgData["Rails"]["RailsWhite"],
       ironRail: IronGuardRail,
 
       border: imgData["Border"]["BorderBeachdune"],
@@ -105,9 +105,9 @@ class Fence extends Component {
       this.setState({
         fascia: imgData["Fascia"][`Fascia${name}`]
       });
-    } else if (activeTab === "Rail") {
+    } else if (activeTab === "Rails") {
       this.setState({
-        rail: imgData["Rail"][`Rail${name}`]
+        rail: imgData["Rails"][`Rails${name}`]
       });
     }
   };
@@ -254,7 +254,6 @@ class Fence extends Component {
     return (
       <div className="container">
         {/* Main image up top */}
-        <h1 style={{ marginBottom: "40px" }}>Design Your Own Railing</h1>
 
         <div className="top-section">
           <div className="fence-options">
@@ -308,7 +307,7 @@ class Fence extends Component {
             </div>
 
             <div className="options">
-              <h4 className="option-title">Cap Rail:</h4>
+              <h4 className="option-title">Top Rail:</h4>
               <div className="option-container">
                 <div
                   className={this.state.ironPostStyle ? "option" : "none"}
@@ -479,6 +478,8 @@ class Fence extends Component {
             />
           </div>
         </div>
+
+        {/*Filter before mapping for crown rail AND iron post style otherwise map through all tabs*/}
 
         <Tabs>
           <TabList
