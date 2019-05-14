@@ -105,6 +105,7 @@
   margin-top: -26px;
   margin-left: -120px;
   position: absolute;
+  z-index: 1;
 }
 
 .fascia {

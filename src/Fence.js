@@ -53,7 +53,8 @@ class Fence extends Component {
       postToggle: false,
       compositePostStyle: true,
       ironPostStyle: false,
-      hidePostCaps: false
+      hidePostCaps: false,
+      noneStyle: false
     };
   }
 
@@ -161,13 +162,15 @@ class Fence extends Component {
       this.setState({
         compositePostStyle: false,
         ironPostStyle: true,
-        hidePostCaps: true
+        hidePostCaps: true,
+        noneStyle: true
       });
     } else {
       this.setState({
         ironPostStyle: false,
         compositePostStyle: true,
-        hidePostCaps: false
+        hidePostCaps: false,
+        noneStyle: false
       });
     }
   };
@@ -190,21 +193,32 @@ class Fence extends Component {
     this.setState({
       oneStyle: true,
       twoStyle: false,
-      crownStyle: false
+      crownStyle: false,
+      noneStyle: false
     });
   };
   toggleStyleCaps2 = () => {
     this.setState({
       oneStyle: false,
       twoStyle: true,
-      crownStyle: false
+      crownStyle: false,
+      noneStyle: false
     });
   };
   toggleStyleCaps3 = () => {
     this.setState({
       oneStyle: false,
       twoStyle: false,
-      crownStyle: true
+      crownStyle: true,
+      noneStyle: false
+    });
+  };
+  toggleStyleCaps4 = () => {
+    this.setState({
+      oneStyle: false,
+      twoStyle: false,
+      crownStyle: false,
+      noneStyle: true
     });
   };
 
@@ -222,6 +236,7 @@ class Fence extends Component {
     const clickedBtn1 = this.state.oneStyle ? clicked : notClicked;
     const clickedBtn11 = this.state.twoStyle ? clicked : notClicked;
     const clickedBtn111 = this.state.crownStyle ? clicked : notClicked;
+    const clickedBtn1111 = this.state.noneStyle ? clicked : notClicked;
 
     const clickedBtn2 = this.state.compositeStyle ? clicked : notClicked;
     const clickedBtn22 = this.state.aluminumStyle ? clicked : notClicked;
@@ -296,7 +311,19 @@ class Fence extends Component {
               <h4 className="option-title">Cap Rail:</h4>
               <div className="option-container">
                 <div
-                  className="option"
+                  className={this.state.ironPostStyle ? "option" : "none"}
+                  style={clickedBtn1111}
+                  onClick={this.toggleStyleCaps4}
+                >
+                  None
+                </div>
+                <div
+                  className={
+                    this.state.ironPostStyle ||
+                    (this.state.compositePostStyle && this.state.ironStyle)
+                      ? "none"
+                      : "option"
+                  }
                   style={clickedBtn111}
                   onClick={this.toggleStyleCaps3}
                 >
