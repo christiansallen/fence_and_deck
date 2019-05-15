@@ -163,14 +163,14 @@ class Fence extends Component {
         compositePostStyle: false,
         ironPostStyle: true,
         hidePostCaps: true,
-        noneStyle: true
+        noneStyle: !this.state.noneStyle
       });
     } else {
       this.setState({
         ironPostStyle: false,
         compositePostStyle: true,
         hidePostCaps: false,
-        noneStyle: false
+        noneStyle: !this.state.noneStyle
       });
     }
   };
@@ -307,7 +307,7 @@ class Fence extends Component {
             </div>
 
             <div className="options">
-              <h4 className="option-title">Top Rail:</h4>
+              <h4 className="option-title">Cap Rail:</h4>
               <div className="option-container">
                 <div
                   className={this.state.ironPostStyle ? "option" : "none"}
@@ -490,13 +490,23 @@ class Fence extends Component {
               marginTop: "230px"
             }}
           >
-            {tabs.map((tab, idx) => {
-              return (
-                <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
-                  {tab.name}
-                </Tab>
-              );
-            })}
+            {this.state.crownStyle || this.state.noneStyle
+              ? tabs
+                  .filter(tab => tab.name !== "Cap Rail")
+                  .map((tab, idx) => {
+                    return (
+                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                        {tab.name}
+                      </Tab>
+                    );
+                  })
+              : tabs.map((tab, idx) => {
+                  return (
+                    <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                      {tab.name}
+                    </Tab>
+                  );
+                })}
           </TabList>
 
           {/*changeItem parameter should be the tab that's selected.*/}
@@ -512,6 +522,7 @@ class Fence extends Component {
                   crownStyle={this.state.crownStyle}
                   ironStyle={this.state.ironStyle}
                   ironPostStyle={this.state.ironPostStyle}
+                  compositeStyle={this.state.compositeStyle}
                 />
               </TabPanel>
             );

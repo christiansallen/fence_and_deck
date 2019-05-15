@@ -26,28 +26,113 @@ import WinchestergrayColor from "./Images/Color_Winchestergray.png";
 import WoodlandbrownColor from "./Images/Color_Woodlandbrown.png";
 
 export const TabColorsData = [
-  { name: "Beachdune", img: BeachduneColor, alt: "Beachdune" },
-  { name: "Clamshell", img: ClamshellColor, alt: "Clamshell" },
-  { name: "Coastalbluff", img: CoastalbluffColor, alt: "Coastalbluff" },
-  { name: "Foggywharf", img: FoggywharfColor, alt: "Foggywharf" },
-  { name: "Rockyharbor", img: RockyharborColor, alt: "Rockyharbor" },
-  { name: "Sunsetcove", img: SunsetcoveColor, alt: "Sunsetcove" },
-  { name: "Toastedsand", img: ToastedsandColor, alt: "ToastedSand" },
+  {
+    name: "(Enhance) Beach Dune",
+    img: BeachduneColor,
+    alt: "Beachdune"
+  },
+  {
+    name: "(Enhance) Clam Shell",
+    img: ClamshellColor,
+    alt: "Clamshell"
+  },
+  {
+    name: "(Enhance) Coastal Bluff",
+    img: CoastalbluffColor,
+    alt: "Coastalbluff"
+  },
+  {
+    name: "(Enhance) Foggy Wharf",
+    img: FoggywharfColor,
+    alt: "Foggywharf"
+  },
+  {
+    name: "(Enhance) Rocky Harbor",
+    img: RockyharborColor,
+    alt: "Rockyharbor"
+  },
+  {
+    name: "(Enhance) Sunset Cove",
+    img: SunsetcoveColor,
+    alt: "Sunsetcove"
+  },
+  { name: "(Enhance) Saddle", img: SaddleColor, alt: "Saddle" },
+
+  { name: "(Select) Maderia", img: MaderiaColor, alt: "Maderia" },
+  {
+    name: "(Select) Pebble Grey",
+    img: PebblegreyColor,
+    alt: "Pebblegrey"
+  },
+  {
+    name: "(Select) Winchester Grey",
+    img: WinchestergrayColor,
+    alt: "Winchestergray"
+  },
+  {
+    name: "(Select) Woodland Brown",
+    img: WoodlandbrownColor,
+    alt: "Woodlandbrown"
+  },
+
+  {
+    name: "(Transcend) Fire Pit",
+    img: FirepitColor,
+    alt: "Firepit"
+  },
+  {
+    name: "(Transcend) Gravel Path",
+    img: GravelpathColor,
+    alt: "Gravelpath"
+  },
+  {
+    name: "(Transcend) Havana Gold",
+    img: HavanagoldColor,
+    alt: "Havanagold"
+  },
+  {
+    name: "(Transcend) Island Mist",
+    img: IslandmistColor,
+    alt: "Islandmist"
+  },
+  {
+    name: "(Transcend) Lava Rock",
+    img: LavarockColor,
+    alt: "Lavarock"
+  },
+
+  {
+    name: "(Transcend) Rope Swing",
+    img: RopeswingColor,
+    alt: "Ropeswing"
+  },
+  {
+    name: "(Transcend) Spiced Rum",
+    img: SpicedrumColor,
+    alt: "Spicedrum"
+  },
+  {
+    name: "(Transcend) Tiki Torch",
+    img: TikitorchColor,
+    alt: "Tikitorch"
+  },
+  {
+    name: "(Transcend) Tree House",
+    img: TreehouseColor,
+    alt: "Treehouse"
+  },
+  {
+    name: "(Transcend) Vintage Lantern",
+    img: VintagelanternColor,
+    alt: "Vintagelantern"
+  },
+
+  {
+    name: "Toasted Sand",
+    img: ToastedsandColor,
+    alt: "ToastedSand"
+  },
   { name: "Charcoal", img: CharcoalColor, alt: "Charcoal" },
-  { name: "Firepit", img: FirepitColor, alt: "Firepit" },
-  { name: "Gravelpath", img: GravelpathColor, alt: "Gravelpath" },
-  { name: "Havanagold", img: HavanagoldColor, alt: "Havanagold" },
-  { name: "Islandmist", img: IslandmistColor, alt: "Islandmist" },
-  { name: "Lavarock", img: LavarockColor, alt: "Lavarock" },
-  { name: "Maderia", img: MaderiaColor, alt: "Maderia" },
-  { name: "Pebblegrey", img: PebblegreyColor, alt: "Pebblegrey" },
-  { name: "Ropeswing", img: RopeswingColor, alt: "Ropeswing" },
-  { name: "Saddle", img: SaddleColor, alt: "Saddle" },
-  { name: "Spicedrum", img: SpicedrumColor, alt: "Spicedrum" },
-  { name: "Tikitorch", img: TikitorchColor, alt: "Tikitorch" },
-  { name: "Treehouse", img: TreehouseColor, alt: "Treehouse" },
-  { name: "Vintagelantern", img: VintagelanternColor, alt: "Vintagelantern" },
-  { name: "White", img: WhiteColor, alt: "White" },
-  { name: "Winchestergray", img: WinchestergrayColor, alt: "Winchestergray" },
-  { name: "Woodlandbrown", img: WoodlandbrownColor, alt: "Woodlandbrown" }
+
+  { name: "White", img: WhiteColor, alt: "White" }
 ];

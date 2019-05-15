@@ -180,9 +180,9 @@ export const tabs = [
   { name: "Post Cap" },
   { name: "Post Sleeve" },
   { name: "Post Skirt" },
-  { name: "Cap Rail" },
   { name: "Rails" },
   { name: "Baluster" },
+  { name: "Cap Rail" },
   { name: "Deck" },
   { name: "Border" },
   { name: "Fascia" }

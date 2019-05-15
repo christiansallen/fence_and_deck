@@ -49,21 +49,24 @@ class TabColors extends Component {
       twoStyle,
       crownStyle,
       ironStyle,
-      ironPostStyle
+      ironPostStyle,
+      compositeStyle
     } = this.props;
     let test = Object.keys(imgData[activeTab]);
     let newFenceOptions = test.map(x => x.split(/(?=[A-Z])/)).map(x => x[1]);
-    let result = TabColorsData.filter(x => newFenceOptions.includes(x.name));
+    let result = TabColorsData.filter(x => newFenceOptions.includes(x.alt));
 
     if (activeTab === "Baluster" && aluminum) {
       return [
         {
           img: CharcoalColor,
-          name: "Charcoal"
+          name: "Charcoal",
+          alt: "Charcoal"
         },
         {
           img: WhiteColor,
-          name: "White"
+          name: "White",
+          alt: "White"
         }
       ];
     }
@@ -72,43 +75,178 @@ class TabColors extends Component {
       return [
         {
           img: FirepitColor,
-          name: "Firepit"
+          name: "Fire Pit",
+          alt: "Firepit"
         },
         {
           img: GravelpathColor,
-          name: "Gravelpath"
+          name: "Gravel Path",
+          alt: "Gravelpath"
         },
         {
           img: HavanagoldColor,
-          name: "Havanagold"
+          name: "Havana Gold",
+          alt: "Havanagold"
         },
         {
           img: IslandmistColor,
-          name: "Islandmist"
+          name: "Island Mist",
+          alt: "Islandmist"
         },
         {
           img: LavarockColor,
-          name: "Lavarock"
+          name: "Lava Rock",
+          alt: "Lavarock"
         },
         {
           img: RopeswingColor,
-          name: "Ropeswing"
+          name: "Rope Swing",
+          alt: "Ropeswing"
         },
         {
           img: SpicedrumColor,
-          name: "Spicedrum"
+          name: "Spiced Rum",
+          alt: "Spicedrum"
         },
         {
           img: TikitorchColor,
-          name: "Tikitorch"
+          name: "Tiki Torch",
+          alt: "Tikitorch"
         },
         {
           img: TreehouseColor,
-          name: "Treehouse"
+          name: "Tree House",
+          alt: "Treehouse"
         },
         {
           img: VintagelanternColor,
-          name: "Vintagelantern"
+          name: "Vintage Lantern",
+          alt: "Vintagelantern"
+        }
+      ];
+    }
+
+    if (activeTab === "Rails" && !ironStyle) {
+      return [
+        {
+          img: FirepitColor,
+          name: "Fire Pit",
+          alt: "Firepit"
+        },
+        {
+          img: GravelpathColor,
+          name: "Gravel Path",
+          alt: "Gravelpath"
+        },
+        {
+          img: HavanagoldColor,
+          name: "Havana Gold",
+          alt: "Havanagold"
+        },
+        {
+          img: RopeswingColor,
+          name: "Rope Swing",
+          alt: "Ropeswing"
+        },
+        {
+          img: VintagelanternColor,
+          name: "Vintage Lantern",
+          alt: "Vintagelantern"
+        },
+        {
+          img: CharcoalColor,
+          name: "Charcoal",
+          alt: "Charcoal"
+        },
+        {
+          img: WhiteColor,
+          name: "White",
+          alt: "White"
+        }
+      ];
+    }
+
+    if (
+      (activeTab === "Post Cap" ||
+        activeTab === "Post Sleeve" ||
+        activeTab === "Post Skirt") &&
+      !ironPostStyle
+    ) {
+      return [
+        {
+          img: FirepitColor,
+          name: "Fire Pit",
+          alt: "Firepit"
+        },
+        {
+          img: GravelpathColor,
+          name: "Gravel Path",
+          alt: "Gravelpath"
+        },
+        {
+          img: HavanagoldColor,
+          name: "Havana Gold",
+          alt: "Havanagold"
+        },
+        {
+          img: RopeswingColor,
+          name: "Rope Swing",
+          alt: "Ropeswing"
+        },
+        {
+          img: VintagelanternColor,
+          name: "Vintage Lantern",
+          alt: "Vintagelantern"
+        },
+        {
+          img: CharcoalColor,
+          name: "Charcoal",
+          alt: "Charcoal"
+        },
+        {
+          img: WhiteColor,
+          name: "White",
+          alt: "White"
+        }
+      ];
+    }
+
+    if (activeTab === "Baluster" && compositeStyle) {
+      return [
+        {
+          img: FirepitColor,
+          name: "Fire Pit",
+          alt: "Firepit"
+        },
+        {
+          img: GravelpathColor,
+          name: "Gravel Path",
+          alt: "Gravelpath"
+        },
+        {
+          img: HavanagoldColor,
+          name: "Havana Gold",
+          alt: "Havanagold"
+        },
+        {
+          img: RopeswingColor,
+          name: "Rope Swing",
+          alt: "Ropeswing"
+        },
+        {
+          img: LavarockColor,
+          name: "Lava Rock",
+          alt: "Lavarock"
+        },
+        {
+          img: CharcoalColor,
+          name: "Charcoal",
+          alt: "Charcoal"
+        },
+        {
+          img: WhiteColor,
+          name: "White",
+          alt: "White"
         }
       ];
     }
@@ -117,64 +255,79 @@ class TabColors extends Component {
       return [
         {
           img: FirepitColor,
-          name: "Firepit"
+          name: "Fire Pit",
+          alt: "Firepit"
         },
         {
           img: GravelpathColor,
-          name: "Gravelpath"
+          name: "Gravel Path",
+          alt: "Gravelpath"
         },
         {
           img: HavanagoldColor,
-          name: "Havanagold"
+          name: "Havana Gold",
+          alt: "Havanagold"
         },
         {
           img: IslandmistColor,
-          name: "Islandmist"
+          name: "Island Mist",
+          alt: "Islandmist"
         },
         {
           img: LavarockColor,
-          name: "Lavarock"
+          name: "Lava Rock",
+          alt: "Lavarock"
         },
         {
           img: MaderiaColor,
-          name: "Maderia"
+          name: "Maderia",
+          alt: "Maderia"
         },
         {
           img: PebblegreyColor,
-          name: "Pebblegrey"
+          name: "Pebble Grey",
+          alt: "Pebblegrey"
         },
         {
           img: RopeswingColor,
-          name: "Ropeswing"
+          name: "Rope Swing",
+          alt: "Ropeswing"
         },
         {
           img: SaddleColor,
-          name: "Saddle"
+          name: "Saddle",
+          alt: "Saddle"
         },
         {
           img: SpicedrumColor,
-          name: "Spicedrum"
+          name: "Spiced Rum",
+          alt: "Spicedrum"
         },
         {
           img: TikitorchColor,
-          name: "Tikitorch"
+          name: "Tiki Torch",
+          alt: "Tikitorch"
         },
         {
           img: TreehouseColor,
-          name: "Treehouse"
+          name: "Tree House",
+          alt: "Treehouse"
         },
         {
           img: VintagelanternColor,
-          name: "Vintagelantern"
+          name: "Vintage Lantern",
+          alt: "Vintagelantern"
         },
 
         {
           img: WinchestergrayColor,
-          name: "Winchestergray"
+          name: "Winchester Gray",
+          alt: "Winchestergray"
         },
         {
           img: WoodlandbrownColor,
-          name: "Woodlandbrown"
+          name: "Woodland Brown",
+          alt: "Woodlandbrown"
         }
       ];
     }
@@ -183,23 +336,28 @@ class TabColors extends Component {
       return [
         {
           img: HavanagoldColor,
-          name: "Havanagold"
+          name: "Havana Gold",
+          alt: "Havanagold"
         },
         {
           img: IslandmistColor,
-          name: "Islandmist"
+          name: "Island Mist",
+          alt: "Islandmist"
         },
         {
           img: LavarockColor,
-          name: "Lavarock"
+          name: "Lava Rock",
+          alt: "Lavarock"
         },
         {
           img: SpicedrumColor,
-          name: "Spicedrum"
+          name: "Spiced Rum",
+          alt: "Spicedrum"
         },
         {
           img: TikitorchColor,
-          name: "Tikitorch"
+          name: "Tiki Torch",
+          alt: "Tikitorch"
         }
       ];
     }
@@ -208,7 +366,8 @@ class TabColors extends Component {
       return [
         {
           img: CharcoalColor,
-          name: "Charcoal"
+          name: "Charcoal",
+          alt: "Charcoal"
         }
       ];
     }
@@ -222,7 +381,8 @@ class TabColors extends Component {
       return [
         {
           img: CharcoalColor,
-          name: "Charcoal"
+          name: "Charcoal",
+          alt: "Charcoal"
         }
       ];
     }
@@ -230,7 +390,8 @@ class TabColors extends Component {
     console.log("Active Tab", activeTab);
     console.log("Tab Colors Data:", TabColorsData);
     console.log("newFence", newFenceOptions);
-    console.log("result", result);
+    console.log("%c Results", "color:blue");
+    console.log({ result });
     return result;
   };
 
@@ -244,7 +405,7 @@ class TabColors extends Component {
             <div
               className="block"
               key={idx}
-              onClick={() => handleTabColors(item.name)}
+              onClick={() => handleTabColors(item.alt)}
             >
               <img src={item.img} alt={item.alt} className="color" />
               <p className="name">{item.name}</p>
@@ -257,3 +418,44 @@ class TabColors extends Component {
 }
 
 export default TabColors;
+
+/*
+renderedTabs = () => {
+    if (this.state.crownStyle) {
+      tabs
+        .filter(tab => tab.name !== "Cap Rail")
+        .map((tab, idx) => {
+          return (
+            <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+              {tab.name}
+            </Tab>
+          );
+        });
+    } else if (this.state.ironPostStyle) {
+      tabs
+        .filter(
+          tab =>
+            tab.name !== "Post Cap" ||
+            tab.name !== "Post Sleeve" ||
+            tab.name !== "Post Skirt" ||
+            tab.name !== "Rails" ||
+            tab.name !== "Baluster"
+        )
+        .map((tab, idx) => {
+          return (
+            <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+              {tab.name}
+            </Tab>
+          );
+        });
+    } else {
+      tabs.map((tab, idx) => {
+        return (
+          <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+            {tab.name}
+          </Tab>
+        );
+      });
+    }
+  };
+  */
