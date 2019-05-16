@@ -112,20 +112,6 @@ class Fence extends Component {
     }
   };
 
-  toggleStylePost = () => {
-    if (this.state.shortStyle === true) {
-      this.setState({
-        shortStyle: false,
-        tallStyle: true
-      });
-    } else {
-      this.setState({
-        shortStyle: true,
-        tallStyle: false
-      });
-    }
-  };
-
   toggleStyleBalusters1 = () => {
     this.setState({
       compositeStyle: true,
@@ -224,7 +210,7 @@ class Fence extends Component {
 
   render() {
     const clicked = {
-      backgroundColor: "green",
+      backgroundColor: "#106C1A",
       color: "white"
     };
 

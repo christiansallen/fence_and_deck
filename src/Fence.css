@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.color:active {
+  border: 5px solid #106c1a;
+}
+
 .block {
   margin: 4px 15px 0px 15px;
   align-items: center;

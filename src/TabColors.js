@@ -33,7 +33,8 @@ class TabColors extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      TabColorsData
+      TabColorsData,
+      clicked: false
     };
   }
 
