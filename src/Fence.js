@@ -120,7 +120,8 @@ class Fence extends Component {
       postToggle: false,
       hidePostCaps: false,
       compositePostStyle: true,
-      ironPostStyle: false
+      ironPostStyle: false,
+      activeTab: "Baluster"
     });
   };
   toggleStyleBalusters2 = () => {
@@ -131,7 +132,8 @@ class Fence extends Component {
       postToggle: false,
       hidePostCaps: false,
       compositePostStyle: true,
-      ironPostStyle: false
+      ironPostStyle: false,
+      activeTab: "Baluster"
     });
   };
   toggleStyleBalusters3 = () => {
@@ -139,7 +141,8 @@ class Fence extends Component {
       compositeStyle: false,
       aluminumStyle: false,
       ironStyle: true,
-      postToggle: true
+      postToggle: true,
+      activeTab: "Baluster"
     });
   };
 
@@ -149,14 +152,16 @@ class Fence extends Component {
         compositePostStyle: false,
         ironPostStyle: true,
         hidePostCaps: true,
-        noneStyle: !this.state.noneStyle
+        noneStyle: !this.state.noneStyle,
+        activeTab: "Post Sleeve"
       });
     } else {
       this.setState({
         ironPostStyle: false,
         compositePostStyle: true,
         hidePostCaps: false,
-        noneStyle: !this.state.noneStyle
+        noneStyle: !this.state.noneStyle,
+        activeTab: "Post Sleeve"
       });
     }
   };
@@ -165,12 +170,14 @@ class Fence extends Component {
     if (this.state.flatStyle === true) {
       this.setState({
         flatStyle: false,
-        pyramidStyle: true
+        pyramidStyle: true,
+        activeTab: "Post Cap"
       });
     } else {
       this.setState({
         flatStyle: true,
-        pyramidStyle: false
+        pyramidStyle: false,
+        activeTab: "Post Cap"
       });
     }
   };
@@ -180,7 +187,8 @@ class Fence extends Component {
       oneStyle: true,
       twoStyle: false,
       crownStyle: false,
-      noneStyle: false
+      noneStyle: false,
+      activeTab: "Cap Rail"
     });
   };
   toggleStyleCaps2 = () => {
@@ -188,7 +196,8 @@ class Fence extends Component {
       oneStyle: false,
       twoStyle: true,
       crownStyle: false,
-      noneStyle: false
+      noneStyle: false,
+      activeTab: "Cap Rail"
     });
   };
   toggleStyleCaps3 = () => {
@@ -196,7 +205,8 @@ class Fence extends Component {
       oneStyle: false,
       twoStyle: false,
       crownStyle: true,
-      noneStyle: false
+      noneStyle: false,
+      activeTab: "Cap Rail"
     });
   };
   toggleStyleCaps4 = () => {
@@ -204,7 +214,8 @@ class Fence extends Component {
       oneStyle: false,
       twoStyle: false,
       crownStyle: false,
-      noneStyle: true
+      noneStyle: true,
+      activeTab: "Cap Rail"
     });
   };
 
