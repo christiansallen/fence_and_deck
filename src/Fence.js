@@ -139,9 +139,7 @@ class Fence extends Component {
       compositeStyle: false,
       aluminumStyle: false,
       ironStyle: true,
-      postToggle: true,
-      activeTab: "Baluster",
-      tabIndex: 3
+      postToggle: true
     });
   };
 
@@ -152,8 +150,8 @@ class Fence extends Component {
         ironPostStyle: true,
         hidePostCaps: true,
         noneStyle: true,
-        activeTab: "Post Sleeve",
-        tabIndex: 1
+        activeTab: "Deck",
+        tabIndex: 0
       });
     } else {
       this.setState({
@@ -186,24 +184,55 @@ class Fence extends Component {
   };
 
   toggleStyleCaps1 = () => {
-    this.setState({
-      oneStyle: true,
-      twoStyle: false,
-      crownStyle: false,
-      noneStyle: false,
-      activeTab: "Cap Rail",
-      tabIndex: 4
-    });
+    if (this.state.ironStyle) {
+      this.setState({
+        oneStyle: true,
+        twoStyle: false,
+        crownStyle: false,
+        noneStyle: false,
+        activeTab: "Cap Rail",
+        tabIndex: 2
+      });
+    } else {
+      this.setState({
+        oneStyle: true,
+        twoStyle: false,
+        crownStyle: false,
+        noneStyle: false,
+        activeTab: "Cap Rail",
+        tabIndex: 4
+      });
+    }
   };
   toggleStyleCaps2 = () => {
-    this.setState({
-      oneStyle: false,
-      twoStyle: true,
-      crownStyle: false,
-      noneStyle: false,
-      activeTab: "Cap Rail",
-      tabIndex: 4
-    });
+    if (this.state.ironStyle && !this.state.ironPostStyle) {
+      this.setState({
+        oneStyle: false,
+        twoStyle: true,
+        crownStyle: false,
+        noneStyle: false,
+        activeTab: "Cap Rail",
+        tabIndex: 2
+      });
+    } else if (this.state.ironStyle && this.state.ironPostStyle) {
+      this.setState({
+        oneStyle: false,
+        twoStyle: true,
+        crownStyle: false,
+        noneStyle: false,
+        activeTab: "Cap Rail",
+        tabIndex: 0
+      });
+    } else {
+      this.setState({
+        oneStyle: false,
+        twoStyle: true,
+        crownStyle: false,
+        noneStyle: false,
+        activeTab: "Cap Rail",
+        tabIndex: 4
+      });
+    }
   };
   toggleStyleCaps3 = () => {
     this.setState({
@@ -221,8 +250,8 @@ class Fence extends Component {
       twoStyle: false,
       crownStyle: false,
       noneStyle: true,
-      activeTab: "Cap Rail",
-      tabIndex: 4
+      activeTab: "Deck",
+      tabIndex: 0
     });
   };
 
@@ -255,7 +284,6 @@ class Fence extends Component {
       this.state.ironPostStyle === true ? clicked : notClicked;
 
     const { tabs } = this.state;
-    console.log("Active Tab:", this.state.activeTab);
     return (
       <div className="container">
         {/* Main image up top */}
