@@ -44,6 +44,16 @@
   width: 60px;
 }
 
+.legend {
+  margin-left: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-list {
+  margin-top: -217px;
+}
+
 .fence-container {
   height: 500px;
   position: relative;

@@ -139,7 +139,9 @@ class Fence extends Component {
       compositeStyle: false,
       aluminumStyle: false,
       ironStyle: true,
-      postToggle: true
+      postToggle: true,
+      activeTab: "Post Cap",
+      tabIndex: 0
     });
   };
 
@@ -290,7 +292,7 @@ class Fence extends Component {
 
         <div className="top-section">
           <div className="fence-options">
-            <h3>Pick your railing options below:</h3>
+            <h3>1. Pick your railing options:</h3>
 
             <div className="options">
               <h4 className="option-title">Baluster:</h4>
@@ -503,11 +505,26 @@ class Fence extends Component {
           </div>
         </div>
 
-        {/*Filter before mapping for crown rail AND iron post style otherwise map through all tabs*/}
+        {/*<div className="legend">
+          <p>Post Cap: </p>
+          <p>Post Sleeve: </p>
+          <p>Rails: </p>
+          <p>Baluster: </p>
+          <p>Cap Rail: </p>
+          <p>Deck: </p>
+          <p>Border: </p>
+          <p>Fascia: </p>
+        </div>
+            */}
 
+        {/*Filter before mapping for crown rail AND iron post style otherwise map through all tabs*/}
+        <h3 style={{ marginTop: "219px", marginLeft: "-791px" }}>
+          2. Pick your color options:
+        </h3>
         <Tabs
           selectedIndex={this.state.tabIndex}
           onSelect={tabIndex => this.setState({ tabIndex })}
+          className="tabs-list"
         >
           <TabList
             style={{
