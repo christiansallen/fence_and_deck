@@ -6,7 +6,6 @@ import TabColors from "./TabColors.js";
 import { tabs, imgData } from "./FenceData";
 
 //Needed imports
-import TpostCharcoal from "./Images/Tpost_Charcoal.png";
 import AluminumCharcoal from "./Images/Iron_Charcoal.png";
 import IronGuardRail from "./Images/IronGuardRail.png";
 import IronPosts from "./Images/Iron_Posts.png";
@@ -20,9 +19,7 @@ class Fence extends Component {
       crown: imgData["Cap Rail"]["CrownHavanagold"],
 
       sPost: imgData["Post Sleeve"]["SpostWhite"],
-      tPost: TpostCharcoal,
       ironPosts: IronPosts,
-
       trex: imgData["Baluster"]["TrexWhite"],
       aluminum: imgData["Baluster"]["AluminumBronze"],
       iron: AluminumCharcoal,
@@ -54,10 +51,12 @@ class Fence extends Component {
       compositePostStyle: true,
       ironPostStyle: false,
       hidePostCaps: false,
-      noneStyle: false
+      noneStyle: false,
+      tabIndex: 0
     };
   }
 
+  //Active Tab changes color rendering. Need to figure out how to match tab selected with Active Tab
   changeItem = name => {
     this.setState({
       activeTab: name
@@ -77,10 +76,7 @@ class Fence extends Component {
     } else if (activeTab === "Post Cap") {
       this.setState({
         flat: imgData["Post Cap"][`Flat${name}`],
-        pyramid: imgData["Post Cap"][`Pyramid${name}`]
-      });
-    } else if (activeTab === "Post Skirt") {
-      this.setState({
+        pyramid: imgData["Post Cap"][`Pyramid${name}`],
         skirt: imgData["Post Skirt"][`Skirt${name}`]
       });
     } else if (activeTab === "Cap Rail") {
@@ -121,7 +117,8 @@ class Fence extends Component {
       hidePostCaps: false,
       compositePostStyle: true,
       ironPostStyle: false,
-      activeTab: "Baluster"
+      activeTab: "Baluster",
+      tabIndex: 3
     });
   };
   toggleStyleBalusters2 = () => {
@@ -133,7 +130,8 @@ class Fence extends Component {
       hidePostCaps: false,
       compositePostStyle: true,
       ironPostStyle: false,
-      activeTab: "Baluster"
+      activeTab: "Baluster",
+      tabIndex: 3
     });
   };
   toggleStyleBalusters3 = () => {
@@ -142,7 +140,8 @@ class Fence extends Component {
       aluminumStyle: false,
       ironStyle: true,
       postToggle: true,
-      activeTab: "Baluster"
+      activeTab: "Baluster",
+      tabIndex: 3
     });
   };
 
@@ -152,16 +151,18 @@ class Fence extends Component {
         compositePostStyle: false,
         ironPostStyle: true,
         hidePostCaps: true,
-        noneStyle: !this.state.noneStyle,
-        activeTab: "Post Sleeve"
+        noneStyle: true,
+        activeTab: "Post Sleeve",
+        tabIndex: 1
       });
     } else {
       this.setState({
         ironPostStyle: false,
         compositePostStyle: true,
         hidePostCaps: false,
-        noneStyle: !this.state.noneStyle,
-        activeTab: "Post Sleeve"
+        noneStyle: false,
+        activeTab: "Post Sleeve",
+        tabIndex: 1
       });
     }
   };
@@ -171,13 +172,15 @@ class Fence extends Component {
       this.setState({
         flatStyle: false,
         pyramidStyle: true,
-        activeTab: "Post Cap"
+        activeTab: "Post Cap",
+        tabIndex: 0
       });
     } else {
       this.setState({
         flatStyle: true,
         pyramidStyle: false,
-        activeTab: "Post Cap"
+        activeTab: "Post Cap",
+        tabIndex: 0
       });
     }
   };
@@ -188,7 +191,8 @@ class Fence extends Component {
       twoStyle: false,
       crownStyle: false,
       noneStyle: false,
-      activeTab: "Cap Rail"
+      activeTab: "Cap Rail",
+      tabIndex: 4
     });
   };
   toggleStyleCaps2 = () => {
@@ -197,7 +201,8 @@ class Fence extends Component {
       twoStyle: true,
       crownStyle: false,
       noneStyle: false,
-      activeTab: "Cap Rail"
+      activeTab: "Cap Rail",
+      tabIndex: 4
     });
   };
   toggleStyleCaps3 = () => {
@@ -206,7 +211,8 @@ class Fence extends Component {
       twoStyle: false,
       crownStyle: true,
       noneStyle: false,
-      activeTab: "Cap Rail"
+      activeTab: "Rails",
+      tabIndex: 2
     });
   };
   toggleStyleCaps4 = () => {
@@ -215,7 +221,8 @@ class Fence extends Component {
       twoStyle: false,
       crownStyle: false,
       noneStyle: true,
-      activeTab: "Cap Rail"
+      activeTab: "Cap Rail",
+      tabIndex: 4
     });
   };
 
@@ -248,6 +255,7 @@ class Fence extends Component {
       this.state.ironPostStyle === true ? clicked : notClicked;
 
     const { tabs } = this.state;
+    console.log("Active Tab:", this.state.activeTab);
     return (
       <div className="container">
         {/* Main image up top */}
@@ -401,15 +409,6 @@ class Fence extends Component {
                   : "none"
               }
             />
-            <img
-              src={this.state.tPost}
-              alt="Tall Post charcoal"
-              className={
-                this.state.tallStyle && !this.state.hidePostCaps
-                  ? "tall-post"
-                  : "none"
-              }
-            />
 
             <img
               src={this.state.ironStyle ? this.state.ironRail : this.state.rail}
@@ -478,7 +477,10 @@ class Fence extends Component {
 
         {/*Filter before mapping for crown rail AND iron post style otherwise map through all tabs*/}
 
-        <Tabs>
+        <Tabs
+          selectedIndex={this.state.tabIndex}
+          onSelect={tabIndex => this.setState({ tabIndex })}
+        >
           <TabList
             style={{
               fontSize: "20px",
@@ -487,9 +489,77 @@ class Fence extends Component {
               marginTop: "230px"
             }}
           >
-            {this.state.crownStyle || this.state.noneStyle
+            {(this.state.crownStyle || this.state.noneStyle) &&
+            !this.state.ironStyle
               ? tabs
                   .filter(tab => tab.name !== "Cap Rail")
+                  .map((tab, idx) => {
+                    return (
+                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                        {tab.name}
+                      </Tab>
+                    );
+                  })
+              : (this.state.crownStyle || this.state.noneStyle) &&
+                this.state.ironStyle &&
+                !this.state.ironPostStyle
+              ? tabs
+                  .filter(
+                    tab =>
+                      tab.name !== "Rails" &&
+                      tab.name !== "Cap Rail" &&
+                      tab.name !== "Baluster"
+                  )
+                  .map((tab, idx) => {
+                    return (
+                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                        {tab.name}
+                      </Tab>
+                    );
+                  })
+              : this.state.ironStyle && this.state.compositePostStyle
+              ? tabs
+                  .filter(
+                    tab => tab.name !== "Rails" && tab.name !== "Baluster"
+                  )
+                  .map((tab, idx) => {
+                    return (
+                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                        {tab.name}
+                      </Tab>
+                    );
+                  })
+              : (this.state.crownStyle || this.state.noneStyle) &&
+                this.state.ironStyle &&
+                this.state.ironPostStyle &&
+                this.state.noneStyle
+              ? tabs
+                  .filter(
+                    tab =>
+                      tab.name !== "Rails" &&
+                      tab.name !== "Cap Rail" &&
+                      tab.name !== "Baluster" &&
+                      tab.name !== "Post Cap" &&
+                      tab.name !== "Post Sleeve"
+                  )
+                  .map((tab, idx) => {
+                    return (
+                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                        {tab.name}
+                      </Tab>
+                    );
+                  })
+              : (this.state.crownStyle || this.state.twoStyle) &&
+                this.state.ironStyle &&
+                this.state.ironPostStyle
+              ? tabs
+                  .filter(
+                    tab =>
+                      tab.name !== "Rails" &&
+                      tab.name !== "Baluster" &&
+                      tab.name !== "Post Cap" &&
+                      tab.name !== "Post Sleeve"
+                  )
                   .map((tab, idx) => {
                     return (
                       <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
@@ -507,9 +577,9 @@ class Fence extends Component {
           </TabList>
 
           {/*changeItem parameter should be the tab that's selected.*/}
-          {tabs.map(tab => {
+          {tabs.map((tab, idx) => {
             return (
-              <TabPanel>
+              <TabPanel key={idx}>
                 <TabColors
                   handleTabColors={this.handleTabColors}
                   activeTab={this.state.activeTab}

@@ -31,6 +31,7 @@ import BorderFoggywharf from "./Images/Border_Foggywharf.png";
 import BorderGravelpath from "./Images/Border_Gravelpath.png";
 import BorderHavanagold from "./Images/Border_Havanagold.png";
 import BorderIslandmist from "./Images/Border_Islandmist.png";
+import BorderLavarock from "./Images/Border_Lavarock.png";
 import BorderMaderia from "./Images/Border_Maderia.png";
 import BorderPebblegray from "./Images/Border_Pebblegray.png";
 import BorderRockyharbor from "./Images/Border_Rockyharbor.png";
@@ -179,7 +180,6 @@ import "./Fence.css";
 export const tabs = [
   { name: "Post Cap" },
   { name: "Post Sleeve" },
-  { name: "Post Skirt" },
   { name: "Rails" },
   { name: "Baluster" },
   { name: "Cap Rail" },
@@ -309,6 +309,7 @@ export const imgData = {
     BorderGravelpath: BorderGravelpath,
     BorderHavanagold: BorderHavanagold,
     BorderIslandmist: BorderIslandmist,
+    BorderLavarock: BorderLavarock,
     BorderMaderia: BorderMaderia,
     BorderPebblegray: BorderPebblegray,
     BorderRockyharbor: BorderRockyharbor,

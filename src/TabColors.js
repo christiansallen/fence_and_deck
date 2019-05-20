@@ -34,7 +34,7 @@ class TabColors extends Component {
     super(props);
     this.state = {
       TabColorsData,
-      clicked: false
+      active: false
     };
   }
 
@@ -394,6 +394,10 @@ class TabColors extends Component {
     console.log("%c Results", "color:blue");
     console.log({ result });
     return result;
+  };
+
+  active = idx => {
+    this.setState({ active: idx });
   };
 
   render() {
