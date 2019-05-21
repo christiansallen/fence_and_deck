@@ -592,7 +592,11 @@ class Fence extends Component {
                   )
                   .map((tab, idx) => {
                     return (
-                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                      <Tab
+                        onClick={() => this.changeItem(tab.name)}
+                        key={idx}
+                        style={tab.name === "Summary" ? summaryTab : null}
+                      >
                         {tab.name}
                       </Tab>
                     );
@@ -604,7 +608,11 @@ class Fence extends Component {
                   )
                   .map((tab, idx) => {
                     return (
-                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                      <Tab
+                        onClick={() => this.changeItem(tab.name)}
+                        key={idx}
+                        style={tab.name === "Summary" ? summaryTab : null}
+                      >
                         {tab.name}
                       </Tab>
                     );
@@ -624,7 +632,11 @@ class Fence extends Component {
                   )
                   .map((tab, idx) => {
                     return (
-                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                      <Tab
+                        onClick={() => this.changeItem(tab.name)}
+                        key={idx}
+                        style={tab.name === "Summary" ? summaryTab : null}
+                      >
                         {tab.name}
                       </Tab>
                     );
@@ -642,14 +654,22 @@ class Fence extends Component {
                   )
                   .map((tab, idx) => {
                     return (
-                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                      <Tab
+                        onClick={() => this.changeItem(tab.name)}
+                        key={idx}
+                        style={tab.name === "Summary" ? summaryTab : null}
+                      >
                         {tab.name}
                       </Tab>
                     );
                   })
               : tabs.map((tab, idx) => {
                   return (
-                    <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                    <Tab
+                      onClick={() => this.changeItem(tab.name)}
+                      key={idx}
+                      style={tab.name === "Summary" ? summaryTab : null}
+                    >
                       {tab.name}
                     </Tab>
                   );
