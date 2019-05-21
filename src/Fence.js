@@ -699,6 +699,7 @@ class Fence extends Component {
                   fasciaColor={this.state.fasciaColor}
                   borderColor={this.state.borderColor}
                   tabColor={this.tabColor}
+                  noneStyle={this.state.noneStyle}
                 />
               </TabPanel>
             );

@@ -766,7 +766,10 @@ class TabColors extends Component {
       fasciaColor,
       borderColor,
       tabColor,
-      crownStyle
+      crownStyle,
+      ironStyle,
+      ironPostStyle,
+      noneStyle
     } = this.props;
 
     return (
@@ -798,6 +801,104 @@ class TabColors extends Component {
               .map((item, idx) => {
                 return (
                   <p key={idx} className="legend-item2">
+                    {item.name === "Post Cap"
+                      ? postCapColor
+                      : item.name === "Post Sleeve"
+                      ? postSleeveColor
+                      : item.name === "Rails"
+                      ? railsColor
+                      : item.name === "Baluster"
+                      ? balusterColor
+                      : item.name === "Cap Rail"
+                      ? capRailColor
+                      : item.name === "Deck"
+                      ? deckColor
+                      : item.name === "Fascia"
+                      ? fasciaColor
+                      : borderColor}
+                  </p>
+                );
+              })}
+          </div>
+        ) : ironStyle && ironPostStyle && noneStyle ? (
+          <div className="legend">
+            {tabs
+              .filter(
+                item =>
+                  item.name !== "Summary" &&
+                  item.name !== "Cap Rail" &&
+                  item.name !== "Rails" &&
+                  item.name !== "Baluster" &&
+                  item.name !== "Post Sleeve" &&
+                  item.name !== "Post Cap"
+              )
+              .map((item, idx) => {
+                return (
+                  <p key={idx} className="legend-item3">
+                    {item.name === "Post Cap"
+                      ? postCapColor
+                      : item.name === "Post Sleeve"
+                      ? postSleeveColor
+                      : item.name === "Rails"
+                      ? railsColor
+                      : item.name === "Baluster"
+                      ? balusterColor
+                      : item.name === "Cap Rail"
+                      ? capRailColor
+                      : item.name === "Deck"
+                      ? deckColor
+                      : item.name === "Fascia"
+                      ? fasciaColor
+                      : borderColor}
+                  </p>
+                );
+              })}
+          </div>
+        ) : ironStyle && !ironPostStyle ? (
+          <div className="legend">
+            {tabs
+              .filter(
+                item =>
+                  item.name !== "Summary" &&
+                  item.name !== "Rails" &&
+                  item.name !== "Baluster"
+              )
+              .map((item, idx) => {
+                return (
+                  <p key={idx} className="legend-item4">
+                    {item.name === "Post Cap"
+                      ? postCapColor
+                      : item.name === "Post Sleeve"
+                      ? postSleeveColor
+                      : item.name === "Rails"
+                      ? railsColor
+                      : item.name === "Baluster"
+                      ? balusterColor
+                      : item.name === "Cap Rail"
+                      ? capRailColor
+                      : item.name === "Deck"
+                      ? deckColor
+                      : item.name === "Fascia"
+                      ? fasciaColor
+                      : borderColor}
+                  </p>
+                );
+              })}
+          </div>
+        ) : ironStyle && ironPostStyle && !noneStyle ? (
+          <div className="legend">
+            {tabs
+              .filter(
+                item =>
+                  item.name !== "Summary" &&
+                  item.name !== "Rails" &&
+                  item.name !== "Baluster" &&
+                  item.name !== "Post Sleeve" &&
+                  item.name !== "Post Cap"
+              )
+              .map((item, idx) => {
+                return (
+                  <p key={idx} className="legend-item5">
                     {item.name === "Post Cap"
                       ? postCapColor
                       : item.name === "Post Sleeve"
@@ -850,44 +951,3 @@ class TabColors extends Component {
 }
 
 export default TabColors;
-
-/*
-renderedTabs = () => {
-    if (this.state.crownStyle) {
-      tabs
-        .filter(tab => tab.name !== "Cap Rail")
-        .map((tab, idx) => {
-          return (
-            <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
-              {tab.name}
-            </Tab>
-          );
-        });
-    } else if (this.state.ironPostStyle) {
-      tabs
-        .filter(
-          tab =>
-            tab.name !== "Post Cap" ||
-            tab.name !== "Post Sleeve" ||
-            tab.name !== "Post Skirt" ||
-            tab.name !== "Rails" ||
-            tab.name !== "Baluster"
-        )
-        .map((tab, idx) => {
-          return (
-            <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
-              {tab.name}
-            </Tab>
-          );
-        });
-    } else {
-      tabs.map((tab, idx) => {
-        return (
-          <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
-            {tab.name}
-          </Tab>
-        );
-      });
-    }
-  };
-  */
