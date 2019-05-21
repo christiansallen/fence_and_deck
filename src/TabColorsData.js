@@ -153,7 +153,9 @@ export const DeckColorsData = [
     name: "Toasted Sand",
     img: DeckToastedsandColor,
     alt: "ToastedSand"
-  }
+  },
+
+  { name: "White", img: WhiteColor, alt: "White" }
 ];
 
 export const TabColorsData = [
@@ -268,7 +270,5 @@ export const TabColorsData = [
     img: BronzeColor,
     alt: "Bronze"
   },
-  { name: "Charcoal", img: CharcoalColor, alt: "Charcoal" },
-
-  { name: "White", img: WhiteColor, alt: "White" }
+  { name: "Charcoal", img: CharcoalColor, alt: "Charcoal" }
 ];

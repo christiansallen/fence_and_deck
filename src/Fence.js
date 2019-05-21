@@ -17,39 +17,20 @@ class Fence extends Component {
       one: imgData["Cap Rail"]["OneHavanagold"],
       two: imgData["Cap Rail"]["TwoHavanagold"],
       crown: imgData["Cap Rail"]["CrownHavanagold"],
-      sPost: imgData["Post Sleeve"]["SpostCharcoal"],
+      sPost: imgData["Post Sleeve"]["SpostWhite"],
       ironPosts: IronPosts,
-      trex: imgData["Baluster"]["TrexCharcoal"],
-      aluminum: imgData["Baluster"]["AluminumCharcoal"],
+      trex: imgData["Baluster"]["TrexWhite"],
+      aluminum: imgData["Baluster"]["AluminumWhite"],
       iron: AluminumCharcoal,
-      flat: imgData["Post Cap"]["FlatCharcoal"],
-      pyramid: imgData["Post Cap"]["PyramidCharcoal"],
-      skirt: imgData["Post Skirt"]["SkirtCharcoal"],
-      rail: imgData["Rails"]["RailsCharcoal"],
+      flat: imgData["Post Cap"]["FlatWhite"],
+      pyramid: imgData["Post Cap"]["PyramidWhite"],
+      skirt: imgData["Post Skirt"]["SkirtWhite"],
+      rail: imgData["Rails"]["RailsWhite"],
       ironRail: IronGuardRail,
       border: imgData["Border"]["BorderFoggywharf"],
       deck: imgData["Deck"]["DeckFoggywharf"],
       fascia: imgData["Fascia"]["FasciaFoggywharf"],
 
-      oneColor: "chosen color",
-      twoColor: "chosen color",
-      crownColor: "chosen color",
-      sPostColor: "chosen color",
-      ironPostsColor: "chosen color",
-      trexColor: "chosen color",
-      aluminumColor: "chosen color",
-      ironColor: "chosen color",
-      flatColor: "chosen color",
-      pyramidColor: "chosen color",
-      skirtColor: "chosen color",
-      railColor: "chosen color",
-      ironRailColor: "chosen color",
-      borderColor: "chosen color",
-      deckColor: "chosen color",
-      fasciaColor: "chosen color",
-
-      tabs,
-      activeTab: "Post Cap",
       oneStyle: false,
       twoStyle: false,
       crownStyle: true,
@@ -65,7 +46,19 @@ class Fence extends Component {
       ironPostStyle: false,
       hidePostCaps: false,
       noneStyle: false,
-      tabIndex: 0
+      tabIndex: 0,
+
+      tabs,
+      activeTab: "Post Cap",
+
+      postCapColor: "White",
+      postSleeveColor: "White",
+      capRailColor: "Havana Gold",
+      railsColor: "White",
+      balusterColor: "White",
+      deckColor: "(Enhance) Foggy Wharf",
+      borderColor: "(Enhance) Foggy Wharf",
+      fasciaColor: "(Enhance) Foggy Wharf"
     };
   }
 
@@ -76,8 +69,37 @@ class Fence extends Component {
     });
   };
 
-  tabColor = (name, activeTab) => {
-    console.log("hello");
+  tabColor = (active, color) => {
+    console.log("activeTab: ", active);
+    console.log("color: ", color);
+
+    // eslint-disable-next-line default-case
+    switch (active) {
+      case "Post Cap":
+        this.setState({ postCapColor: color });
+        break;
+      case "Post Sleeve":
+        this.setState({ postSleeveColor: color });
+        break;
+      case "Cap Rail":
+        this.setState({ capRailColor: color });
+        break;
+      case "Rails":
+        this.setState({ railsColor: color });
+        break;
+      case "Baluster":
+        this.setState({ balusterColor: color });
+        break;
+      case "Deck":
+        this.setState({ deckColor: color });
+        break;
+      case "Border":
+        this.setState({ borderColor: color });
+        break;
+      case "Fascia":
+        this.setState({ fasciaColor: color });
+        break;
+    }
   };
 
   handleTabColors = name => {
@@ -283,6 +305,11 @@ class Fence extends Component {
     const notClicked = {
       backgroundColor: "white",
       color: "black"
+    };
+
+    const summaryTab = {
+      backgroundColor: "green",
+      color: "white"
     };
 
     const clickedBtn1 = this.state.oneStyle ? clicked : notClicked;
@@ -543,8 +570,13 @@ class Fence extends Component {
                   .filter(tab => tab.name !== "Cap Rail")
                   .map((tab, idx) => {
                     return (
-                      <Tab onClick={() => this.changeItem(tab.name)} key={idx}>
+                      <Tab
+                        onClick={() => this.changeItem(tab.name)}
+                        key={idx}
+                        style={tab.name === "Summary" ? summaryTab : null}
+                      >
                         {tab.name}
+                        {console.log(tab)}
                       </Tab>
                     );
                   })
@@ -638,22 +670,15 @@ class Fence extends Component {
                   ironStyle={this.state.ironStyle}
                   ironPostStyle={this.state.ironPostStyle}
                   compositeStyle={this.state.compositeStyle}
-                  oneColor={this.state.one}
-                  twoColor={this.state.two}
-                  crownColor={this.state.crown}
-                  sPostColor={this.state.sPost}
-                  ironPostsColor={this.state.ironPosts}
-                  trexColor={this.state.trex}
-                  aluminumColor={this.state.aluminum}
-                  ironColor={this.state.iron}
-                  flatColor={this.state.flat}
-                  pyramidColor={this.state.pyramid}
-                  skirtColor={this.state.skirt}
-                  railColor={this.state.rail}
-                  ironRailColor={this.state.ironRail}
-                  borderColor={this.state.border}
-                  deckColor={this.state.deck}
-                  fasciaColor={this.state.fascia}
+                  postCapColor={this.state.postCapColor}
+                  capRailColor={this.state.capRailColor}
+                  postSleeveColor={this.state.postSleeveColor}
+                  railsColor={this.state.railsColor}
+                  balusterColor={this.state.balusterColor}
+                  deckColor={this.state.deckColor}
+                  fasciaColor={this.state.fasciaColor}
+                  borderColor={this.state.borderColor}
+                  tabColor={this.tabColor}
                 />
               </TabPanel>
             );

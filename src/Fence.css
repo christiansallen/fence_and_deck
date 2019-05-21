@@ -18,16 +18,19 @@
 }
 
 .legend {
-  font-size: 1.3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
   display: flex;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  justify-content: space-around;
 }
 
 .legend-item {
-  width: 400px;
-  margin: 0px;
+  margin: 0px 9.5px;
+  width: 104px;
+}
+
+.legend-item2 {
+  margin: 0px 10px;
+  width: 119px;
 }
 
 .block {

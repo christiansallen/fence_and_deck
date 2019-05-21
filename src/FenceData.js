@@ -187,7 +187,7 @@ export const tabs = [
   { name: "Deck" },
   { name: "Border" },
   { name: "Fascia" },
-  { name: "Legend" }
+  { name: "Summary" }
 ];
 
 export const imgData = {

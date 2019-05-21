@@ -56,7 +56,7 @@ class TabColors extends Component {
       ironPostStyle,
       compositeStyle
     } = this.props;
-    if (activeTab !== "Legend") {
+    if (activeTab !== "Summary") {
       if (
         activeTab !== "Deck" &&
         activeTab !== "Border" &&
@@ -757,28 +757,21 @@ class TabColors extends Component {
     const {
       handleTabColors,
       activeTab,
-      oneColor,
-      twoColor,
-      crownColor,
-      sPostColor,
-      ironPostsColor,
-      trexColor,
-      aluminumColor,
-      ironColor,
-      flatColor,
-      pyramidColor,
-      skirtColor,
-      railColor,
-      ironRailColor,
-      borderColor,
+      postCapColor,
+      capRailColor,
+      postSleeveColor,
+      railsColor,
+      balusterColor,
       deckColor,
       fasciaColor,
+      borderColor,
+      tabColor,
       crownStyle
     } = this.props;
 
     return (
       <div className="tab-container">
-        {activeTab !== "Legend" ? (
+        {activeTab !== "Summary" ? (
           this.componentName(activeTab).map((item, idx) => {
             return (
               <div
@@ -786,19 +779,66 @@ class TabColors extends Component {
                 key={idx}
                 onClick={() => handleTabColors(item.alt)}
               >
-                <img src={item.img} alt={item.alt} className="color" />
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  className="color"
+                  onClick={() => tabColor(activeTab, item.name)}
+                />
                 <p className="name">{item.name}</p>
               </div>
             );
           })
+        ) : crownStyle ? (
+          <div className="legend">
+            {tabs
+              .filter(
+                item => item.name !== "Summary" && item.name !== "Cap Rail"
+              )
+              .map((item, idx) => {
+                return (
+                  <p key={idx} className="legend-item2">
+                    {item.name === "Post Cap"
+                      ? postCapColor
+                      : item.name === "Post Sleeve"
+                      ? postSleeveColor
+                      : item.name === "Rails"
+                      ? railsColor
+                      : item.name === "Baluster"
+                      ? balusterColor
+                      : item.name === "Cap Rail"
+                      ? capRailColor
+                      : item.name === "Deck"
+                      ? deckColor
+                      : item.name === "Fascia"
+                      ? fasciaColor
+                      : borderColor}
+                  </p>
+                );
+              })}
+          </div>
         ) : (
           <div className="legend">
             {tabs
-              .filter(item => item.name !== "Legend")
+              .filter(item => item.name !== "Summary")
               .map((item, idx) => {
                 return (
                   <p key={idx} className="legend-item">
-                    {item.name}: {activeTab}
+                    {item.name === "Post Cap"
+                      ? postCapColor
+                      : item.name === "Post Sleeve"
+                      ? postSleeveColor
+                      : item.name === "Rails"
+                      ? railsColor
+                      : item.name === "Baluster"
+                      ? balusterColor
+                      : item.name === "Cap Rail"
+                      ? capRailColor
+                      : item.name === "Deck"
+                      ? deckColor
+                      : item.name === "Fascia"
+                      ? fasciaColor
+                      : borderColor}
                   </p>
                 );
               })}
