@@ -1,5 +1,4 @@
-//Need to add BronzeColor
-
+import BronzeColor from "./Images/Color_Bronze.png";
 import BeachduneColor from "./Images/Color_Beachdune.png";
 import ClamshellColor from "./Images/Color_Clamshell.png";
 import CoastalbluffColor from "./Images/Color_Coastalbluff.png";
@@ -131,6 +130,11 @@ export const TabColorsData = [
     name: "Toasted Sand",
     img: ToastedsandColor,
     alt: "ToastedSand"
+  },
+  {
+    name: "Bronze",
+    img: BronzeColor,
+    alt: "Bronze"
   },
   { name: "Charcoal", img: CharcoalColor, alt: "Charcoal" },
 

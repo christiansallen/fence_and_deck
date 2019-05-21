@@ -76,6 +76,10 @@ class Fence extends Component {
     });
   };
 
+  tabColor = (name, activeTab) => {
+    console.log("hello");
+  };
+
   handleTabColors = name => {
     const { activeTab, aluminumStyle } = this.state;
     if (activeTab === "Post Sleeve") {
