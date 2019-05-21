@@ -1,4 +1,4 @@
-import BronzeColor from "./Images/Color_Bronze.png";
+import BronzeColor from "./Images/Color_ Bronze.png";
 import BeachduneColor from "./Images/Color_Beachdune.png";
 import ClamshellColor from "./Images/Color_Clamshell.png";
 import CoastalbluffColor from "./Images/Color_Coastalbluff.png";
@@ -23,6 +23,138 @@ import VintagelanternColor from "./Images/Color_Vintagelantern.png";
 import WhiteColor from "./Images/Color_White.png";
 import WinchestergrayColor from "./Images/Color_Winchestergray.png";
 import WoodlandbrownColor from "./Images/Color_Woodlandbrown.png";
+
+import DeckBeachduneColor from "./Images/1Color_Beachdune.png";
+import DeckClamshellColor from "./Images/1Color_Clamshell.png";
+import DeckCoastalbluffColor from "./Images/1Color_Coastalbluff.png";
+import DeckFoggywharfColor from "./Images/1Color_Foggywharf.png";
+import DeckRockyharborColor from "./Images/1Color_Rockyharbor.png";
+import DeckSunsetcoveColor from "./Images/1Color_Sunsetcove.png";
+import DeckToastedsandColor from "./Images/1Color_Toastedsand.png";
+import DeckFirepitColor from "./Images/1Color_Firepit.png";
+import DeckGravelpathColor from "./Images/1Color_Gravelpath.png";
+import DeckHavanagoldColor from "./Images/1Color_Havanagold.png";
+import DeckIslandmistColor from "./Images/1Color_Islandmist.png";
+import DeckLavarockColor from "./Images/1Color_Lavarock.png";
+import DeckMaderiaColor from "./Images/1Color_Maderia.png";
+import DeckPebblegreyColor from "./Images/1Color_Pebblegrey.png";
+import DeckRopeswingColor from "./Images/1Color_Ropeswing.png";
+import DeckSaddleColor from "./Images/1Color_Saddle.png";
+import DeckSpicedrumColor from "./Images/1Color_Spicedrum.png";
+import DeckTikitorchColor from "./Images/1Color_Tikitorch.png";
+import DeckTreehouseColor from "./Images/1Color_Treehouse.png";
+import DeckVintagelanternColor from "./Images/1Color_Vintagelantern.png";
+import DeckWinchestergrayColor from "./Images/1Color_Winchestergray.png";
+import DeckWoodlandbrownColor from "./Images/1Color_Woodlandbrown.png";
+
+export const DeckColorsData = [
+  {
+    name: "(Enhance) Beach Dune",
+    img: DeckBeachduneColor,
+    alt: "Beachdune"
+  },
+  {
+    name: "(Enhance) Clam Shell",
+    img: DeckClamshellColor,
+    alt: "Clamshell"
+  },
+  {
+    name: "(Enhance) Coastal Bluff",
+    img: DeckCoastalbluffColor,
+    alt: "Coastalbluff"
+  },
+  {
+    name: "(Enhance) Foggy Wharf",
+    img: DeckFoggywharfColor,
+    alt: "Foggywharf"
+  },
+  {
+    name: "(Enhance) Rocky Harbor",
+    img: DeckRockyharborColor,
+    alt: "Rockyharbor"
+  },
+  {
+    name: "(Enhance) Sunset Cove",
+    img: DeckSunsetcoveColor,
+    alt: "Sunsetcove"
+  },
+  { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+
+  { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
+  {
+    name: "(Select) Pebble Grey",
+    img: DeckPebblegreyColor,
+    alt: "Pebblegrey"
+  },
+  {
+    name: "(Select) Winchester Grey",
+    img: DeckWinchestergrayColor,
+    alt: "Winchestergray"
+  },
+  {
+    name: "(Select) Woodland Brown",
+    img: DeckWoodlandbrownColor,
+    alt: "Woodlandbrown"
+  },
+
+  {
+    name: "(Transcend) Fire Pit",
+    img: DeckFirepitColor,
+    alt: "Firepit"
+  },
+  {
+    name: "(Transcend) Gravel Path",
+    img: DeckGravelpathColor,
+    alt: "Gravelpath"
+  },
+  {
+    name: "(Transcend) Havana Gold",
+    img: DeckHavanagoldColor,
+    alt: "Havanagold"
+  },
+  {
+    name: "(Transcend) Island Mist",
+    img: DeckIslandmistColor,
+    alt: "Islandmist"
+  },
+  {
+    name: "(Transcend) Lava Rock",
+    img: DeckLavarockColor,
+    alt: "Lavarock"
+  },
+
+  {
+    name: "(Transcend) Rope Swing",
+    img: DeckRopeswingColor,
+    alt: "Ropeswing"
+  },
+  {
+    name: "(Transcend) Spiced Rum",
+    img: DeckSpicedrumColor,
+    alt: "Spicedrum"
+  },
+  {
+    name: "(Transcend) Tiki Torch",
+    img: DeckTikitorchColor,
+    alt: "Tikitorch"
+  },
+  {
+    name: "(Transcend) Tree House",
+    img: DeckTreehouseColor,
+    alt: "Treehouse"
+  },
+  {
+    name: "(Transcend) Vintage Lantern",
+    img: DeckVintagelanternColor,
+    alt: "Vintagelantern"
+  },
+
+  {
+    name: "Toasted Sand",
+    img: DeckToastedsandColor,
+    alt: "ToastedSand"
+  }
+];
 
 export const TabColorsData = [
   {

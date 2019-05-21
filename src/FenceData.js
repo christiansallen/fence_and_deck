@@ -105,6 +105,7 @@ import FasciaWinchestergray from "./Images/Fascia_Winchestergray.png";
 import FasciaWoodlandbrown from "./Images/Fascia_Woodlandbrown.png";
 import FasciaIslandmist from "./Images/Fascia_Islandmist.png";
 import FasciaMaderia from "./Images/Fascia_Maderia.png";
+import FasciaWhite from "./Images/Fascia_White.png";
 
 //Flats
 import FlatCharcoal from "./Images/Flat_Charcoal.png";
@@ -347,6 +348,7 @@ export const imgData = {
     FasciaWinchestergray: FasciaWinchestergray,
     FasciaWoodlandbrown: FasciaWoodlandbrown,
     FasciaIslandmist: FasciaIslandmist,
-    FasciaMaderia: FasciaMaderia
+    FasciaMaderia: FasciaMaderia,
+    FasciaWhite: FasciaWhite
   }
 };

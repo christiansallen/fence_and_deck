@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TabColorsData } from "./TabColorsData";
+import { TabColorsData, DeckColorsData } from "./TabColorsData";
 import { imgData } from "./FenceData.js";
 import { tabs } from "./FenceData.js";
 import BeachduneColor from "./Images/Color_Beachdune.png";
@@ -23,6 +23,7 @@ import SpicedrumColor from "./Images/Color_Spicedrum.png";
 import TikitorchColor from "./Images/Color_Tikitorch.png";
 import TreehouseColor from "./Images/Color_Treehouse.png";
 import VintagelanternColor from "./Images/Color_Vintagelantern.png";
+import BronzeColor from "./Images/Color_ Bronze.png";
 import WhiteColor from "./Images/Color_White.png";
 import WinchestergrayColor from "./Images/Color_Winchestergray.png";
 import WoodlandbrownColor from "./Images/Color_Woodlandbrown.png";
@@ -56,342 +57,693 @@ class TabColors extends Component {
       compositeStyle
     } = this.props;
     if (activeTab !== "Legend") {
-      let test = Object.keys(imgData[activeTab]);
-      let newFenceOptions = test.map(x => x.split(/(?=[A-Z])/)).map(x => x[1]);
-      let result = TabColorsData.filter(x => newFenceOptions.includes(x.alt));
-
-      if (activeTab === "Baluster" && aluminum) {
-        return [
-          {
-            img: CharcoalColor,
-            name: "Charcoal",
-            alt: "Charcoal"
-          },
-          {
-            img: WhiteColor,
-            name: "White",
-            alt: "White"
-          }
-        ];
-      }
-
-      if (activeTab === "Cap Rail" && crownStyle) {
-        return [
-          {
-            img: FirepitColor,
-            name: "Fire Pit",
-            alt: "Firepit"
-          },
-          {
-            img: GravelpathColor,
-            name: "Gravel Path",
-            alt: "Gravelpath"
-          },
-          {
-            img: HavanagoldColor,
-            name: "Havana Gold",
-            alt: "Havanagold"
-          },
-          {
-            img: IslandmistColor,
-            name: "Island Mist",
-            alt: "Islandmist"
-          },
-          {
-            img: LavarockColor,
-            name: "Lava Rock",
-            alt: "Lavarock"
-          },
-          {
-            img: RopeswingColor,
-            name: "Rope Swing",
-            alt: "Ropeswing"
-          },
-          {
-            img: SpicedrumColor,
-            name: "Spiced Rum",
-            alt: "Spicedrum"
-          },
-          {
-            img: TikitorchColor,
-            name: "Tiki Torch",
-            alt: "Tikitorch"
-          },
-          {
-            img: TreehouseColor,
-            name: "Tree House",
-            alt: "Treehouse"
-          },
-          {
-            img: VintagelanternColor,
-            name: "Vintage Lantern",
-            alt: "Vintagelantern"
-          }
-        ];
-      }
-
-      if (activeTab === "Rails" && !ironStyle) {
-        return [
-          {
-            img: FirepitColor,
-            name: "Fire Pit",
-            alt: "Firepit"
-          },
-          {
-            img: GravelpathColor,
-            name: "Gravel Path",
-            alt: "Gravelpath"
-          },
-          {
-            img: HavanagoldColor,
-            name: "Havana Gold",
-            alt: "Havanagold"
-          },
-          {
-            img: RopeswingColor,
-            name: "Rope Swing",
-            alt: "Ropeswing"
-          },
-          {
-            img: VintagelanternColor,
-            name: "Vintage Lantern",
-            alt: "Vintagelantern"
-          },
-          {
-            img: CharcoalColor,
-            name: "Charcoal",
-            alt: "Charcoal"
-          },
-          {
-            img: WhiteColor,
-            name: "White",
-            alt: "White"
-          }
-        ];
-      }
-
       if (
-        (activeTab === "Post Cap" ||
-          activeTab === "Post Sleeve" ||
-          activeTab === "Post Skirt") &&
-        !ironPostStyle
+        activeTab !== "Deck" &&
+        activeTab !== "Border" &&
+        activeTab !== "Fascia"
       ) {
-        return [
-          {
-            img: FirepitColor,
-            name: "Fire Pit",
-            alt: "Firepit"
-          },
-          {
-            img: GravelpathColor,
-            name: "Gravel Path",
-            alt: "Gravelpath"
-          },
-          {
-            img: HavanagoldColor,
-            name: "Havana Gold",
-            alt: "Havanagold"
-          },
-          {
-            img: RopeswingColor,
-            name: "Rope Swing",
-            alt: "Ropeswing"
-          },
-          {
-            img: VintagelanternColor,
-            name: "Vintage Lantern",
-            alt: "Vintagelantern"
-          },
-          {
-            img: CharcoalColor,
-            name: "Charcoal",
-            alt: "Charcoal"
-          },
-          {
-            img: WhiteColor,
-            name: "White",
-            alt: "White"
-          }
-        ];
+        let test = Object.keys(imgData[activeTab]);
+        let newFenceOptions = test
+          .map(x => x.split(/(?=[A-Z])/))
+          .map(x => x[1]);
+        let result = TabColorsData.filter(x => newFenceOptions.includes(x.alt));
+
+        if (activeTab === "Baluster" && aluminum) {
+          return [
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            },
+            { img: BronzeColor, name: "Bronze", alt: "Bronze" }
+          ];
+        }
+
+        if (activeTab === "Cap Rail" && crownStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: IslandmistColor,
+              name: "Island Mist",
+              alt: "Islandmist"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: SpicedrumColor,
+              name: "Spiced Rum",
+              alt: "Spicedrum"
+            },
+            {
+              img: TikitorchColor,
+              name: "Tiki Torch",
+              alt: "Tikitorch"
+            },
+            {
+              img: TreehouseColor,
+              name: "Tree House",
+              alt: "Treehouse"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            }
+          ];
+        }
+
+        if (activeTab === "Rails" && !ironStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            },
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            }
+          ];
+        }
+
+        if (
+          (activeTab === "Post Cap" ||
+            activeTab === "Post Sleeve" ||
+            activeTab === "Post Skirt") &&
+          !ironPostStyle
+        ) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            },
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            }
+          ];
+        }
+
+        if (activeTab === "Baluster" && compositeStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            }
+          ];
+        }
+
+        if (activeTab === "Cap Rail" && oneStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: IslandmistColor,
+              name: "Island Mist",
+              alt: "Islandmist"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: MaderiaColor,
+              name: "Maderia",
+              alt: "Maderia"
+            },
+            {
+              img: PebblegreyColor,
+              name: "Pebble Grey",
+              alt: "Pebblegrey"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: SaddleColor,
+              name: "Saddle",
+              alt: "Saddle"
+            },
+            {
+              img: SpicedrumColor,
+              name: "Spiced Rum",
+              alt: "Spicedrum"
+            },
+            {
+              img: TikitorchColor,
+              name: "Tiki Torch",
+              alt: "Tikitorch"
+            },
+            {
+              img: TreehouseColor,
+              name: "Tree House",
+              alt: "Treehouse"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            },
+
+            {
+              img: WinchestergrayColor,
+              name: "Winchester Gray",
+              alt: "Winchestergray"
+            },
+            {
+              img: WoodlandbrownColor,
+              name: "Woodland Brown",
+              alt: "Woodlandbrown"
+            }
+          ];
+        }
+
+        if (activeTab === "Cap Rail" && twoStyle) {
+          return [
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: IslandmistColor,
+              name: "Island Mist",
+              alt: "Islandmist"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: SpicedrumColor,
+              name: "Spiced Rum",
+              alt: "Spicedrum"
+            },
+            {
+              img: TikitorchColor,
+              name: "Tiki Torch",
+              alt: "Tikitorch"
+            }
+          ];
+        }
+
+        if ((activeTab === "Baluster" || activeTab === "Rails") && ironStyle) {
+          return [
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            }
+          ];
+        }
+
+        if (
+          (activeTab === "Post Skirt" ||
+            activeTab === "Post Sleeve" ||
+            activeTab === "Post Cap") &&
+          ironPostStyle
+        ) {
+          return [
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            }
+          ];
+        }
+
+        return result;
+      } else {
+        let test = Object.keys(imgData[activeTab]);
+        let newFenceOptions = test
+          .map(x => x.split(/(?=[A-Z])/))
+          .map(x => x[1]);
+        let result = DeckColorsData.filter(x =>
+          newFenceOptions.includes(x.alt)
+        );
+
+        if (activeTab === "Baluster" && aluminum) {
+          return [
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            },
+            { img: BronzeColor, name: "Bronze", alt: "Bronze" }
+          ];
+        }
+
+        if (activeTab === "Cap Rail" && crownStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: IslandmistColor,
+              name: "Island Mist",
+              alt: "Islandmist"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: SpicedrumColor,
+              name: "Spiced Rum",
+              alt: "Spicedrum"
+            },
+            {
+              img: TikitorchColor,
+              name: "Tiki Torch",
+              alt: "Tikitorch"
+            },
+            {
+              img: TreehouseColor,
+              name: "Tree House",
+              alt: "Treehouse"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            }
+          ];
+        }
+
+        if (activeTab === "Rails" && !ironStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            },
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            }
+          ];
+        }
+
+        if (
+          (activeTab === "Post Cap" ||
+            activeTab === "Post Sleeve" ||
+            activeTab === "Post Skirt") &&
+          !ironPostStyle
+        ) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            },
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            }
+          ];
+        }
+
+        if (activeTab === "Baluster" && compositeStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            },
+            {
+              img: WhiteColor,
+              name: "White",
+              alt: "White"
+            }
+          ];
+        }
+
+        if (activeTab === "Cap Rail" && oneStyle) {
+          return [
+            {
+              img: FirepitColor,
+              name: "Fire Pit",
+              alt: "Firepit"
+            },
+            {
+              img: GravelpathColor,
+              name: "Gravel Path",
+              alt: "Gravelpath"
+            },
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: IslandmistColor,
+              name: "Island Mist",
+              alt: "Islandmist"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: MaderiaColor,
+              name: "Maderia",
+              alt: "Maderia"
+            },
+            {
+              img: PebblegreyColor,
+              name: "Pebble Grey",
+              alt: "Pebblegrey"
+            },
+            {
+              img: RopeswingColor,
+              name: "Rope Swing",
+              alt: "Ropeswing"
+            },
+            {
+              img: SaddleColor,
+              name: "Saddle",
+              alt: "Saddle"
+            },
+            {
+              img: SpicedrumColor,
+              name: "Spiced Rum",
+              alt: "Spicedrum"
+            },
+            {
+              img: TikitorchColor,
+              name: "Tiki Torch",
+              alt: "Tikitorch"
+            },
+            {
+              img: TreehouseColor,
+              name: "Tree House",
+              alt: "Treehouse"
+            },
+            {
+              img: VintagelanternColor,
+              name: "Vintage Lantern",
+              alt: "Vintagelantern"
+            },
+
+            {
+              img: WinchestergrayColor,
+              name: "Winchester Gray",
+              alt: "Winchestergray"
+            },
+            {
+              img: WoodlandbrownColor,
+              name: "Woodland Brown",
+              alt: "Woodlandbrown"
+            }
+          ];
+        }
+
+        if (activeTab === "Cap Rail" && twoStyle) {
+          return [
+            {
+              img: HavanagoldColor,
+              name: "Havana Gold",
+              alt: "Havanagold"
+            },
+            {
+              img: IslandmistColor,
+              name: "Island Mist",
+              alt: "Islandmist"
+            },
+            {
+              img: LavarockColor,
+              name: "Lava Rock",
+              alt: "Lavarock"
+            },
+            {
+              img: SpicedrumColor,
+              name: "Spiced Rum",
+              alt: "Spicedrum"
+            },
+            {
+              img: TikitorchColor,
+              name: "Tiki Torch",
+              alt: "Tikitorch"
+            }
+          ];
+        }
+
+        if ((activeTab === "Baluster" || activeTab === "Rails") && ironStyle) {
+          return [
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            }
+          ];
+        }
+
+        if (
+          (activeTab === "Post Skirt" ||
+            activeTab === "Post Sleeve" ||
+            activeTab === "Post Cap") &&
+          ironPostStyle
+        ) {
+          return [
+            {
+              img: CharcoalColor,
+              name: "Charcoal",
+              alt: "Charcoal"
+            }
+          ];
+        }
+
+        return result;
       }
-
-      if (activeTab === "Baluster" && compositeStyle) {
-        return [
-          {
-            img: FirepitColor,
-            name: "Fire Pit",
-            alt: "Firepit"
-          },
-          {
-            img: GravelpathColor,
-            name: "Gravel Path",
-            alt: "Gravelpath"
-          },
-          {
-            img: HavanagoldColor,
-            name: "Havana Gold",
-            alt: "Havanagold"
-          },
-          {
-            img: RopeswingColor,
-            name: "Rope Swing",
-            alt: "Ropeswing"
-          },
-          {
-            img: LavarockColor,
-            name: "Lava Rock",
-            alt: "Lavarock"
-          },
-          {
-            img: CharcoalColor,
-            name: "Charcoal",
-            alt: "Charcoal"
-          },
-          {
-            img: WhiteColor,
-            name: "White",
-            alt: "White"
-          }
-        ];
-      }
-
-      if (activeTab === "Cap Rail" && oneStyle) {
-        return [
-          {
-            img: FirepitColor,
-            name: "Fire Pit",
-            alt: "Firepit"
-          },
-          {
-            img: GravelpathColor,
-            name: "Gravel Path",
-            alt: "Gravelpath"
-          },
-          {
-            img: HavanagoldColor,
-            name: "Havana Gold",
-            alt: "Havanagold"
-          },
-          {
-            img: IslandmistColor,
-            name: "Island Mist",
-            alt: "Islandmist"
-          },
-          {
-            img: LavarockColor,
-            name: "Lava Rock",
-            alt: "Lavarock"
-          },
-          {
-            img: MaderiaColor,
-            name: "Maderia",
-            alt: "Maderia"
-          },
-          {
-            img: PebblegreyColor,
-            name: "Pebble Grey",
-            alt: "Pebblegrey"
-          },
-          {
-            img: RopeswingColor,
-            name: "Rope Swing",
-            alt: "Ropeswing"
-          },
-          {
-            img: SaddleColor,
-            name: "Saddle",
-            alt: "Saddle"
-          },
-          {
-            img: SpicedrumColor,
-            name: "Spiced Rum",
-            alt: "Spicedrum"
-          },
-          {
-            img: TikitorchColor,
-            name: "Tiki Torch",
-            alt: "Tikitorch"
-          },
-          {
-            img: TreehouseColor,
-            name: "Tree House",
-            alt: "Treehouse"
-          },
-          {
-            img: VintagelanternColor,
-            name: "Vintage Lantern",
-            alt: "Vintagelantern"
-          },
-
-          {
-            img: WinchestergrayColor,
-            name: "Winchester Gray",
-            alt: "Winchestergray"
-          },
-          {
-            img: WoodlandbrownColor,
-            name: "Woodland Brown",
-            alt: "Woodlandbrown"
-          }
-        ];
-      }
-
-      if (activeTab === "Cap Rail" && twoStyle) {
-        return [
-          {
-            img: HavanagoldColor,
-            name: "Havana Gold",
-            alt: "Havanagold"
-          },
-          {
-            img: IslandmistColor,
-            name: "Island Mist",
-            alt: "Islandmist"
-          },
-          {
-            img: LavarockColor,
-            name: "Lava Rock",
-            alt: "Lavarock"
-          },
-          {
-            img: SpicedrumColor,
-            name: "Spiced Rum",
-            alt: "Spicedrum"
-          },
-          {
-            img: TikitorchColor,
-            name: "Tiki Torch",
-            alt: "Tikitorch"
-          }
-        ];
-      }
-
-      if ((activeTab === "Baluster" || activeTab === "Rails") && ironStyle) {
-        return [
-          {
-            img: CharcoalColor,
-            name: "Charcoal",
-            alt: "Charcoal"
-          }
-        ];
-      }
-
-      if (
-        (activeTab === "Post Skirt" ||
-          activeTab === "Post Sleeve" ||
-          activeTab === "Post Cap") &&
-        ironPostStyle
-      ) {
-        return [
-          {
-            img: CharcoalColor,
-            name: "Charcoal",
-            alt: "Charcoal"
-          }
-        ];
-      }
-
-      return result;
     } else {
       console.log("Else:", activeTab);
     }
