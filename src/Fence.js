@@ -17,23 +17,36 @@ class Fence extends Component {
       one: imgData["Cap Rail"]["OneHavanagold"],
       two: imgData["Cap Rail"]["TwoHavanagold"],
       crown: imgData["Cap Rail"]["CrownHavanagold"],
-
-      sPost: imgData["Post Sleeve"]["SpostWhite"],
+      sPost: imgData["Post Sleeve"]["SpostCharcoal"],
       ironPosts: IronPosts,
-      trex: imgData["Baluster"]["TrexWhite"],
-      aluminum: imgData["Baluster"]["AluminumBronze"],
+      trex: imgData["Baluster"]["TrexCharcoal"],
+      aluminum: imgData["Baluster"]["AluminumCharcoal"],
       iron: AluminumCharcoal,
-
-      flat: imgData["Post Cap"]["FlatWhite"],
-      pyramid: imgData["Post Cap"]["PyramidWhite"],
-      skirt: imgData["Post Skirt"]["SkirtWhite"],
-
-      rail: imgData["Rails"]["RailsWhite"],
+      flat: imgData["Post Cap"]["FlatCharcoal"],
+      pyramid: imgData["Post Cap"]["PyramidCharcoal"],
+      skirt: imgData["Post Skirt"]["SkirtCharcoal"],
+      rail: imgData["Rails"]["RailsCharcoal"],
       ironRail: IronGuardRail,
+      border: imgData["Border"]["BorderFoggywharf"],
+      deck: imgData["Deck"]["DeckFoggywharf"],
+      fascia: imgData["Fascia"]["FasciaFoggywharf"],
 
-      border: imgData["Border"]["BorderBeachdune"],
-      deck: imgData["Deck"]["DeckBeachdune"],
-      fascia: imgData["Fascia"]["FasciaBeachdune"],
+      oneColor: "chosen color",
+      twoColor: "chosen color",
+      crownColor: "chosen color",
+      sPostColor: "chosen color",
+      ironPostsColor: "chosen color",
+      trexColor: "chosen color",
+      aluminumColor: "chosen color",
+      ironColor: "chosen color",
+      flatColor: "chosen color",
+      pyramidColor: "chosen color",
+      skirtColor: "chosen color",
+      railColor: "chosen color",
+      ironRailColor: "chosen color",
+      borderColor: "chosen color",
+      deckColor: "chosen color",
+      fasciaColor: "chosen color",
 
       tabs,
       activeTab: "Post Cap",
@@ -505,22 +518,8 @@ class Fence extends Component {
           </div>
         </div>
 
-        {/*<div className="legend">
-          <p>Post Cap: </p>
-          <p>Post Sleeve: </p>
-          <p>Rails: </p>
-          <p>Baluster: </p>
-          <p>Cap Rail: </p>
-          <p>Deck: </p>
-          <p>Border: </p>
-          <p>Fascia: </p>
-        </div>
-            */}
-
         {/*Filter before mapping for crown rail AND iron post style otherwise map through all tabs*/}
-        <h3 style={{ marginTop: "219px", marginLeft: "-791px" }}>
-          2. Pick your color options:
-        </h3>
+        <h3 className="choose-color">2. Pick your color options:</h3>
         <Tabs
           selectedIndex={this.state.tabIndex}
           onSelect={tabIndex => this.setState({ tabIndex })}
@@ -635,6 +634,22 @@ class Fence extends Component {
                   ironStyle={this.state.ironStyle}
                   ironPostStyle={this.state.ironPostStyle}
                   compositeStyle={this.state.compositeStyle}
+                  oneColor={this.state.one}
+                  twoColor={this.state.two}
+                  crownColor={this.state.crown}
+                  sPostColor={this.state.sPost}
+                  ironPostsColor={this.state.ironPosts}
+                  trexColor={this.state.trex}
+                  aluminumColor={this.state.aluminum}
+                  ironColor={this.state.iron}
+                  flatColor={this.state.flat}
+                  pyramidColor={this.state.pyramid}
+                  skirtColor={this.state.skirt}
+                  railColor={this.state.rail}
+                  ironRailColor={this.state.ironRail}
+                  borderColor={this.state.border}
+                  deckColor={this.state.deck}
+                  fasciaColor={this.state.fascia}
                 />
               </TabPanel>
             );
