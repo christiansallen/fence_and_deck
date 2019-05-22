@@ -191,6 +191,7 @@ class Fence extends Component {
         ironPostStyle: true,
         hidePostCaps: true,
         noneStyle: true,
+        twoStyle: false,
         activeTab: "Deck",
         tabIndex: 0
       });
@@ -200,6 +201,8 @@ class Fence extends Component {
         compositePostStyle: true,
         hidePostCaps: false,
         noneStyle: false,
+        oneStyle: true,
+        twoStyle: false,
         activeTab: "Post Sleeve",
         tabIndex: 1
       });
