@@ -342,7 +342,9 @@ class Fence extends Component {
 
         <div className="top-section">
           <div className="logo-container">
-            <img src={Logo} alt="logo" className="logo" />
+            <a href="https://www.fenceanddeckutah.com">
+              <img src={Logo} alt="logo" className="logo" />
+            </a>
           </div>
           <div className="fence-options">
             <h3>1. Pick your railing options:</h3>
