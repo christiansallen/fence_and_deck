@@ -341,6 +341,9 @@ class Fence extends Component {
         {/* Main image up top */}
 
         <div className="top-section">
+          <div className="logo-container">
+            <img src={Logo} alt="logo" className="logo" />
+          </div>
           <div className="fence-options">
             <h3>1. Pick your railing options:</h3>
 
@@ -455,10 +458,6 @@ class Fence extends Component {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="logo-container">
-            <img src={Logo} alt="logo" className="logo" />
           </div>
 
           {/*FENCE IMAGE*/}

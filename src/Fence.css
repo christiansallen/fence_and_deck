@@ -4,7 +4,7 @@
   border-radius: 10px;
   border: 1px solid rgb(107, 107, 107);
   transition: all 0.2s ease-in-out;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .color:hover {
@@ -13,10 +13,10 @@
 }
 
 .logo {
-  max-width: 140px;
-  height: 140px;
-  margin-right: -150px;
-  margin-left: 50px;
+  max-width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  margin-left: -70px;
 }
 
 .legend {
@@ -312,4 +312,10 @@
 .react-tabs__tab-panel--selected {
   display: block;
   z-index: 20;
+}
+
+@media (max-width: 600px) {
+  .top-section {
+    background-color: red;
+  }
 }
