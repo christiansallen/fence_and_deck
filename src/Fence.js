@@ -568,25 +568,120 @@ class Fence extends Component {
         </div>
 
         {/*Filter before mapping for crown rail AND iron post style otherwise map through all tabs*/}
-        <h3 className="choose-color">2. Pick your color options:</h3>
-        <Tabs
-          selectedIndex={this.state.tabIndex}
-          onSelect={tabIndex => this.setState({ tabIndex })}
-          className="tabs-list"
-        >
-          <TabList
-            style={{
-              fontSize: "20px",
-              display: "flex",
-              justifyContent: "space-around",
-              marginTop: "230px"
-            }}
+        <div className="bottom-section">
+          <h3 className="choose-color">2. Pick your color options:</h3>
+          <Tabs
+            selectedIndex={this.state.tabIndex}
+            onSelect={tabIndex => this.setState({ tabIndex })}
+            className="tabs-list"
           >
-            {(this.state.crownStyle || this.state.noneStyle) &&
-            !this.state.ironStyle
-              ? tabs
-                  .filter(tab => tab.name !== "Cap Rail")
-                  .map((tab, idx) => {
+            <TabList
+              style={{
+                fontSize: "20px",
+                display: "flex",
+                justifyContent: "space-around"
+              }}
+            >
+              {(this.state.crownStyle || this.state.noneStyle) &&
+              !this.state.ironStyle
+                ? tabs
+                    .filter(tab => tab.name !== "Cap Rail")
+                    .map((tab, idx) => {
+                      return (
+                        <Tab
+                          onClick={() => this.changeItem(tab.name)}
+                          key={idx}
+                          style={tab.name === "Summary" ? summaryTab : null}
+                        >
+                          {tab.name}
+                          {console.log(tab)}
+                        </Tab>
+                      );
+                    })
+                : (this.state.crownStyle || this.state.noneStyle) &&
+                  this.state.ironStyle &&
+                  !this.state.ironPostStyle
+                ? tabs
+                    .filter(
+                      tab =>
+                        tab.name !== "Rails" &&
+                        tab.name !== "Cap Rail" &&
+                        tab.name !== "Baluster"
+                    )
+                    .map((tab, idx) => {
+                      return (
+                        <Tab
+                          onClick={() => this.changeItem(tab.name)}
+                          key={idx}
+                          style={tab.name === "Summary" ? summaryTab : null}
+                        >
+                          {tab.name}
+                        </Tab>
+                      );
+                    })
+                : this.state.ironStyle && this.state.compositePostStyle
+                ? tabs
+                    .filter(
+                      tab => tab.name !== "Rails" && tab.name !== "Baluster"
+                    )
+                    .map((tab, idx) => {
+                      return (
+                        <Tab
+                          onClick={() => this.changeItem(tab.name)}
+                          key={idx}
+                          style={tab.name === "Summary" ? summaryTab : null}
+                        >
+                          {tab.name}
+                        </Tab>
+                      );
+                    })
+                : (this.state.crownStyle || this.state.noneStyle) &&
+                  this.state.ironStyle &&
+                  this.state.ironPostStyle &&
+                  this.state.noneStyle
+                ? tabs
+                    .filter(
+                      tab =>
+                        tab.name !== "Rails" &&
+                        tab.name !== "Cap Rail" &&
+                        tab.name !== "Baluster" &&
+                        tab.name !== "Post Cap" &&
+                        tab.name !== "Post Sleeve"
+                    )
+                    .map((tab, idx) => {
+                      return (
+                        <Tab
+                          onClick={() => this.changeItem(tab.name)}
+                          key={idx}
+                          style={tab.name === "Summary" ? summaryTab : null}
+                        >
+                          {tab.name}
+                        </Tab>
+                      );
+                    })
+                : (this.state.crownStyle || this.state.twoStyle) &&
+                  this.state.ironStyle &&
+                  this.state.ironPostStyle
+                ? tabs
+                    .filter(
+                      tab =>
+                        tab.name !== "Rails" &&
+                        tab.name !== "Baluster" &&
+                        tab.name !== "Post Cap" &&
+                        tab.name !== "Post Sleeve"
+                    )
+                    .map((tab, idx) => {
+                      return (
+                        <Tab
+                          onClick={() => this.changeItem(tab.name)}
+                          key={idx}
+                          style={tab.name === "Summary" ? summaryTab : null}
+                        >
+                          {tab.name}
+                        </Tab>
+                      );
+                    })
+                : tabs.map((tab, idx) => {
                     return (
                       <Tab
                         onClick={() => this.changeItem(tab.name)}
@@ -594,135 +689,41 @@ class Fence extends Component {
                         style={tab.name === "Summary" ? summaryTab : null}
                       >
                         {tab.name}
-                        {console.log(tab)}
                       </Tab>
                     );
-                  })
-              : (this.state.crownStyle || this.state.noneStyle) &&
-                this.state.ironStyle &&
-                !this.state.ironPostStyle
-              ? tabs
-                  .filter(
-                    tab =>
-                      tab.name !== "Rails" &&
-                      tab.name !== "Cap Rail" &&
-                      tab.name !== "Baluster"
-                  )
-                  .map((tab, idx) => {
-                    return (
-                      <Tab
-                        onClick={() => this.changeItem(tab.name)}
-                        key={idx}
-                        style={tab.name === "Summary" ? summaryTab : null}
-                      >
-                        {tab.name}
-                      </Tab>
-                    );
-                  })
-              : this.state.ironStyle && this.state.compositePostStyle
-              ? tabs
-                  .filter(
-                    tab => tab.name !== "Rails" && tab.name !== "Baluster"
-                  )
-                  .map((tab, idx) => {
-                    return (
-                      <Tab
-                        onClick={() => this.changeItem(tab.name)}
-                        key={idx}
-                        style={tab.name === "Summary" ? summaryTab : null}
-                      >
-                        {tab.name}
-                      </Tab>
-                    );
-                  })
-              : (this.state.crownStyle || this.state.noneStyle) &&
-                this.state.ironStyle &&
-                this.state.ironPostStyle &&
-                this.state.noneStyle
-              ? tabs
-                  .filter(
-                    tab =>
-                      tab.name !== "Rails" &&
-                      tab.name !== "Cap Rail" &&
-                      tab.name !== "Baluster" &&
-                      tab.name !== "Post Cap" &&
-                      tab.name !== "Post Sleeve"
-                  )
-                  .map((tab, idx) => {
-                    return (
-                      <Tab
-                        onClick={() => this.changeItem(tab.name)}
-                        key={idx}
-                        style={tab.name === "Summary" ? summaryTab : null}
-                      >
-                        {tab.name}
-                      </Tab>
-                    );
-                  })
-              : (this.state.crownStyle || this.state.twoStyle) &&
-                this.state.ironStyle &&
-                this.state.ironPostStyle
-              ? tabs
-                  .filter(
-                    tab =>
-                      tab.name !== "Rails" &&
-                      tab.name !== "Baluster" &&
-                      tab.name !== "Post Cap" &&
-                      tab.name !== "Post Sleeve"
-                  )
-                  .map((tab, idx) => {
-                    return (
-                      <Tab
-                        onClick={() => this.changeItem(tab.name)}
-                        key={idx}
-                        style={tab.name === "Summary" ? summaryTab : null}
-                      >
-                        {tab.name}
-                      </Tab>
-                    );
-                  })
-              : tabs.map((tab, idx) => {
-                  return (
-                    <Tab
-                      onClick={() => this.changeItem(tab.name)}
-                      key={idx}
-                      style={tab.name === "Summary" ? summaryTab : null}
-                    >
-                      {tab.name}
-                    </Tab>
-                  );
-                })}
-          </TabList>
+                  })}
+            </TabList>
 
-          {/*changeItem parameter should be the tab that's selected.*/}
-          {tabs.map((tab, idx) => {
-            return (
-              <TabPanel key={idx}>
-                <TabColors
-                  handleTabColors={this.handleTabColors}
-                  activeTab={this.state.activeTab}
-                  aluminum={this.state.aluminumStyle}
-                  oneStyle={this.state.oneStyle}
-                  twoStyle={this.state.twoStyle}
-                  crownStyle={this.state.crownStyle}
-                  ironStyle={this.state.ironStyle}
-                  ironPostStyle={this.state.ironPostStyle}
-                  compositeStyle={this.state.compositeStyle}
-                  postCapColor={this.state.postCapColor}
-                  capRailColor={this.state.capRailColor}
-                  postSleeveColor={this.state.postSleeveColor}
-                  railsColor={this.state.railsColor}
-                  balusterColor={this.state.balusterColor}
-                  deckColor={this.state.deckColor}
-                  fasciaColor={this.state.fasciaColor}
-                  borderColor={this.state.borderColor}
-                  tabColor={this.tabColor}
-                  noneStyle={this.state.noneStyle}
-                />
-              </TabPanel>
-            );
-          })}
-        </Tabs>
+            {/*changeItem parameter should be the tab that's selected.*/}
+            {tabs.map((tab, idx) => {
+              return (
+                <TabPanel key={idx}>
+                  <TabColors
+                    handleTabColors={this.handleTabColors}
+                    activeTab={this.state.activeTab}
+                    aluminum={this.state.aluminumStyle}
+                    oneStyle={this.state.oneStyle}
+                    twoStyle={this.state.twoStyle}
+                    crownStyle={this.state.crownStyle}
+                    ironStyle={this.state.ironStyle}
+                    ironPostStyle={this.state.ironPostStyle}
+                    compositeStyle={this.state.compositeStyle}
+                    postCapColor={this.state.postCapColor}
+                    capRailColor={this.state.capRailColor}
+                    postSleeveColor={this.state.postSleeveColor}
+                    railsColor={this.state.railsColor}
+                    balusterColor={this.state.balusterColor}
+                    deckColor={this.state.deckColor}
+                    fasciaColor={this.state.fasciaColor}
+                    borderColor={this.state.borderColor}
+                    tabColor={this.tabColor}
+                    noneStyle={this.state.noneStyle}
+                  />
+                </TabPanel>
+              );
+            })}
+          </Tabs>
+        </div>
       </div>
     );
   }

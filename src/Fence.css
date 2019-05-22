@@ -12,11 +12,6 @@
   cursor: pointer;
 }
 
-.choose-color {
-  margin-top: 219px;
-  margin-left: -791px;
-}
-
 .logo {
   max-width: 140px;
   height: 140px;
@@ -81,10 +76,6 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 60px;
-}
-
-.tabs-list {
-  margin-top: -217px;
 }
 
 .fence-container {
@@ -240,12 +231,23 @@
   padding-top: 15px;
 }
 
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 219px;
+  max-width: 1150px;
+}
+
 .fence-options {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   width: 400px;
+}
+
+.choose-color {
+  text-align: -webkit-auto;
 }
 
 .react-tabs {
