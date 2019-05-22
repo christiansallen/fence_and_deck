@@ -388,3 +388,69 @@
     width: 76px;
   }
 }
+
+@media (max-width: 1000px) {
+  .top-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-container {
+    width: 70px;
+    margin-left: -16px;
+  }
+  .fence-image-options {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: -80px;
+  }
+  .fence-container {
+    margin: 0;
+    margin-left: -108px;
+  }
+  .logo {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .fence-options {
+    margin-top: -100px;
+    margin-bottom: 133px;
+    z-index: 5;
+  }
+  .options {
+    margin-top: 10px;
+  }
+  .react-tabs__tab-list {
+    font-size: 0.8rem;
+  }
+  .tab-container {
+    padding-bottom: 20px;
+  }
+  .legend {
+    font-weight: normal;
+  }
+  .legend-item {
+    margin: 0px 4px;
+    font-size: 0.8rem;
+    width: 68px;
+  }
+
+  .legend-item2 {
+    margin: 0px 21.4px;
+    width: 43px;
+  }
+
+  .legend-item3 {
+    margin: 0px 52px;
+    width: 68px;
+  }
+
+  .legend-item4 {
+    margin: 0px 15.5px;
+    width: 68px;
+  }
+
+  .legend-item5 {
+    margin: 0px 30px;
+    width: 76px;
+  }
+}
