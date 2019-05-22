@@ -1,7 +1,6 @@
 .App {
   box-sizing: border-box;
   font-size: 62.5%;
-  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
   z-index: -1000000;

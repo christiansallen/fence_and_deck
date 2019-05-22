@@ -12,6 +12,11 @@
   cursor: pointer;
 }
 
+.container {
+  max-width: 1400px;
+  margin-left: 70px;
+}
+
 .logo {
   max-width: 70px;
   height: 70px;
