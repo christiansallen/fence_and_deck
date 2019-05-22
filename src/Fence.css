@@ -424,6 +424,9 @@
   .tab-container {
     padding-bottom: 20px;
   }
+  .react-tabs__tab-list {
+    margin-left: 75px;
+  }
   .legend {
     font-weight: normal;
   }
