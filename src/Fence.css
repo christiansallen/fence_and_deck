@@ -244,6 +244,11 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 400px;
+  margin-right: 350px;
+}
+
+.fence-image-options {
+  display: flex;
 }
 
 .choose-color {
@@ -259,6 +264,9 @@
   margin: 0 0 10px;
   padding: 0;
   z-index: 20;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .react-tabs__tab {
@@ -316,6 +324,67 @@
 
 @media (max-width: 600px) {
   .top-section {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-container {
+    width: 70px;
+    margin-left: -16px;
+  }
+  .fence-image-options {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: -80px;
+  }
+  .fence-container {
+    margin: 0;
+    margin-left: -108px;
+  }
+  .logo {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .fence-options {
+    margin-top: -100px;
+    margin-bottom: 133px;
+    z-index: 5;
+  }
+  .options {
+    margin-top: 10px;
+  }
+  .react-tabs__tab-list {
+    font-size: 0.8rem;
+  }
+  .tab-container {
+    padding-bottom: 20px;
+  }
+  .legend {
+    font-weight: normal;
+  }
+
+  .legend-item {
+    margin: 0px 7.5px;
+    font-size: 0.5rem;
+    width: 40px;
+  }
+
+  .legend-item2 {
+    margin: 0px 9.4px;
+    width: 43px;
+  }
+
+  .legend-item3 {
+    margin: 0px 29px;
+    width: 68px;
+  }
+
+  .legend-item4 {
+    margin: 0px 2.5px;
+    width: 68px;
+  }
+
+  .legend-item5 {
+    margin: 0px 13px;
+    width: 76px;
   }
 }

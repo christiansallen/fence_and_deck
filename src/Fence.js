@@ -346,225 +346,227 @@ class Fence extends Component {
               <img src={Logo} alt="logo" className="logo" />
             </a>
           </div>
-          <div className="fence-options">
-            <h3>1. Pick your railing options:</h3>
+          <div className="fence-image-options">
+            <div className="fence-options">
+              <h3>1. Pick your railing options:</h3>
 
-            <div className="options">
-              <h4 className="option-title">Baluster:</h4>
-              <div className="option-container">
-                <div
-                  className="option"
-                  style={clickedBtn2}
-                  onClick={this.toggleStyleBalusters1}
-                >
-                  Composite
+              <div className="options">
+                <h4 className="option-title">Baluster:</h4>
+                <div className="option-container">
+                  <div
+                    className="option"
+                    style={clickedBtn2}
+                    onClick={this.toggleStyleBalusters1}
+                  >
+                    Composite
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn22}
+                    onClick={this.toggleStyleBalusters2}
+                  >
+                    Aluminum
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn222}
+                    onClick={this.toggleStyleBalusters3}
+                  >
+                    Iron
+                  </div>
                 </div>
-                <div
-                  className="option"
-                  style={clickedBtn22}
-                  onClick={this.toggleStyleBalusters2}
-                >
-                  Aluminum
+              </div>
+
+              <div className={this.state.postToggle ? "options" : "none"}>
+                <h4 className="option-title">Post Style:</h4>
+                <div className="option-container">
+                  <div
+                    className="option"
+                    style={clickedBtn4}
+                    onClick={this.togglePostStyle}
+                  >
+                    Composite
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn44}
+                    onClick={this.togglePostStyle}
+                  >
+                    Iron
+                  </div>
                 </div>
-                <div
-                  className="option"
-                  style={clickedBtn222}
-                  onClick={this.toggleStyleBalusters3}
-                >
-                  Iron
+              </div>
+
+              <div className="options">
+                <h4 className="option-title">Cap Rail:</h4>
+                <div className="option-container">
+                  <div
+                    className={this.state.ironPostStyle ? "option" : "none"}
+                    style={clickedBtn1111}
+                    onClick={this.toggleStyleCaps4}
+                  >
+                    None
+                  </div>
+                  <div
+                    className={
+                      this.state.ironPostStyle ||
+                      (this.state.compositePostStyle && this.state.ironStyle)
+                        ? "none"
+                        : "option"
+                    }
+                    style={clickedBtn111}
+                    onClick={this.toggleStyleCaps3}
+                  >
+                    Crown Rail
+                  </div>
+                  <div
+                    className={this.state.ironPostStyle ? "none" : "option"}
+                    style={clickedBtn1}
+                    onClick={this.toggleStyleCaps1}
+                  >
+                    1x6 Cap Rail
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn11}
+                    onClick={this.toggleStyleCaps2}
+                  >
+                    2x4 Cap Rail
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={
+                  this.state.hidePostCaps || this.state.oneStyle
+                    ? "none"
+                    : "options"
+                }
+              >
+                <h4 className="option-title">Post Cap:</h4>
+                <div className="option-container">
+                  <div
+                    className="option"
+                    style={clickedBtn3}
+                    onClick={this.toggleStylePostCap}
+                  >
+                    Flat
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn33}
+                    onClick={this.toggleStylePostCap}
+                  >
+                    Pyramid
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className={this.state.postToggle ? "options" : "none"}>
-              <h4 className="option-title">Post Style:</h4>
-              <div className="option-container">
-                <div
-                  className="option"
-                  style={clickedBtn4}
-                  onClick={this.togglePostStyle}
-                >
-                  Composite
-                </div>
-                <div
-                  className="option"
-                  style={clickedBtn44}
-                  onClick={this.togglePostStyle}
-                >
-                  Iron
-                </div>
-              </div>
+            {/*FENCE IMAGE*/}
+            <div className="fence-container">
+              {/*Rails*/}
+              <img
+                src={this.state.trex}
+                alt="trex white"
+                className={this.state.compositeStyle ? "trex" : "none"}
+              />
+              <img
+                src={this.state.aluminum}
+                alt="Iron bronze"
+                className={this.state.aluminumStyle ? "iron" : "none"}
+              />
+              <img
+                src={this.state.ironPosts}
+                alt="Iron Posts"
+                className={this.state.hidePostCaps ? "iron-posts" : "none"}
+              />
+              <img
+                src={this.state.sPost}
+                alt="Short post charcoal"
+                className={
+                  this.state.shortStyle && !this.state.hidePostCaps
+                    ? "short-post"
+                    : "none"
+                }
+              />
+
+              <img
+                src={
+                  this.state.ironStyle && this.state.compositePostStyle
+                    ? this.state.ironRail
+                    : this.state.ironStyle &&
+                      this.state.ironPostStyle &&
+                      !this.state.noneStyle
+                    ? this.state.ironRail
+                    : this.state.ironStyle &&
+                      this.state.ironPostStyle &&
+                      this.state.noneStyle
+                    ? this.state.ironRail2
+                    : this.state.rail
+                }
+                alt="Iron Rail"
+                className="rail"
+              />
+
+              <img
+                src={this.state.skirt}
+                alt="Skirt White"
+                className={this.state.hidePostCaps ? "none" : "skirt"}
+              />
+              <img
+                src={this.state.border}
+                alt="Border Firepit"
+                className="fence-border"
+              />
+              <img
+                src={this.state.pyramid}
+                alt="Pyramid Charcoal"
+                className={
+                  this.state.pyramidStyle &&
+                  !this.state.hidePostCaps &&
+                  !this.state.oneStyle
+                    ? "pyramid"
+                    : "none"
+                }
+              />
+              <img
+                src={this.state.flat}
+                alt="Flat Charcoal"
+                className={
+                  this.state.flatStyle &&
+                  !this.state.hidePostCaps &&
+                  !this.state.oneStyle
+                    ? "flat"
+                    : "none"
+                }
+              />
+              <img
+                src={this.state.crown}
+                alt="Crown firepit"
+                className={this.state.crownStyle ? "crown" : "none"}
+              />
+              <img
+                src={this.state.one}
+                alt="charcoal one"
+                className={
+                  this.state.oneStyle && !this.state.ironPostStyle
+                    ? "one"
+                    : "none"
+                }
+              />
+              <img
+                src={this.state.two}
+                alt="island mist two"
+                className={this.state.twoStyle ? "two" : "none"}
+              />
+              <img src={this.state.deck} alt="Deck firepit" className="deck" />
+              <img
+                src={this.state.fascia}
+                alt="Fascia Firepit"
+                className="fascia"
+              />
             </div>
-
-            <div className="options">
-              <h4 className="option-title">Cap Rail:</h4>
-              <div className="option-container">
-                <div
-                  className={this.state.ironPostStyle ? "option" : "none"}
-                  style={clickedBtn1111}
-                  onClick={this.toggleStyleCaps4}
-                >
-                  None
-                </div>
-                <div
-                  className={
-                    this.state.ironPostStyle ||
-                    (this.state.compositePostStyle && this.state.ironStyle)
-                      ? "none"
-                      : "option"
-                  }
-                  style={clickedBtn111}
-                  onClick={this.toggleStyleCaps3}
-                >
-                  Crown Rail
-                </div>
-                <div
-                  className={this.state.ironPostStyle ? "none" : "option"}
-                  style={clickedBtn1}
-                  onClick={this.toggleStyleCaps1}
-                >
-                  1x6 Cap Rail
-                </div>
-                <div
-                  className="option"
-                  style={clickedBtn11}
-                  onClick={this.toggleStyleCaps2}
-                >
-                  2x4 Cap Rail
-                </div>
-              </div>
-            </div>
-
-            <div
-              className={
-                this.state.hidePostCaps || this.state.oneStyle
-                  ? "none"
-                  : "options"
-              }
-            >
-              <h4 className="option-title">Post Cap:</h4>
-              <div className="option-container">
-                <div
-                  className="option"
-                  style={clickedBtn3}
-                  onClick={this.toggleStylePostCap}
-                >
-                  Flat
-                </div>
-                <div
-                  className="option"
-                  style={clickedBtn33}
-                  onClick={this.toggleStylePostCap}
-                >
-                  Pyramid
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/*FENCE IMAGE*/}
-          <div className="fence-container">
-            {/*Rails*/}
-            <img
-              src={this.state.trex}
-              alt="trex white"
-              className={this.state.compositeStyle ? "trex" : "none"}
-            />
-            <img
-              src={this.state.aluminum}
-              alt="Iron bronze"
-              className={this.state.aluminumStyle ? "iron" : "none"}
-            />
-            <img
-              src={this.state.ironPosts}
-              alt="Iron Posts"
-              className={this.state.hidePostCaps ? "iron-posts" : "none"}
-            />
-            <img
-              src={this.state.sPost}
-              alt="Short post charcoal"
-              className={
-                this.state.shortStyle && !this.state.hidePostCaps
-                  ? "short-post"
-                  : "none"
-              }
-            />
-
-            <img
-              src={
-                this.state.ironStyle && this.state.compositePostStyle
-                  ? this.state.ironRail
-                  : this.state.ironStyle &&
-                    this.state.ironPostStyle &&
-                    !this.state.noneStyle
-                  ? this.state.ironRail
-                  : this.state.ironStyle &&
-                    this.state.ironPostStyle &&
-                    this.state.noneStyle
-                  ? this.state.ironRail2
-                  : this.state.rail
-              }
-              alt="Iron Rail"
-              className="rail"
-            />
-
-            <img
-              src={this.state.skirt}
-              alt="Skirt White"
-              className={this.state.hidePostCaps ? "none" : "skirt"}
-            />
-            <img
-              src={this.state.border}
-              alt="Border Firepit"
-              className="fence-border"
-            />
-            <img
-              src={this.state.pyramid}
-              alt="Pyramid Charcoal"
-              className={
-                this.state.pyramidStyle &&
-                !this.state.hidePostCaps &&
-                !this.state.oneStyle
-                  ? "pyramid"
-                  : "none"
-              }
-            />
-            <img
-              src={this.state.flat}
-              alt="Flat Charcoal"
-              className={
-                this.state.flatStyle &&
-                !this.state.hidePostCaps &&
-                !this.state.oneStyle
-                  ? "flat"
-                  : "none"
-              }
-            />
-            <img
-              src={this.state.crown}
-              alt="Crown firepit"
-              className={this.state.crownStyle ? "crown" : "none"}
-            />
-            <img
-              src={this.state.one}
-              alt="charcoal one"
-              className={
-                this.state.oneStyle && !this.state.ironPostStyle
-                  ? "one"
-                  : "none"
-              }
-            />
-            <img
-              src={this.state.two}
-              alt="island mist two"
-              className={this.state.twoStyle ? "two" : "none"}
-            />
-            <img src={this.state.deck} alt="Deck firepit" className="deck" />
-            <img
-              src={this.state.fascia}
-              alt="Fascia Firepit"
-              className="fascia"
-            />
           </div>
         </div>
 
@@ -576,13 +578,7 @@ class Fence extends Component {
             onSelect={tabIndex => this.setState({ tabIndex })}
             className="tabs-list"
           >
-            <TabList
-              style={{
-                fontSize: "20px",
-                display: "flex",
-                justifyContent: "space-around"
-              }}
-            >
+            <TabList>
               {(this.state.crownStyle || this.state.noneStyle) &&
               !this.state.ironStyle
                 ? tabs
