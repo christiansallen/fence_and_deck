@@ -49,55 +49,6 @@ import DeckWoodlandbrownColor from "./Images/1Color_Woodlandbrown.png";
 
 export const DeckColorsData = [
   {
-    name: "(Enhance) Beach Dune",
-    img: DeckBeachduneColor,
-    alt: "Beachdune"
-  },
-  {
-    name: "(Enhance) Clam Shell",
-    img: DeckClamshellColor,
-    alt: "Clamshell"
-  },
-  {
-    name: "(Enhance) Coastal Bluff",
-    img: DeckCoastalbluffColor,
-    alt: "Coastalbluff"
-  },
-  {
-    name: "(Enhance) Foggy Wharf",
-    img: DeckFoggywharfColor,
-    alt: "Foggywharf"
-  },
-  {
-    name: "(Enhance) Rocky Harbor",
-    img: DeckRockyharborColor,
-    alt: "Rockyharbor"
-  },
-  {
-    name: "(Enhance) Sunset Cove",
-    img: DeckSunsetcoveColor,
-    alt: "Sunsetcove"
-  },
-  { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" },
-
-  { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
-  {
-    name: "(Select) Pebble Grey",
-    img: DeckPebblegreyColor,
-    alt: "Pebblegrey"
-  },
-  {
-    name: "(Select) Winchester Grey",
-    img: DeckWinchestergrayColor,
-    alt: "Winchestergray"
-  },
-  {
-    name: "(Select) Woodland Brown",
-    img: DeckWoodlandbrownColor,
-    alt: "Woodlandbrown"
-  },
-
-  {
     name: "(Transcend) Fire Pit",
     img: DeckFirepitColor,
     alt: "Firepit"
@@ -148,66 +99,66 @@ export const DeckColorsData = [
     img: DeckVintagelanternColor,
     alt: "Vintagelantern"
   },
+  {
+    name: "(Enhance) Beach Dune",
+    img: DeckBeachduneColor,
+    alt: "Beachdune"
+  },
+  {
+    name: "(Enhance) Clam Shell",
+    img: DeckClamshellColor,
+    alt: "Clamshell"
+  },
+  {
+    name: "(Enhance) Coastal Bluff",
+    img: DeckCoastalbluffColor,
+    alt: "Coastalbluff"
+  },
+  {
+    name: "(Enhance) Foggy Wharf",
+    img: DeckFoggywharfColor,
+    alt: "Foggywharf"
+  },
+  {
+    name: "(Enhance) Rocky Harbor",
+    img: DeckRockyharborColor,
+    alt: "Rockyharbor"
+  },
+  {
+    name: "(Enhance) Sunset Cove",
+    img: DeckSunsetcoveColor,
+    alt: "Sunsetcove"
+  },
 
   {
-    name: "Toasted Sand",
+    name: "(Enhance) Toasted Sand",
     img: DeckToastedsandColor,
-    alt: "ToastedSand"
+    alt: "Toastedsand"
+  },
+
+  { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+
+  { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
+  {
+    name: "(Select) Pebble Grey",
+    img: DeckPebblegreyColor,
+    alt: "Pebblegrey"
+  },
+  {
+    name: "(Select) Winchester Grey",
+    img: DeckWinchestergrayColor,
+    alt: "Winchestergray"
+  },
+  {
+    name: "(Select) Woodland Brown",
+    img: DeckWoodlandbrownColor,
+    alt: "Woodlandbrown"
   },
 
   { name: "White", img: WhiteColor, alt: "White" }
 ];
 
 export const TabColorsData = [
-  {
-    name: "(Enhance) Beach Dune",
-    img: BeachduneColor,
-    alt: "Beachdune"
-  },
-  {
-    name: "(Enhance) Clam Shell",
-    img: ClamshellColor,
-    alt: "Clamshell"
-  },
-  {
-    name: "(Enhance) Coastal Bluff",
-    img: CoastalbluffColor,
-    alt: "Coastalbluff"
-  },
-  {
-    name: "(Enhance) Foggy Wharf",
-    img: FoggywharfColor,
-    alt: "Foggywharf"
-  },
-  {
-    name: "(Enhance) Rocky Harbor",
-    img: RockyharborColor,
-    alt: "Rockyharbor"
-  },
-  {
-    name: "(Enhance) Sunset Cove",
-    img: SunsetcoveColor,
-    alt: "Sunsetcove"
-  },
-  { name: "(Enhance) Saddle", img: SaddleColor, alt: "Saddle" },
-
-  { name: "(Select) Maderia", img: MaderiaColor, alt: "Maderia" },
-  {
-    name: "(Select) Pebble Grey",
-    img: PebblegreyColor,
-    alt: "Pebblegrey"
-  },
-  {
-    name: "(Select) Winchester Grey",
-    img: WinchestergrayColor,
-    alt: "Winchestergray"
-  },
-  {
-    name: "(Select) Woodland Brown",
-    img: WoodlandbrownColor,
-    alt: "Woodlandbrown"
-  },
-
   {
     name: "(Transcend) Fire Pit",
     img: FirepitColor,
@@ -259,12 +210,61 @@ export const TabColorsData = [
     img: VintagelanternColor,
     alt: "Vintagelantern"
   },
+  {
+    name: "(Enhance) Beach Dune",
+    img: BeachduneColor,
+    alt: "Beachdune"
+  },
+  {
+    name: "(Enhance) Clam Shell",
+    img: ClamshellColor,
+    alt: "Clamshell"
+  },
+  {
+    name: "(Enhance) Coastal Bluff",
+    img: CoastalbluffColor,
+    alt: "Coastalbluff"
+  },
+  {
+    name: "(Enhance) Foggy Wharf",
+    img: FoggywharfColor,
+    alt: "Foggywharf"
+  },
+  {
+    name: "(Enhance) Rocky Harbor",
+    img: RockyharborColor,
+    alt: "Rockyharbor"
+  },
+  {
+    name: "(Enhance) Sunset Cove",
+    img: SunsetcoveColor,
+    alt: "Sunsetcove"
+  },
+  { name: "(Enhance) Saddle", img: SaddleColor, alt: "Saddle" },
 
   {
-    name: "Toasted Sand",
+    name: "(Enhance) Toasted Sand",
     img: ToastedsandColor,
     alt: "ToastedSand"
   },
+
+  { name: "(Select) Maderia", img: MaderiaColor, alt: "Maderia" },
+  {
+    name: "(Select) Pebble Grey",
+    img: PebblegreyColor,
+    alt: "Pebblegrey"
+  },
+  {
+    name: "(Select) Winchester Grey",
+    img: WinchestergrayColor,
+    alt: "Winchestergray"
+  },
+  {
+    name: "(Select) Woodland Brown",
+    img: WoodlandbrownColor,
+    alt: "Woodlandbrown"
+  },
+
   {
     name: "Bronze",
     img: BronzeColor,
