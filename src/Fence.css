@@ -17,6 +17,13 @@
   margin-left: -791px;
 }
 
+.logo {
+  max-width: 140px;
+  height: 140px;
+  margin-right: -150px;
+  margin-left: 50px;
+}
+
 .legend {
   font-size: 0.8rem;
   font-weight: bold;
@@ -152,7 +159,7 @@
   margin-top: -26px;
   margin-left: -120px;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 }
 
 .fascia {

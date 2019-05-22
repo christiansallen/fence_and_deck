@@ -4,10 +4,12 @@ import "react-tabs/style/react-tabs.css";
 import TabColors from "./TabColors.js";
 
 import { tabs, imgData } from "./FenceData";
+import Logo from "./Images/logo.png";
 
 //Needed imports
 import AluminumCharcoal from "./Images/Iron_Charcoal.png";
 import IronGuardRail from "./Images/IronGuardRail.png";
+import IronGuardRail2 from "./Images/IronGuardRail2.png";
 import IronPosts from "./Images/Iron_Posts.png";
 
 class Fence extends Component {
@@ -27,6 +29,7 @@ class Fence extends Component {
       skirt: imgData["Post Skirt"]["SkirtWhite"],
       rail: imgData["Rails"]["RailsWhite"],
       ironRail: IronGuardRail,
+      ironRail2: IronGuardRail2,
       border: imgData["Border"]["BorderFoggywharf"],
       deck: imgData["Deck"]["DeckFoggywharf"],
       fascia: imgData["Fascia"]["FasciaFoggywharf"],
@@ -454,6 +457,10 @@ class Fence extends Component {
             </div>
           </div>
 
+          <div className="logo-container">
+            <img src={Logo} alt="logo" className="logo" />
+          </div>
+
           {/*FENCE IMAGE*/}
           <div className="fence-container">
             {/*Rails*/}
@@ -466,11 +473,6 @@ class Fence extends Component {
               src={this.state.aluminum}
               alt="Iron bronze"
               className={this.state.aluminumStyle ? "iron" : "none"}
-            />
-            <img
-              src={this.state.iron}
-              alt="Iron bronze"
-              className={this.state.ironStyle ? "iron" : "none"}
             />
             <img
               src={this.state.ironPosts}
@@ -488,10 +490,23 @@ class Fence extends Component {
             />
 
             <img
-              src={this.state.ironStyle ? this.state.ironRail : this.state.rail}
-              alt="Rail White"
+              src={
+                this.state.ironStyle && this.state.compositePostStyle
+                  ? this.state.ironRail
+                  : this.state.ironStyle &&
+                    this.state.ironPostStyle &&
+                    !this.state.noneStyle
+                  ? this.state.ironRail
+                  : this.state.ironStyle &&
+                    this.state.ironPostStyle &&
+                    this.state.noneStyle
+                  ? this.state.ironRail2
+                  : this.state.rail
+              }
+              alt="Iron Rail"
               className="rail"
             />
+
             <img
               src={this.state.skirt}
               alt="Skirt White"
