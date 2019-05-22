@@ -404,6 +404,7 @@
   }
   .fence-container {
     margin: 0;
+    margin-left: 60px;
   }
   .logo {
     margin-right: 0px;
