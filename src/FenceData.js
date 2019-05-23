@@ -5,7 +5,7 @@ import OneHavanagold from "./Images/1x6_Havanagold.png";
 import OneIslandmist from "./Images/1x6_Islandmist.png";
 import OneLavarock from "./Images/1x6_Lavarock.png";
 import OneMaderia from "./Images/1x6_Maderia.png";
-import OnePebblegrey from "./Images/1x6_Pebblegrey.png";
+import OnePebblegray from "./Images/1x6_Pebblegray.png";
 import OneRopeswing from "./Images/1x6_Ropeswing.png";
 import OneSaddle from "./Images/1x6_Saddle.png";
 import OneSpicedrum from "./Images/1x6_Spicedrum.png";
@@ -111,7 +111,7 @@ import FasciaWhite from "./Images/Fascia_White.png";
 import FlatCharcoal from "./Images/Flat_Charcoal.png";
 import FlatFirepit from "./Images/Flat_Firepit.png";
 import FlatGravelpath from "./Images/Flat_Gravelpath.png";
-import FlatHavanagold from "./Images/Flat_Havanagold.png";
+import FlatTreehouse from "./Images/Flat_Treehouse.png";
 import FlatWhite from "./Images/Flat_White.png";
 import FlatRopeswing from "./Images/Flat_Ropeswing.png";
 import FlatVintagelantern from "./Images/Flat_Vintagelantern.png";
@@ -119,7 +119,7 @@ import FlatVintagelantern from "./Images/Flat_Vintagelantern.png";
 import PyramidCharcoal from "./Images/Pyramid_Charcoal.png";
 import PyramidFirepit from "./Images/Pyramid_Firepit.png";
 import PyramidGravelpath from "./Images/Pyramid_Gravelpath.png";
-import PyramidHavanagold from "./Images/Pyramid_Havanagold.png";
+import PyramidTreehouse from "./Images/Pyramid_Treehouse.png";
 import PyramidWhite from "./Images/Pyramid_White.png";
 import PyramidRopeswing from "./Images/Pyramid_Ropeswing.png";
 import PyramidVintagelantern from "./Images/Pyramid_Vintagelantern.png";
@@ -135,7 +135,7 @@ import IronGuardRail from "./Images/IronGuardRail.png";
 import RailsCharcoal from "./Images/Rail_Charcoal.png";
 import RailsFirepit from "./Images/Rail_Firepit.png";
 import RailsGravelpath from "./Images/Rail_Gravelpath.png";
-import RailsHavanagold from "./Images/Rail_Havanagold.png";
+import RailsTreehouse from "./Images/Rail_Treehouse.png";
 import RailsWhite from "./Images/Rail_White.png";
 import RailsRopeswing from "./Images/Rail_Ropeswing.png";
 import RailsVintagelantern from "./Images/Rail_Vintagelantern.png";
@@ -144,7 +144,7 @@ import RailsVintagelantern from "./Images/Rail_Vintagelantern.png";
 import SkirtCharcoal from "./Images/Skirt_Charcoal.png";
 import SkirtFirepit from "./Images/Skirt_Firepit.png";
 import SkirtGravelpath from "./Images/Skirt_Gravelpath.png";
-import SkirtHavanagold from "./Images/Skirt_Havanagold.png";
+import SkirtTreehouse from "./Images/Skirt_Treehouse.png";
 import SkirtWhite from "./Images/Skirt_White.png";
 import SkirtRopeswing from "./Images/Skirt_Ropeswing.png";
 import SkirtVintagelantern from "./Images/Skirt_Vintagelantern.png";
@@ -153,7 +153,7 @@ import SkirtVintagelantern from "./Images/Skirt_Vintagelantern.png";
 import SpostCharcoal from "./Images/Spost_Charcoal.png";
 import SpostFirepit from "./Images/Spost_Firepit.png";
 import SpostGravelpath from "./Images/Spost_Gravelpath.png";
-import SpostHavanagold from "./Images/Spost_Havanagold.png";
+import SpostTreehouse from "./Images/Spost_Treehouse.png";
 import SpostWhite from "./Images/Spost_White.png";
 import SpostRopeswing from "./Images/Spost_Ropeswing.png";
 import SpostVintagelantern from "./Images/Spost_Vintagelantern.png";
@@ -196,7 +196,7 @@ export const imgData = {
     SpostCharcoal: SpostCharcoal,
     SpostFirepit: SpostFirepit,
     SpostGravelpath: SpostGravelpath,
-    SpostHavanagold: SpostHavanagold,
+    SpostTreehouse: SpostTreehouse,
     SpostRopeswing: SpostRopeswing,
     SpostVintagelantern: SpostVintagelantern
   },
@@ -228,14 +228,14 @@ export const imgData = {
     FlatCharcoal: FlatCharcoal,
     FlatFirepit: FlatFirepit,
     FlatGravelpath: FlatGravelpath,
-    FlatHavanagold: FlatHavanagold,
+    FlatTreehouse: FlatTreehouse,
     FlatWhite: FlatWhite,
     FlatRopeswing: FlatRopeswing,
     FlatVintagelantern: FlatVintagelantern,
     PyramidCharcoal: PyramidCharcoal,
     PyramidFirepit: PyramidFirepit,
     PyramidGravelpath: PyramidGravelpath,
-    PyramidHavanagold: PyramidHavanagold,
+    PyramidTreehouse: PyramidTreehouse,
     PyramidWhite: PyramidWhite,
     PyramidRopeswing: PyramidRopeswing,
     PyramidVintagelantern: PyramidVintagelantern
@@ -244,7 +244,7 @@ export const imgData = {
     SkirtCharcoal: SkirtCharcoal,
     SkirtFirepit: SkirtFirepit,
     SkirtGravelpath: SkirtGravelpath,
-    SkirtHavanagold: SkirtHavanagold,
+    SkirtTreehouse: SkirtTreehouse,
     SkirtWhite: SkirtWhite,
     SkirtRopeswing: SkirtRopeswing,
     SkirtVintagelantern: SkirtVintagelantern
@@ -271,7 +271,7 @@ export const imgData = {
     OneIslandmist: OneIslandmist,
     OneLavarock: OneLavarock,
     OneMaderia: OneMaderia,
-    OnePebblegrey: OnePebblegrey,
+    OnePebblegray: OnePebblegray,
     OneRopeswing: OneRopeswing,
     OneSaddle: OneSaddle,
     OneSpicedrum: OneSpicedrum,
@@ -285,7 +285,7 @@ export const imgData = {
     RailsCharcoal: RailsCharcoal,
     RailsFirepit: RailsFirepit,
     RailsGravelpath: RailsGravelpath,
-    RailsHavanagold: RailsHavanagold,
+    RailsTreehouse: RailsTreehouse,
     RailsWhite: RailsWhite,
     RailsRopeswing: RailsRopeswing,
     RailsVintagelantern: RailsVintagelantern

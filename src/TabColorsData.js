@@ -13,7 +13,7 @@ import HavanagoldColor from "./Images/Color_Havanagold.png";
 import IslandmistColor from "./Images/Color_Islandmist.png";
 import LavarockColor from "./Images/Color_Lavarock.png";
 import MaderiaColor from "./Images/Color_Maderia.png";
-import PebblegreyColor from "./Images/Color_Pebblegrey.png";
+import PebblegrayColor from "./Images/Color_Pebblegray.png";
 import RopeswingColor from "./Images/Color_Ropeswing.png";
 import SaddleColor from "./Images/Color_Saddle.png";
 import SpicedrumColor from "./Images/Color_Spicedrum.png";
@@ -37,7 +37,7 @@ import DeckHavanagoldColor from "./Images/1Color_Havanagold.png";
 import DeckIslandmistColor from "./Images/1Color_Islandmist.png";
 import DeckLavarockColor from "./Images/1Color_Lavarock.png";
 import DeckMaderiaColor from "./Images/1Color_Maderia.png";
-import DeckPebblegreyColor from "./Images/1Color_Pebblegrey.png";
+import DeckPebblegrayColor from "./Images/1Color_Pebblegray.png";
 import DeckRopeswingColor from "./Images/1Color_Ropeswing.png";
 import DeckSaddleColor from "./Images/1Color_Saddle.png";
 import DeckSpicedrumColor from "./Images/1Color_Spicedrum.png";
@@ -49,6 +49,32 @@ import DeckWoodlandbrownColor from "./Images/1Color_Woodlandbrown.png";
 
 export const DeckColorsData = [
   {
+    name: "(Transcend) Island Mist",
+    img: DeckIslandmistColor,
+    alt: "Islandmist"
+  },
+  {
+    name: "(Transcend) Tiki Torch",
+    img: DeckTikitorchColor,
+    alt: "Tikitorch"
+  },
+  {
+    name: "(Transcend) Havana Gold",
+    img: DeckHavanagoldColor,
+    alt: "Havanagold"
+  },
+  {
+    name: "(Transcend) Spiced Rum",
+    img: DeckSpicedrumColor,
+    alt: "Spicedrum"
+  },
+  {
+    name: "(Transcend) Lava Rock",
+    img: DeckLavarockColor,
+    alt: "Lavarock"
+  },
+
+  {
     name: "(Transcend) Fire Pit",
     img: DeckFirepitColor,
     alt: "Firepit"
@@ -58,37 +84,13 @@ export const DeckColorsData = [
     img: DeckGravelpathColor,
     alt: "Gravelpath"
   },
-  {
-    name: "(Transcend) Havana Gold",
-    img: DeckHavanagoldColor,
-    alt: "Havanagold"
-  },
-  {
-    name: "(Transcend) Island Mist",
-    img: DeckIslandmistColor,
-    alt: "Islandmist"
-  },
-  {
-    name: "(Transcend) Lava Rock",
-    img: DeckLavarockColor,
-    alt: "Lavarock"
-  },
 
   {
     name: "(Transcend) Rope Swing",
     img: DeckRopeswingColor,
     alt: "Ropeswing"
   },
-  {
-    name: "(Transcend) Spiced Rum",
-    img: DeckSpicedrumColor,
-    alt: "Spicedrum"
-  },
-  {
-    name: "(Transcend) Tiki Torch",
-    img: DeckTikitorchColor,
-    alt: "Tikitorch"
-  },
+
   {
     name: "(Transcend) Tree House",
     img: DeckTreehouseColor,
@@ -140,10 +142,12 @@ export const DeckColorsData = [
 
   { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
   {
-    name: "(Select) Pebble Grey",
-    img: DeckPebblegreyColor,
-    alt: "Pebblegrey"
+    name: "(Select) Pebble Gray",
+    img: DeckPebblegrayColor,
+    alt: "Pebblegray"
   },
+  { name: "(Select) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+
   {
     name: "(Select) Winchester Grey",
     img: DeckWinchestergrayColor,
@@ -160,107 +164,107 @@ export const DeckColorsData = [
 
 export const TabColorsData = [
   {
-    name: "(Transcend) Fire Pit",
+    name: "Fire Pit",
     img: FirepitColor,
     alt: "Firepit"
   },
   {
-    name: "(Transcend) Gravel Path",
+    name: "Gravel Path",
     img: GravelpathColor,
     alt: "Gravelpath"
   },
   {
-    name: "(Transcend) Havana Gold",
+    name: "Havana Gold",
     img: HavanagoldColor,
     alt: "Havanagold"
   },
   {
-    name: "(Transcend) Island Mist",
+    name: "Island Mist",
     img: IslandmistColor,
     alt: "Islandmist"
   },
   {
-    name: "(Transcend) Lava Rock",
+    name: "Lava Rock",
     img: LavarockColor,
     alt: "Lavarock"
   },
 
   {
-    name: "(Transcend) Rope Swing",
+    name: "Rope Swing",
     img: RopeswingColor,
     alt: "Ropeswing"
   },
   {
-    name: "(Transcend) Spiced Rum",
+    name: "Spiced Rum",
     img: SpicedrumColor,
     alt: "Spicedrum"
   },
   {
-    name: "(Transcend) Tiki Torch",
+    name: "Tiki Torch",
     img: TikitorchColor,
     alt: "Tikitorch"
   },
   {
-    name: "(Transcend) Tree House",
+    name: "Tree House",
     img: TreehouseColor,
     alt: "Treehouse"
   },
   {
-    name: "(Transcend) Vintage Lantern",
+    name: "Vintage Lantern",
     img: VintagelanternColor,
     alt: "Vintagelantern"
   },
   {
-    name: "(Enhance) Beach Dune",
+    name: "Beach Dune",
     img: BeachduneColor,
     alt: "Beachdune"
   },
   {
-    name: "(Enhance) Clam Shell",
+    name: "Clam Shell",
     img: ClamshellColor,
     alt: "Clamshell"
   },
   {
-    name: "(Enhance) Coastal Bluff",
+    name: "Coastal Bluff",
     img: CoastalbluffColor,
     alt: "Coastalbluff"
   },
   {
-    name: "(Enhance) Foggy Wharf",
+    name: "Foggy Wharf",
     img: FoggywharfColor,
     alt: "Foggywharf"
   },
   {
-    name: "(Enhance) Rocky Harbor",
+    name: "Rocky Harbor",
     img: RockyharborColor,
     alt: "Rockyharbor"
   },
   {
-    name: "(Enhance) Sunset Cove",
+    name: "Sunset Cove",
     img: SunsetcoveColor,
     alt: "Sunsetcove"
   },
-  { name: "(Enhance) Saddle", img: SaddleColor, alt: "Saddle" },
+  { name: "Saddle", img: SaddleColor, alt: "Saddle" },
 
   {
-    name: "(Enhance) Toasted Sand",
+    name: "Toasted Sand",
     img: ToastedsandColor,
     alt: "ToastedSand"
   },
 
-  { name: "(Select) Maderia", img: MaderiaColor, alt: "Maderia" },
+  { name: "Maderia", img: MaderiaColor, alt: "Maderia" },
   {
-    name: "(Select) Pebble Grey",
-    img: PebblegreyColor,
-    alt: "Pebblegrey"
+    name: "Pebble Gray",
+    img: PebblegrayColor,
+    alt: "Pebblegray"
   },
   {
-    name: "(Select) Winchester Grey",
+    name: "Winchester Grey",
     img: WinchestergrayColor,
     alt: "Winchestergray"
   },
   {
-    name: "(Select) Woodland Brown",
+    name: "Woodland Brown",
     img: WoodlandbrownColor,
     alt: "Woodlandbrown"
   },
@@ -270,5 +274,5 @@ export const TabColorsData = [
     img: BronzeColor,
     alt: "Bronze"
   },
-  { name: "Charcoal", img: CharcoalColor, alt: "Charcoal" }
+  { name: "Charcoal Black", img: CharcoalColor, alt: "Charcoal" }
 ];

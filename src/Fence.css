@@ -32,27 +32,27 @@
 
 .legend-item {
   margin: 0px 9.5px;
-  width: 104px;
+  width: 109px;
 }
 
 .legend-item2 {
   margin: 0px 10px;
-  width: 119px;
+  width: 124px;
 }
 
 .legend-item3 {
   margin: 0px 79px;
-  width: 119px;
+  width: 124px;
 }
 
 .legend-item4 {
   margin: 0px 20px;
-  width: 119px;
+  width: 124px;
 }
 
 .legend-item5 {
   margin: 0px 51px;
-  width: 119px;
+  width: 124px;
 }
 
 .block {
@@ -80,7 +80,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 60px;
+  width: 50px;
+}
+
+.name-bold {
+  font-size: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50px;
+  font-weight: bold;
 }
 
 .fence-container {

@@ -570,7 +570,6 @@ class Fence extends Component {
           </div>
         </div>
 
-        {/*Filter before mapping for crown rail AND iron post style otherwise map through all tabs*/}
         <div className="bottom-section">
           <h3 className="choose-color">2. Pick your color options:</h3>
           <Tabs
@@ -591,7 +590,6 @@ class Fence extends Component {
                           style={tab.name === "Summary" ? summaryTab : null}
                         >
                           {tab.name}
-                          {console.log(tab)}
                         </Tab>
                       );
                     })
