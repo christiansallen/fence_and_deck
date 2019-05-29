@@ -136,7 +136,7 @@ class TabColors extends Component {
         }
 
         if (
-          (activeTab === "Post Cap" ||
+          (activeTab === "Cap/Skirt" ||
             activeTab === "Post Sleeve" ||
             activeTab === "Post Skirt") &&
           !ironPostStyle
@@ -233,7 +233,7 @@ class TabColors extends Component {
         if (
           (activeTab === "Post Skirt" ||
             activeTab === "Post Sleeve" ||
-            activeTab === "Post Cap") &&
+            activeTab === "Cap/Skirt") &&
           ironPostStyle
         ) {
           return [
@@ -383,7 +383,7 @@ class TabColors extends Component {
     const {
       handleTabColors,
       activeTab,
-      postCapColor,
+      capSkirtColor,
       capRailColor,
       postSleeveColor,
       railsColor,
@@ -397,7 +397,6 @@ class TabColors extends Component {
       ironPostStyle,
       noneStyle
     } = this.props;
-
     return (
       <div className="tab-container">
         {activeTab !== "Summary" ? (
@@ -432,23 +431,32 @@ class TabColors extends Component {
               )
               .map((item, idx) => {
                 return (
-                  <p key={idx} className="legend-item2">
-                    {item.name === "Post Cap"
-                      ? postCapColor
-                      : item.name === "Post Sleeve"
-                      ? postSleeveColor
-                      : item.name === "Rails"
-                      ? railsColor
-                      : item.name === "Baluster"
-                      ? balusterColor
-                      : item.name === "Cap Rail"
-                      ? capRailColor
-                      : item.name === "Deck"
-                      ? deckColor
-                      : item.name === "Fascia"
-                      ? fasciaColor
-                      : borderColor}
-                  </p>
+                  <div>
+                    <p key={idx} className="legend-item2">
+                      {item.name === "Cap/Skirt"
+                        ? capSkirtColor
+                        : item.name === "Post Sleeve"
+                        ? postSleeveColor
+                        : item.name === "Rails"
+                        ? railsColor
+                        : item.name === "Baluster"
+                        ? balusterColor
+                        : item.name === "Cap Rail"
+                        ? capRailColor
+                        : item.name === "Deck"
+                        ? deckColor
+                        : item.name === "Fascia"
+                        ? fasciaColor
+                        : borderColor}
+                    </p>
+
+                    {/*Add color swatch here */}
+                    {TabColorsData.filter(tab =>
+                      tab.name.includes(capSkirtColor)
+                        ? console.log("first tab.img", tab.img)
+                        : console.log("second tab.img:", tab.img)
+                    )}
+                  </div>
                 );
               })}
           </div>
@@ -462,13 +470,13 @@ class TabColors extends Component {
                   item.name !== "Rails" &&
                   item.name !== "Baluster" &&
                   item.name !== "Post Sleeve" &&
-                  item.name !== "Post Cap"
+                  item.name !== "Cap/Skirt"
               )
               .map((item, idx) => {
                 return (
                   <p key={idx} className="legend-item3">
-                    {item.name === "Post Cap"
-                      ? postCapColor
+                    {item.name === "Cap/Skirt"
+                      ? capSkirtColor
                       : item.name === "Post Sleeve"
                       ? postSleeveColor
                       : item.name === "Rails"
@@ -498,8 +506,8 @@ class TabColors extends Component {
               .map((item, idx) => {
                 return (
                   <p key={idx} className="legend-item4">
-                    {item.name === "Post Cap"
-                      ? postCapColor
+                    {item.name === "Cap/Skirt"
+                      ? capSkirtColor
                       : item.name === "Post Sleeve"
                       ? postSleeveColor
                       : item.name === "Rails"
@@ -526,13 +534,13 @@ class TabColors extends Component {
                   item.name !== "Rails" &&
                   item.name !== "Baluster" &&
                   item.name !== "Post Sleeve" &&
-                  item.name !== "Post Cap"
+                  item.name !== "Cap/Skirt"
               )
               .map((item, idx) => {
                 return (
                   <p key={idx} className="legend-item5">
-                    {item.name === "Post Cap"
-                      ? postCapColor
+                    {item.name === "Cap/Skirt"
+                      ? capSkirtColor
                       : item.name === "Post Sleeve"
                       ? postSleeveColor
                       : item.name === "Rails"
@@ -557,8 +565,8 @@ class TabColors extends Component {
               .map((item, idx) => {
                 return (
                   <p key={idx} className="legend-item">
-                    {item.name === "Post Cap"
-                      ? postCapColor
+                    {item.name === "Cap/Skirt"
+                      ? capSkirtColor
                       : item.name === "Post Sleeve"
                       ? postSleeveColor
                       : item.name === "Rails"

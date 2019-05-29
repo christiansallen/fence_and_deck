@@ -274,5 +274,6 @@ export const TabColorsData = [
     img: BronzeColor,
     alt: "Bronze"
   },
-  { name: "Charcoal Black", img: CharcoalColor, alt: "Charcoal" }
+  { name: "Charcoal Black", img: CharcoalColor, alt: "Charcoal" },
+  { name: "White", img: WhiteColor, alt: "White" }
 ];

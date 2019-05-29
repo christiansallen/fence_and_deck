@@ -24,8 +24,8 @@ class Fence extends Component {
       trex: imgData["Baluster"]["TrexWhite"],
       aluminum: imgData["Baluster"]["AluminumWhite"],
       iron: AluminumCharcoal,
-      flat: imgData["Post Cap"]["FlatWhite"],
-      pyramid: imgData["Post Cap"]["PyramidWhite"],
+      flat: imgData["Cap/Skirt"]["FlatWhite"],
+      pyramid: imgData["Cap/Skirt"]["PyramidWhite"],
       skirt: imgData["Post Skirt"]["SkirtWhite"],
       rail: imgData["Rails"]["RailsWhite"],
       ironRail: IronGuardRail,
@@ -52,9 +52,9 @@ class Fence extends Component {
       tabIndex: 0,
 
       tabs,
-      activeTab: "Post Cap",
+      activeTab: "Cap/Skirt",
 
-      postCapColor: "White",
+      capSkirtColor: "White",
       postSleeveColor: "White",
       capRailColor: "Havana Gold",
       railsColor: "White",
@@ -78,8 +78,8 @@ class Fence extends Component {
 
     // eslint-disable-next-line default-case
     switch (active) {
-      case "Post Cap":
-        this.setState({ postCapColor: color });
+      case "Cap/Skirt":
+        this.setState({ capSkirtColor: color });
         break;
       case "Post Sleeve":
         this.setState({ postSleeveColor: color });
@@ -115,10 +115,10 @@ class Fence extends Component {
       this.setState({
         deck: imgData["Deck"][`Deck${name}`]
       });
-    } else if (activeTab === "Post Cap") {
+    } else if (activeTab === "Cap/Skirt") {
       this.setState({
-        flat: imgData["Post Cap"][`Flat${name}`],
-        pyramid: imgData["Post Cap"][`Pyramid${name}`],
+        flat: imgData["Cap/Skirt"][`Flat${name}`],
+        pyramid: imgData["Cap/Skirt"][`Pyramid${name}`],
         skirt: imgData["Post Skirt"][`Skirt${name}`]
       });
     } else if (activeTab === "Cap Rail") {
@@ -182,7 +182,7 @@ class Fence extends Component {
       aluminumStyle: false,
       ironStyle: true,
       postToggle: true,
-      activeTab: "Post Cap",
+      activeTab: "Cap/Skirt",
       tabIndex: 0
     });
   };
@@ -217,14 +217,14 @@ class Fence extends Component {
       this.setState({
         flatStyle: false,
         pyramidStyle: true,
-        activeTab: "Post Cap",
+        activeTab: "Cap/Skirt",
         tabIndex: 0
       });
     } else {
       this.setState({
         flatStyle: true,
         pyramidStyle: false,
-        activeTab: "Post Cap",
+        activeTab: "Cap/Skirt",
         tabIndex: 0
       });
     }
@@ -640,7 +640,7 @@ class Fence extends Component {
                         tab.name !== "Rails" &&
                         tab.name !== "Cap Rail" &&
                         tab.name !== "Baluster" &&
-                        tab.name !== "Post Cap" &&
+                        tab.name !== "Cap/Skirt" &&
                         tab.name !== "Post Sleeve"
                     )
                     .map((tab, idx) => {
@@ -662,7 +662,7 @@ class Fence extends Component {
                       tab =>
                         tab.name !== "Rails" &&
                         tab.name !== "Baluster" &&
-                        tab.name !== "Post Cap" &&
+                        tab.name !== "Cap/Skirt" &&
                         tab.name !== "Post Sleeve"
                     )
                     .map((tab, idx) => {
@@ -703,7 +703,7 @@ class Fence extends Component {
                     ironStyle={this.state.ironStyle}
                     ironPostStyle={this.state.ironPostStyle}
                     compositeStyle={this.state.compositeStyle}
-                    postCapColor={this.state.postCapColor}
+                    capSkirtColor={this.state.capSkirtColor}
                     capRailColor={this.state.capRailColor}
                     postSleeveColor={this.state.postSleeveColor}
                     railsColor={this.state.railsColor}

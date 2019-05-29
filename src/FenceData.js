@@ -179,7 +179,7 @@ import TrexLavarock from "./Images/Trex_Lavarock.png";
 import "./Fence.css";
 
 export const tabs = [
-  { name: "Post Cap" },
+  { name: "Cap/Skirt" },
   { name: "Post Sleeve" },
   { name: "Rails" },
   { name: "Baluster" },
@@ -224,7 +224,8 @@ export const imgData = {
     DeckIslandmist: DeckIslandmist,
     DeckMaderia: DeckMaderia
   },
-  "Post Cap": {
+
+  "Cap/Skirt": {
     FlatCharcoal: FlatCharcoal,
     FlatFirepit: FlatFirepit,
     FlatGravelpath: FlatGravelpath,
