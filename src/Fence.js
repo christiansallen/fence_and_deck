@@ -49,6 +49,9 @@ class Fence extends Component {
       ironPostStyle: false,
       hidePostCaps: false,
       noneStyle: false,
+      transcendStyle: true,
+      enhanceStyle: false,
+      selectStyle: false,
       tabIndex: 0,
 
       tabs,
@@ -303,6 +306,159 @@ class Fence extends Component {
       tabIndex: 0
     });
   };
+  toggleDeckStyle1 = () => {
+    if (this.state.ironStyle && this.state.compositePostStyle) {
+      this.setState({
+        transcendStyle: true,
+        enhanceStyle: false,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 3
+      });
+    } else if (this.state.compositePostStyle && !this.state.crownStyle) {
+      this.setState({
+        transcendStyle: true,
+        enhanceStyle: false,
+        selectStyle: false,
+        tabIndex: 5,
+        activeTab: "Deck"
+      });
+    } else if (
+      this.state.ironStyle &&
+      this.state.ironPostStyle &&
+      !this.state.twoStyle
+    ) {
+      this.setState({
+        transcendStyle: true,
+        enhanceStyle: false,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 0
+      });
+    } else if (
+      this.state.ironStyle &&
+      this.state.ironPostStyle &&
+      this.state.twoStyle
+    ) {
+      this.setState({
+        transcendStyle: true,
+        enhanceStyle: false,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 1
+      });
+    } else {
+      this.setState({
+        transcendStyle: true,
+        enhanceStyle: false,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 4
+      });
+    }
+  };
+  toggleDeckStyle2 = () => {
+    if (this.state.ironStyle && this.state.compositePostStyle) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: true,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 3
+      });
+    } else if (this.state.compositePostStyle && !this.state.crownStyle) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: true,
+        selectStyle: false,
+        tabIndex: 5,
+        activeTab: "Deck"
+      });
+    } else if (
+      this.state.ironStyle &&
+      this.state.ironPostStyle &&
+      !this.state.twoStyle
+    ) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: true,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 0
+      });
+    } else if (
+      this.state.ironStyle &&
+      this.state.ironPostStyle &&
+      this.state.twoStyle
+    ) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: true,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 1
+      });
+    } else {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: true,
+        selectStyle: false,
+        activeTab: "Deck",
+        tabIndex: 4
+      });
+    }
+  };
+  toggleDeckStyle3 = () => {
+    if (this.state.ironStyle && this.state.compositePostStyle) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: false,
+        selectStyle: true,
+        activeTab: "Deck",
+        tabIndex: 3
+      });
+    } else if (this.state.compositePostStyle && !this.state.crownStyle) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: false,
+        selectStyle: true,
+        tabIndex: 5,
+        activeTab: "Deck"
+      });
+    } else if (
+      this.state.ironStyle &&
+      this.state.ironPostStyle &&
+      !this.state.twoStyle
+    ) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: false,
+        selectStyle: true,
+        activeTab: "Deck",
+        tabIndex: 0
+      });
+    } else if (
+      this.state.ironStyle &&
+      this.state.ironPostStyle &&
+      this.state.twoStyle
+    ) {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: false,
+        selectStyle: true,
+        activeTab: "Deck",
+        tabIndex: 1
+      });
+    } else {
+      this.setState({
+        transcendStyle: false,
+        enhanceStyle: false,
+        selectStyle: true,
+        activeTab: "Deck",
+        tabIndex: 4
+      });
+    }
+  };
 
   render() {
     const clicked = {
@@ -337,6 +493,10 @@ class Fence extends Component {
     const clickedBtn44 =
       this.state.ironPostStyle === true ? clicked : notClicked;
 
+    const clickedBtn5 = this.state.transcendStyle ? clicked : notClicked;
+    const clickedBtn55 = this.state.enhanceStyle ? clicked : notClicked;
+    const clickedBtn555 = this.state.selectStyle ? clicked : notClicked;
+
     const { tabs } = this.state;
     return (
       <div className="container">
@@ -350,7 +510,7 @@ class Fence extends Component {
           </div>
           <div className="fence-image-options">
             <div className="fence-options">
-              <h3>1. Pick your railing options:</h3>
+              <h3>1. Choose your railing options:</h3>
 
               <div className="options">
                 <h4 className="option-title">Baluster:</h4>
@@ -460,6 +620,33 @@ class Fence extends Component {
                     onClick={this.toggleStylePostCap}
                   >
                     Pyramid
+                  </div>
+                </div>
+              </div>
+              <h3 className="deck-title">2. Choose your decking options:</h3>
+              <div className="options">
+                <h4 className="option-title">Family:</h4>
+                <div className="option-container">
+                  <div
+                    className="option"
+                    style={clickedBtn5}
+                    onClick={this.toggleDeckStyle1}
+                  >
+                    Transcend
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn55}
+                    onClick={this.toggleDeckStyle2}
+                  >
+                    Enhance
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn555}
+                    onClick={this.toggleDeckStyle3}
+                  >
+                    Select
                   </div>
                 </div>
               </div>
@@ -584,7 +771,7 @@ class Fence extends Component {
         </div>
 
         <div className="bottom-section">
-          <h3 className="choose-color">2. Pick your color options:</h3>
+          <h3 className="choose-color">3. Choose your color options:</h3>
           <Tabs
             selectedIndex={this.state.tabIndex}
             onSelect={tabIndex => this.setState({ tabIndex })}

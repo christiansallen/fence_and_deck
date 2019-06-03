@@ -282,7 +282,6 @@
 .options {
   display: flex;
   margin-top: 10px;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -293,10 +292,27 @@
 }
 
 .option-title {
-  padding: 10px;
-  width: 150px;
+  padding: 5px;
+  width: 125px;
   align-content: flex-start;
   display: flex;
+}
+
+.deck-title {
+  margin-top: 25px;
+}
+
+.deck-options {
+  margin-top: 25px;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-style: italic;
 }
 
 .option {
@@ -351,7 +367,7 @@
   margin: 0 0 10px;
   padding: 0;
   z-index: 20;
-  font-size: 20px;
+  font-size: 14px;
   display: flex;
   justify-content: space-around;
 }
@@ -371,6 +387,9 @@
   border-color: #aaa;
   color: black;
   border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .react-tabs__tab--selected {
