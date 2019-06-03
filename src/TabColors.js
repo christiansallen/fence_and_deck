@@ -3,6 +3,13 @@ import { TabColorsData, DeckColorsData } from "./TabColorsData";
 import { imgData } from "./FenceData.js";
 import { tabs } from "./FenceData.js";
 
+import DeckBeachduneColor from "./Images/1Color_Beachdune.png";
+import DeckClamshellColor from "./Images/1Color_Clamshell.png";
+import DeckCoastalbluffColor from "./Images/1Color_Coastalbluff.png";
+import DeckFoggywharfColor from "./Images/1Color_Foggywharf.png";
+import DeckRockyharborColor from "./Images/1Color_Rockyharbor.png";
+import DeckSunsetcoveColor from "./Images/1Color_Sunsetcove.png";
+import DeckToastedsandColor from "./Images/1Color_Toastedsand.png";
 import DeckFirepitColor from "./Images/1Color_Firepit.png";
 import DeckGravelpathColor from "./Images/1Color_Gravelpath.png";
 import DeckHavanagoldColor from "./Images/1Color_Havanagold.png";
@@ -67,6 +74,9 @@ class TabColors extends Component {
       twoStyle,
       ironStyle,
       ironPostStyle,
+      transcendStyle,
+      enhanceStyle,
+      selectStyle,
       compositeStyle
     } = this.props;
     if (activeTab !== "Summary") {
@@ -260,7 +270,257 @@ class TabColors extends Component {
           newFenceOptions.includes(x.alt)
         );
 
-        if (activeTab === "Cap Rail" && oneStyle) {
+        if (
+          (activeTab === "Deck" || activeTab === "Border") &&
+          transcendStyle
+        ) {
+          return [
+            {
+              name: "(Transcend) Island Mist",
+              img: DeckIslandmistColor,
+              alt: "Islandmist"
+            },
+            {
+              name: "(Transcend) Tiki Torch",
+              img: DeckTikitorchColor,
+              alt: "Tikitorch"
+            },
+            {
+              name: "(Transcend) Havana Gold",
+              img: DeckHavanagoldColor,
+              alt: "Havanagold"
+            },
+            {
+              name: "(Transcend) Spiced Rum",
+              img: DeckSpicedrumColor,
+              alt: "Spicedrum"
+            },
+            {
+              name: "(Transcend) Lava Rock",
+              img: DeckLavarockColor,
+              alt: "Lavarock"
+            },
+
+            {
+              name: "(Transcend) Fire Pit",
+              img: DeckFirepitColor,
+              alt: "Firepit"
+            },
+            {
+              name: "(Transcend) Gravel Path",
+              img: DeckGravelpathColor,
+              alt: "Gravelpath"
+            },
+
+            {
+              name: "(Transcend) Rope Swing",
+              img: DeckRopeswingColor,
+              alt: "Ropeswing"
+            },
+
+            {
+              name: "(Transcend) Tree House",
+              img: DeckTreehouseColor,
+              alt: "Treehouse"
+            },
+            {
+              name: "(Transcend) Vintage Lantern",
+              img: DeckVintagelanternColor,
+              alt: "Vintagelantern"
+            }
+          ];
+        } else if (
+          (activeTab === "Deck" || activeTab === "Border") &&
+          enhanceStyle
+        ) {
+          return [
+            {
+              name: "(Enhance) Beach Dune",
+              img: DeckBeachduneColor,
+              alt: "Beachdune"
+            },
+            {
+              name: "(Enhance) Clam Shell",
+              img: DeckClamshellColor,
+              alt: "Clamshell"
+            },
+            {
+              name: "(Enhance) Coastal Bluff",
+              img: DeckCoastalbluffColor,
+              alt: "Coastalbluff"
+            },
+            {
+              name: "(Enhance) Foggy Wharf",
+              img: DeckFoggywharfColor,
+              alt: "Foggywharf"
+            },
+            {
+              name: "(Enhance) Rocky Harbor",
+              img: DeckRockyharborColor,
+              alt: "Rockyharbor"
+            },
+            {
+              name: "(Enhance) Sunset Cove",
+              img: DeckSunsetcoveColor,
+              alt: "Sunsetcove"
+            },
+
+            {
+              name: "(Enhance) Toasted Sand",
+              img: DeckToastedsandColor,
+              alt: "Toastedsand"
+            },
+
+            { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" }
+          ];
+        } else if (
+          (activeTab === "Deck" || activeTab === "Border") &&
+          selectStyle
+        ) {
+          return [
+            { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
+            {
+              name: "(Select) Pebble Gray",
+              img: DeckPebblegrayColor,
+              alt: "Pebblegray"
+            },
+            { name: "(Select) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+
+            {
+              name: "(Select) Winchester Grey",
+              img: DeckWinchestergrayColor,
+              alt: "Winchestergray"
+            },
+            {
+              name: "(Select) Woodland Brown",
+              img: DeckWoodlandbrownColor,
+              alt: "Woodlandbrown"
+            }
+          ];
+        }
+
+        if (activeTab === "Fascia" && transcendStyle) {
+          return [
+            {
+              name: "(Transcend) Island Mist",
+              img: DeckIslandmistColor,
+              alt: "Islandmist"
+            },
+            {
+              name: "(Transcend) Tiki Torch",
+              img: DeckTikitorchColor,
+              alt: "Tikitorch"
+            },
+            {
+              name: "(Transcend) Havana Gold",
+              img: DeckHavanagoldColor,
+              alt: "Havanagold"
+            },
+            {
+              name: "(Transcend) Spiced Rum",
+              img: DeckSpicedrumColor,
+              alt: "Spicedrum"
+            },
+            {
+              name: "(Transcend) Lava Rock",
+              img: DeckLavarockColor,
+              alt: "Lavarock"
+            },
+
+            {
+              name: "(Transcend) Fire Pit",
+              img: DeckFirepitColor,
+              alt: "Firepit"
+            },
+            {
+              name: "(Transcend) Gravel Path",
+              img: DeckGravelpathColor,
+              alt: "Gravelpath"
+            },
+
+            {
+              name: "(Transcend) Rope Swing",
+              img: DeckRopeswingColor,
+              alt: "Ropeswing"
+            },
+
+            {
+              name: "(Transcend) Tree House",
+              img: DeckTreehouseColor,
+              alt: "Treehouse"
+            },
+            {
+              name: "(Transcend) Vintage Lantern",
+              img: DeckVintagelanternColor,
+              alt: "Vintagelantern"
+            },
+            { name: "White", img: WhiteColor, alt: "White" }
+          ];
+        } else if (activeTab === "Fascia" && enhanceStyle) {
+          return [
+            {
+              name: "(Enhance) Beach Dune",
+              img: DeckBeachduneColor,
+              alt: "Beachdune"
+            },
+            {
+              name: "(Enhance) Clam Shell",
+              img: DeckClamshellColor,
+              alt: "Clamshell"
+            },
+            {
+              name: "(Enhance) Coastal Bluff",
+              img: DeckCoastalbluffColor,
+              alt: "Coastalbluff"
+            },
+            {
+              name: "(Enhance) Foggy Wharf",
+              img: DeckFoggywharfColor,
+              alt: "Foggywharf"
+            },
+            {
+              name: "(Enhance) Rocky Harbor",
+              img: DeckRockyharborColor,
+              alt: "Rockyharbor"
+            },
+            {
+              name: "(Enhance) Sunset Cove",
+              img: DeckSunsetcoveColor,
+              alt: "Sunsetcove"
+            },
+
+            {
+              name: "(Enhance) Toasted Sand",
+              img: DeckToastedsandColor,
+              alt: "Toastedsand"
+            },
+
+            { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+            { name: "White", img: WhiteColor, alt: "White" }
+          ];
+        } else if (activeTab === "Fascia" && selectStyle) {
+          return [
+            { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
+            {
+              name: "(Select) Pebble Gray",
+              img: DeckPebblegrayColor,
+              alt: "Pebblegray"
+            },
+            { name: "(Select) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+
+            {
+              name: "(Select) Winchester Grey",
+              img: DeckWinchestergrayColor,
+              alt: "Winchestergray"
+            },
+            {
+              name: "(Select) Woodland Brown",
+              img: DeckWoodlandbrownColor,
+              alt: "Woodlandbrown"
+            },
+            { name: "White", img: WhiteColor, alt: "White" }
+          ];
+        } else if (activeTab === "Cap Rail" && oneStyle) {
           return [
             {
               img: DeckIslandmistColor,
@@ -342,9 +602,7 @@ class TabColors extends Component {
               alt: "Woodlandbrown"
             }
           ];
-        }
-
-        if (activeTab === "Cap Rail" && twoStyle) {
+        } else if (activeTab === "Cap Rail" && twoStyle) {
           return [
             {
               img: DeckHavanagoldColor,

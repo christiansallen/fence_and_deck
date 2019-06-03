@@ -625,8 +625,7 @@ class Fence extends Component {
               </div>
               <h3 className="deck-title">2. Choose your decking options:</h3>
               <div className="options">
-                <h4 className="option-title">Family:</h4>
-                <div className="option-container">
+                <div className="option-container" style={{ width: "375px" }}>
                   <div
                     className="option"
                     style={clickedBtn5}
@@ -636,17 +635,17 @@ class Fence extends Component {
                   </div>
                   <div
                     className="option"
-                    style={clickedBtn55}
-                    onClick={this.toggleDeckStyle2}
-                  >
-                    Enhance
-                  </div>
-                  <div
-                    className="option"
                     style={clickedBtn555}
                     onClick={this.toggleDeckStyle3}
                   >
                     Select
+                  </div>
+                  <div
+                    className="option"
+                    style={clickedBtn55}
+                    onClick={this.toggleDeckStyle2}
+                  >
+                    Enhance
                   </div>
                 </div>
               </div>
@@ -757,14 +756,53 @@ class Fence extends Component {
               />
 
               <div className="legend-nums">
-                <p className="legend-num-1">1----</p>
-                <p className="legend-num-2">2----</p>
-                <p className="legend-num-3">3-----------</p>
-                <p className="legend-num-4">4--------------</p>
-                <p className="legend-num-5">----------5</p>
+                <p
+                  className={
+                    this.state.hidePostCaps
+                      ? "hidden"
+                      : this.state.oneStyle
+                      ? "hidden"
+                      : "legend-num-1"
+                  }
+                >
+                  1----
+                </p>
+                <p
+                  className={
+                    this.state.ironPostStyle ? "hidden" : "legend-num-2"
+                  }
+                >
+                  2-------
+                </p>
+                <p className={this.state.ironStyle ? "hidden" : "legend-num-3"}>
+                  3-----------
+                </p>
+                <p className={this.state.ironStyle ? "hidden" : "legend-num-4"}>
+                  4--------------
+                </p>
+                <p
+                  className={
+                    !this.state.crownStyle && !this.state.ironPostStyle
+                      ? "legend-num-5"
+                      : this.state.crownStyle
+                      ? "hidden"
+                      : this.state.ironPostStyle
+                      ? "hidden"
+                      : "legend-num-5"
+                  }
+                >
+                  ----------5
+                </p>
                 <p className="legend-num-6">6------------------</p>
                 <p className="legend-num-7">7-------</p>
                 <p className="legend-num-8">8-------</p>
+                <p
+                  className={
+                    this.state.ironPostStyle ? "hidden" : "legend-num-9"
+                  }
+                >
+                  1------
+                </p>
               </div>
             </div>
           </div>
@@ -906,6 +944,9 @@ class Fence extends Component {
               return (
                 <TabPanel key={idx}>
                   <TabColors
+                    transcendStyle={this.state.transcendStyle}
+                    enhanceStyle={this.state.enhanceStyle}
+                    selectStyle={this.state.selectStyle}
                     handleTabColors={this.handleTabColors}
                     activeTab={this.state.activeTab}
                     aluminum={this.state.aluminumStyle}

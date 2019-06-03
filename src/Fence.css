@@ -64,6 +64,13 @@
   top: 105px;
 }
 
+.legend-num-9 {
+  position: relative;
+  z-index: 10;
+  bottom: 104px;
+  right: 145px;
+}
+
 .color:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -296,6 +303,10 @@
   width: 125px;
   align-content: flex-start;
   display: flex;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .deck-title {
