@@ -784,6 +784,10 @@ class Fence extends Component {
                   className={
                     !this.state.crownStyle && !this.state.ironPostStyle
                       ? "legend-num-5"
+                      : this.state.ironStyle &&
+                        this.state.ironPostStyle &&
+                        this.state.twoStyle
+                      ? "legend-num-5"
                       : this.state.crownStyle
                       ? "hidden"
                       : this.state.ironPostStyle
