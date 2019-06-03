@@ -52,6 +52,7 @@ class Fence extends Component {
       tabIndex: 0,
 
       tabs,
+      activeColor: "",
       activeTab: "Cap/Skirt",
 
       capSkirtColor: "White",
@@ -74,7 +75,8 @@ class Fence extends Component {
 
   tabColor = (active, color) => {
     console.log("activeTab: ", active);
-    console.log("color: ", color);
+    console.log("activeColor: ", color);
+    this.setState({ activeColor: color });
 
     // eslint-disable-next-line default-case
     switch (active) {
@@ -566,6 +568,17 @@ class Fence extends Component {
                 alt="Fascia Firepit"
                 className="fascia"
               />
+
+              <div className="legend-nums">
+                <p className="legend-num-1">1----</p>
+                <p className="legend-num-2">2----</p>
+                <p className="legend-num-3">3-----------</p>
+                <p className="legend-num-4">4--------------</p>
+                <p className="legend-num-5">----------5</p>
+                <p className="legend-num-6">6------------------</p>
+                <p className="legend-num-7">7-------</p>
+                <p className="legend-num-8">8-------</p>
+              </div>
             </div>
           </div>
         </div>
@@ -590,6 +603,8 @@ class Fence extends Component {
                           style={tab.name === "Summary" ? summaryTab : null}
                         >
                           {tab.name}
+                          <br />
+                          {tab.num}
                         </Tab>
                       );
                     })
@@ -611,6 +626,8 @@ class Fence extends Component {
                           style={tab.name === "Summary" ? summaryTab : null}
                         >
                           {tab.name}
+                          <br />
+                          {tab.num}
                         </Tab>
                       );
                     })
@@ -627,6 +644,8 @@ class Fence extends Component {
                           style={tab.name === "Summary" ? summaryTab : null}
                         >
                           {tab.name}
+                          <br />
+                          {tab.num}
                         </Tab>
                       );
                     })
@@ -651,6 +670,8 @@ class Fence extends Component {
                           style={tab.name === "Summary" ? summaryTab : null}
                         >
                           {tab.name}
+                          <br />
+                          {tab.num}
                         </Tab>
                       );
                     })
@@ -673,6 +694,8 @@ class Fence extends Component {
                           style={tab.name === "Summary" ? summaryTab : null}
                         >
                           {tab.name}
+                          <br />
+                          {tab.num}
                         </Tab>
                       );
                     })
@@ -684,6 +707,8 @@ class Fence extends Component {
                         style={tab.name === "Summary" ? summaryTab : null}
                       >
                         {tab.name}
+                        <br />
+                        {tab.num}
                       </Tab>
                     );
                   })}

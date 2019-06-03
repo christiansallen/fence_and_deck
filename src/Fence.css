@@ -7,9 +7,82 @@
   margin-bottom: 3px;
 }
 
+.legend-nums {
+  z-index: 10;
+}
+
+.legend-num-1 {
+  position: relative;
+  right: 140px;
+  bottom: 27px;
+}
+
+.legend-num-2 {
+  position: relative;
+  top: 20px;
+  right: 138px;
+}
+
+.legend-num-3 {
+  z-index: 10;
+  position: relative;
+  bottom: 76px;
+  right: 113px;
+}
+
+.legend-num-4 {
+  position: relative;
+  z-index: 10;
+  right: 108px;
+}
+
+.legend-num-5 {
+  position: relative;
+  z-index: 10;
+  left: 229px;
+  bottom: 144px;
+}
+
+.legend-num-6 {
+  position: relative;
+  z-index: 10;
+  right: 147px;
+  top: 30px;
+}
+
+.legend-num-7 {
+  position: relative;
+  z-index: 10;
+  right: 207px;
+  top: 40px;
+}
+
+.legend-num-8 {
+  position: relative;
+  z-index: 10;
+  right: 265px;
+  top: 105px;
+}
+
 .color:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+.color-swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgb(107, 107, 107);
+  transition: all 0.2s ease-in-out;
+}
+
+.summary-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  justify-content: space-between;
 }
 
 .container {
@@ -208,7 +281,7 @@
 
 .options {
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
   justify-content: space-between;
   width: 100%;
 }

@@ -179,14 +179,14 @@ import TrexLavarock from "./Images/Trex_Lavarock.png";
 import "./Fence.css";
 
 export const tabs = [
-  { name: "Cap/Skirt" },
-  { name: "Post Sleeve" },
-  { name: "Rails" },
-  { name: "Baluster" },
-  { name: "Cap Rail" },
-  { name: "Deck" },
-  { name: "Border" },
-  { name: "Fascia" },
+  { name: "Cap/Skirt", num: "(1)" },
+  { name: "Post Sleeve", num: "(2)" },
+  { name: "Rails", num: "(3)" },
+  { name: "Baluster", num: "(4)" },
+  { name: "Cap Rail", num: "(5)" },
+  { name: "Deck", num: "(6)" },
+  { name: "Border", num: "(7)" },
+  { name: "Fascia", num: "(8)" },
   { name: "Summary" }
 ];
 

@@ -52,8 +52,11 @@ class TabColors extends Component {
     };
   }
 
-  changeColorItem = props => {
-    this.props.tabColor();
+  colorSwatch = color => {
+    TabColorsData.filter(tab => tab.name.includes(color)).map(x => {
+      console.log(x);
+      return <img className="color-swatch" src={x.img} alt={x.name} />;
+    });
   };
 
   componentName = activeTab => {
@@ -73,9 +76,11 @@ class TabColors extends Component {
         activeTab !== "Fascia" &&
         activeTab !== "Cap Rail"
       ) {
+        console.log(activeTab);
+        console.log(imgData[activeTab]);
         let test = Object.keys(imgData[activeTab]);
         let newFenceOptions = test
-          .map(x => x.split(/(?=[A-Z])/))
+          .map(x => x[0].split(/(?=[A-Z])/))
           .map(x => x[1]);
         let result = TabColorsData.filter(x => newFenceOptions.includes(x.alt));
 
@@ -431,7 +436,7 @@ class TabColors extends Component {
               )
               .map((item, idx) => {
                 return (
-                  <div>
+                  <div className="summary-items">
                     <p key={idx} className="legend-item2">
                       {item.name === "Cap/Skirt"
                         ? capSkirtColor
@@ -451,11 +456,7 @@ class TabColors extends Component {
                     </p>
 
                     {/*Add color swatch here */}
-                    {TabColorsData.filter(tab =>
-                      tab.name.includes(capSkirtColor)
-                        ? console.log("first tab.img", tab.img)
-                        : console.log("second tab.img:", tab.img)
-                    )}
+                    {this.colorSwatch(capSkirtColor)}
                   </div>
                 );
               })}
