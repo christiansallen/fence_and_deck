@@ -135,6 +135,22 @@
   width: 124px;
 }
 
+.print-button {
+  width: 10%;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: -79px;
+  margin-bottom: 50px;
+  background-color: rgb(16, 108, 26);
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+.print-button:hover {
+  transform: scale(1.1);
+}
+
 .block {
   margin: 4px 15px 0px 15px;
   align-items: center;

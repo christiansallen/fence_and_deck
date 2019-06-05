@@ -60,10 +60,9 @@ class TabColors extends Component {
   }
 
   colorSwatch = color => {
-    TabColorsData.filter(tab => tab.name.includes(color)).map(x => {
-      console.log(x);
-      return <img className="color-swatch" src={x.img} alt={x.name} />;
-    });
+    TabColorsData.filter(tab => tab.name.includes(color)).map(x =>
+      console.log(x.img)
+    );
   };
 
   componentName = activeTab => {
@@ -86,8 +85,6 @@ class TabColors extends Component {
         activeTab !== "Fascia" &&
         activeTab !== "Cap Rail"
       ) {
-        console.log(activeTab);
-        console.log(imgData[activeTab]);
         let test = Object.keys(imgData[activeTab]);
         let newFenceOptions = test
           .map(x => x[0].split(/(?=[A-Z])/))
@@ -677,9 +674,7 @@ class TabColors extends Component {
                   onClick={() => tabColor(activeTab, item.name)}
                 />
                 <p
-                  className={
-                    !item.name.includes("Transcend") ? "name" : "name-bold"
-                  }
+                  className={!item.name.includes("Transcend") ? "name" : "name"}
                 >
                   {item.name}
                 </p>

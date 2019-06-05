@@ -77,8 +77,6 @@ class Fence extends Component {
   };
 
   tabColor = (active, color) => {
-    console.log("activeTab: ", active);
-    console.log("activeColor: ", color);
     this.setState({ activeColor: color });
 
     // eslint-disable-next-line default-case
@@ -975,6 +973,9 @@ class Fence extends Component {
               );
             })}
           </Tabs>
+          <button className="print-button" onClick={() => window.print()}>
+            PRINT
+          </button>
         </div>
       </div>
     );
