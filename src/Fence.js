@@ -974,7 +974,7 @@ class Fence extends Component {
             })}
           </Tabs>
           <button className="print-button" onClick={() => window.print()}>
-            PRINT
+            PRINT / SAVE
           </button>
         </div>
       </div>

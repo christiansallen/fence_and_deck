@@ -136,10 +136,9 @@
 }
 
 .print-button {
-  width: 10%;
+  width: 15%;
   padding: 10px;
   margin: 0 auto;
-  margin-top: -79px;
   margin-bottom: 50px;
   background-color: rgb(16, 108, 26);
   color: white;
@@ -149,6 +148,10 @@
 
 .print-button:hover {
   transform: scale(1.1);
+}
+
+.print-button:focus {
+  outline: none;
 }
 
 .block {
@@ -167,8 +170,8 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding-bottom: 110px;
   z-index: 10;
+  margin-bottom: 50px;
 }
 
 .name {
