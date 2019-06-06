@@ -607,6 +607,8 @@ h4 {
   }
   .fence-container {
     height: 245px;
+    padding-left: 250px;
+    padding-top: 180px;
   }
   .container {
     margin: 0px;
