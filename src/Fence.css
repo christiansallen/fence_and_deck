@@ -89,12 +89,14 @@
   flex-direction: column;
   align-items: center;
   height: 100px;
+  width: 100%;
   justify-content: space-between;
 }
 
 .container {
   max-width: 2000px;
-  margin-left: 70px;
+  background-color: rgb(235, 235, 235);
+  margin-left: 60px;
 }
 
 .logo {
@@ -108,6 +110,7 @@
   font-size: 0.8rem;
   font-weight: bold;
   display: flex;
+  width: 87%;
 }
 
 .legend-item {
@@ -139,7 +142,7 @@
   width: 15%;
   padding: 10px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   background-color: rgb(16, 108, 26);
   color: white;
   font-size: 0.9rem;
@@ -148,6 +151,7 @@
 
 .print-button:hover {
   transform: scale(1.1);
+  transition-duration: 250ms;
 }
 
 .print-button:focus {
@@ -591,5 +595,42 @@ h4 {
   .legend-item5 {
     margin: 0px 13px;
     width: 76px;
+  }
+}
+
+@media print {
+  .legend-nums {
+    display: none;
+  }
+  .print-prompt {
+    display: none;
+  }
+  .fence-container {
+    height: 245px;
+  }
+  .container {
+    margin: 0px;
+  }
+  .option-title {
+    width: 106px;
+  }
+  .color {
+    width: 30px;
+    height: 30px;
+  }
+  .top-section {
+    width: 1200px;
+  }
+  .deck-title {
+    margin-top: 75px;
+  }
+  .choose-color {
+    margin-top: 75px;
+  }
+  .react-tabs__tab-list {
+    width: 100%;
+  }
+  @page {
+    size: landscape;
   }
 }

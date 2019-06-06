@@ -973,9 +973,14 @@ class Fence extends Component {
               );
             })}
           </Tabs>
-          <button className="print-button" onClick={() => window.print()}>
-            PRINT / SAVE
-          </button>
+          <div className="print-prompt">
+            <button className="print-button" onClick={() => window.print()}>
+              PRINT / SAVE
+            </button>
+            <p style={{ fontWeight: "bold", marginBottom: "40px" }}>
+              *To save as a PDF, change the destination to "Save as PDF"*
+            </p>
+          </div>
         </div>
       </div>
     );

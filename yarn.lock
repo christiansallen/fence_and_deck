@@ -8449,6 +8449,11 @@ react-dev-utils@^9.0.0:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
+react-dom@15.0.1:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.0.1.tgz#33c67f557b43ab27a6ba3ec3200321681921c48d"
+  integrity sha1-M8Z/VXtDqyemuj7DIAMhaBkhxI0=
+
 react-dom@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
@@ -8511,6 +8516,14 @@ react-popper@^1.3.2:
     prop-types "^15.6.1"
     typed-styles "^0.0.7"
     warning "^4.0.2"
+
+react-print@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/react-print/-/react-print-1.3.1.tgz#dc66e4a279e10edc0cc484169aa9e0e1fb285e12"
+  integrity sha1-3GbkonnhDtwMxIQWmqng4fsoXhI=
+  dependencies:
+    react "15.0.1"
+    react-dom "15.0.1"
 
 react-reconciler@^0.20.4:
   version "0.20.4"
@@ -8647,6 +8660,15 @@ react-transition-group@^2.7.1:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
+
+react@15.0.1:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.0.1.tgz#262d4f073a384c2a0421afb82d97c8f7df581c09"
+  integrity sha1-Ji1PBzo4TCoEIa+4LZfI999YHAk=
+  dependencies:
+    fbjs "^0.8.0"
+    loose-envify "^1.1.0"
+    object-assign "^4.0.1"
 
 react@^16.6.3, react@^16.8.6:
   version "16.8.6"
