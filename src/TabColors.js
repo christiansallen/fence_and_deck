@@ -715,7 +715,7 @@ class TabColors extends Component {
               })}
           </div>
         ) : ironStyle && ironPostStyle && noneStyle ? (
-          <div className="legend">
+          <div className="legend-2">
             {tabs
               .filter(
                 item =>
@@ -780,7 +780,7 @@ class TabColors extends Component {
               })}
           </div>
         ) : ironStyle && ironPostStyle && !noneStyle ? (
-          <div className="legend">
+          <div className="legend-2">
             {tabs
               .filter(
                 item =>

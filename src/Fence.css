@@ -113,6 +113,13 @@
   width: 87%;
 }
 
+.legend-2 {
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  width: 87%;
+}
+
 .legend-item {
   margin: 0px 9.5px;
   width: 109px;
@@ -172,8 +179,6 @@
 
 .tab-container {
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
   z-index: 10;
   margin-bottom: 50px;
 }
@@ -501,6 +506,9 @@ h4 {
   .legend {
     font-weight: normal;
   }
+  .legend-2 {
+    font-weight: normal;
+  }
   .legend-item {
     margin: 0px 4px;
     font-size: 0.8rem;
@@ -570,6 +578,9 @@ h4 {
   .legend {
     font-weight: normal;
   }
+  .legend-2 {
+    font-weight: normal;
+  }
 
   .legend-item {
     margin: 0px 7.5px;
@@ -610,6 +621,9 @@ h4 {
     padding-left: 250px;
     padding-top: 180px;
   }
+  .summary-items {
+    height: 0px;
+  }
   .container {
     margin: 0px;
   }
@@ -630,6 +644,21 @@ h4 {
     margin-top: 75px;
   }
   .react-tabs__tab-list {
+    width: 100%;
+  }
+  .legend {
+    width: 87%;
+    justify-content: space-around;
+  }
+  .legend-2 {
+    width: 79%;
+    justify-content: space-around;
+  }
+  .tab-container {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .react-tabs__tab-panel .react-tabs__tab--selected {
     width: 100%;
   }
   @page {
