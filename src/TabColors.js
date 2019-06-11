@@ -756,6 +756,7 @@ class TabColors extends Component {
       crownStyle,
       ironStyle,
       ironPostStyle,
+      tabColor,
       noneStyle
     } = this.props;
     return (
@@ -768,7 +769,12 @@ class TabColors extends Component {
                 key={idx}
                 onClick={() => handleTabColors(item.alt)}
               >
-                <img src={item.img} alt={item.alt} className="color" />
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  className="color"
+                  onClick={() => tabColor(activeTab, item.name)}
+                />
                 <p
                   className={!item.name.includes("Transcend") ? "name" : "name"}
                 >

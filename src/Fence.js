@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import TabColors from "./TabColors.js";
-import altBorder from "./TabColors.js";
 
 import { tabs, imgData } from "./FenceData";
 import Logo from "./Images/logo.png";
