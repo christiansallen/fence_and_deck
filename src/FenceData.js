@@ -128,8 +128,6 @@ import PyramidVintagelantern from "./Images/Pyramid_Vintagelantern.png";
 import AluminumBronze from "./Images/Iron_Bronze.png";
 import AluminumCharcoal from "./Images/Iron_Charcoal.png";
 import AluminumWhite from "./Images/Iron_White.png";
-import IronPosts from "./Images/Iron_Posts.png";
-import IronGuardRail from "./Images/IronGuardRail.png";
 
 // Rail
 import RailsCharcoal from "./Images/Rail_Charcoal.png";
@@ -157,15 +155,6 @@ import SpostTreehouse from "./Images/Spost_Treehouse.png";
 import SpostWhite from "./Images/Spost_White.png";
 import SpostRopeswing from "./Images/Spost_Ropeswing.png";
 import SpostVintagelantern from "./Images/Spost_Vintagelantern.png";
-
-//Tall Post
-import TpostCharcoal from "./Images/Tpost_Charcoal.png";
-import TpostFirepit from "./Images/Tpost_Firepit.png";
-import TpostGravelpath from "./Images/Tpost_Gravelpath.png";
-import TpostHavanagold from "./Images/Tpost_Havanagold.png";
-import TpostWhite from "./Images/Tpost_White.png";
-import TpostRopeswing from "./Images/Tpost_Ropeswing.png";
-import TpostVintagelantern from "./Images/Tpost_Vintagelantern.png";
 
 //Trex Fences
 import TrexCharcoal from "./Images/Trex_Charcoal.png";

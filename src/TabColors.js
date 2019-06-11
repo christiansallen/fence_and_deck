@@ -25,25 +25,18 @@ import DeckTreehouseColor from "./Images/1Color_Treehouse.png";
 import DeckVintagelanternColor from "./Images/1Color_Vintagelantern.png";
 import DeckWinchestergrayColor from "./Images/1Color_Winchestergray.png";
 import DeckWoodlandbrownColor from "./Images/1Color_Woodlandbrown.png";
+import DeckNoColor from "./Images/1Color_NoBorder.png";
 
 import CharcoalColor from "./Images/Color_Charcoal.png";
 import FirepitColor from "./Images/Color_Firepit.png";
 import GravelpathColor from "./Images/Color_Gravelpath.png";
 import HavanagoldColor from "./Images/Color_Havanagold.png";
-import IslandmistColor from "./Images/Color_Islandmist.png";
 import LavarockColor from "./Images/Color_Lavarock.png";
-import MaderiaColor from "./Images/Color_Maderia.png";
-import PebblegrayColor from "./Images/Color_Pebblegray.png";
 import RopeswingColor from "./Images/Color_Ropeswing.png";
-import SaddleColor from "./Images/Color_Saddle.png";
-import SpicedrumColor from "./Images/Color_Spicedrum.png";
-import TikitorchColor from "./Images/Color_Tikitorch.png";
 import TreehouseColor from "./Images/Color_Treehouse.png";
 import VintagelanternColor from "./Images/Color_Vintagelantern.png";
 import BronzeColor from "./Images/Color_ Bronze.png";
 import WhiteColor from "./Images/Color_White.png";
-import WinchestergrayColor from "./Images/Color_Winchestergray.png";
-import WoodlandbrownColor from "./Images/Color_Woodlandbrown.png";
 
 import "react-tabs/style/react-tabs.css";
 import "./Fence.css";
@@ -54,16 +47,11 @@ class TabColors extends Component {
     this.state = {
       TabColorsData,
       DeckColorsData,
+      altBorder: "Foggywharf",
       active: false,
       color: ""
     };
   }
-
-  colorSwatch = color => {
-    TabColorsData.filter(tab => tab.name.includes(color)).map(x =>
-      console.log(x.img)
-    );
-  };
 
   componentName = activeTab => {
     const { TabColorsData, DeckColorsData } = this.state;
@@ -267,10 +255,7 @@ class TabColors extends Component {
           newFenceOptions.includes(x.alt)
         );
 
-        if (
-          (activeTab === "Deck" || activeTab === "Border") &&
-          transcendStyle
-        ) {
+        if (activeTab === "Deck" && transcendStyle) {
           return [
             {
               name: "(Transcend) Island Mist",
@@ -326,10 +311,7 @@ class TabColors extends Component {
               alt: "Vintagelantern"
             }
           ];
-        } else if (
-          (activeTab === "Deck" || activeTab === "Border") &&
-          enhanceStyle
-        ) {
+        } else if (activeTab === "Deck" && enhanceStyle) {
           return [
             {
               name: "(Enhance) Beach Dune",
@@ -370,10 +352,7 @@ class TabColors extends Component {
 
             { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" }
           ];
-        } else if (
-          (activeTab === "Deck" || activeTab === "Border") &&
-          selectStyle
-        ) {
+        } else if (activeTab === "Deck" && selectStyle) {
           return [
             { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
             {
@@ -393,6 +372,129 @@ class TabColors extends Component {
               img: DeckWoodlandbrownColor,
               alt: "Woodlandbrown"
             }
+          ];
+        }
+
+        if (activeTab === "Border" && transcendStyle) {
+          return [
+            {
+              name: "(Transcend) Island Mist",
+              img: DeckIslandmistColor,
+              alt: "Islandmist"
+            },
+            {
+              name: "(Transcend) Tiki Torch",
+              img: DeckTikitorchColor,
+              alt: "Tikitorch"
+            },
+            {
+              name: "(Transcend) Havana Gold",
+              img: DeckHavanagoldColor,
+              alt: "Havanagold"
+            },
+            {
+              name: "(Transcend) Spiced Rum",
+              img: DeckSpicedrumColor,
+              alt: "Spicedrum"
+            },
+            {
+              name: "(Transcend) Lava Rock",
+              img: DeckLavarockColor,
+              alt: "Lavarock"
+            },
+
+            {
+              name: "(Transcend) Fire Pit",
+              img: DeckFirepitColor,
+              alt: "Firepit"
+            },
+            {
+              name: "(Transcend) Gravel Path",
+              img: DeckGravelpathColor,
+              alt: "Gravelpath"
+            },
+
+            {
+              name: "(Transcend) Rope Swing",
+              img: DeckRopeswingColor,
+              alt: "Ropeswing"
+            },
+
+            {
+              name: "(Transcend) Tree House",
+              img: DeckTreehouseColor,
+              alt: "Treehouse"
+            },
+            {
+              name: "(Transcend) Vintage Lantern",
+              img: DeckVintagelanternColor,
+              alt: "Vintagelantern"
+            },
+            { name: "No Border", img: DeckNoColor, alt: "NoBorder" }
+          ];
+        } else if (activeTab === "Border" && enhanceStyle) {
+          return [
+            {
+              name: "(Enhance) Beach Dune",
+              img: DeckBeachduneColor,
+              alt: "Beachdune"
+            },
+            {
+              name: "(Enhance) Clam Shell",
+              img: DeckClamshellColor,
+              alt: "Clamshell"
+            },
+            {
+              name: "(Enhance) Coastal Bluff",
+              img: DeckCoastalbluffColor,
+              alt: "Coastalbluff"
+            },
+            {
+              name: "(Enhance) Foggy Wharf",
+              img: DeckFoggywharfColor,
+              alt: "Foggywharf"
+            },
+            {
+              name: "(Enhance) Rocky Harbor",
+              img: DeckRockyharborColor,
+              alt: "Rockyharbor"
+            },
+            {
+              name: "(Enhance) Sunset Cove",
+              img: DeckSunsetcoveColor,
+              alt: "Sunsetcove"
+            },
+
+            {
+              name: "(Enhance) Toasted Sand",
+              img: DeckToastedsandColor,
+              alt: "Toastedsand"
+            },
+
+            { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+            { name: "No Border", img: DeckNoColor, alt: "NoBorder" }
+          ];
+        } else if (activeTab === "Border" && selectStyle) {
+          return [
+            { name: "(Select) Maderia", img: DeckMaderiaColor, alt: "Maderia" },
+            {
+              name: "(Select) Pebble Gray",
+              img: DeckPebblegrayColor,
+              alt: "Pebblegray"
+            },
+            { name: "(Select) Saddle", img: DeckSaddleColor, alt: "Saddle" },
+
+            {
+              name: "(Select) Winchester Grey",
+              img: DeckWinchestergrayColor,
+              alt: "Winchestergray"
+            },
+            {
+              name: "(Select) Woodland Brown",
+              img: DeckWoodlandbrownColor,
+              alt: "Woodlandbrown"
+            },
+            { name: "No Border", img: DeckNoColor, alt: "NoBorder" }
           ];
         }
 
@@ -485,13 +587,11 @@ class TabColors extends Component {
               img: DeckSunsetcoveColor,
               alt: "Sunsetcove"
             },
-
             {
               name: "(Enhance) Toasted Sand",
               img: DeckToastedsandColor,
               alt: "Toastedsand"
             },
-
             { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" },
             { name: "White", img: WhiteColor, alt: "White" }
           ];
@@ -639,6 +739,8 @@ class TabColors extends Component {
     this.setState({ active: idx });
   };
 
+  colorSwatch = color => {};
+
   render() {
     const {
       handleTabColors,
@@ -651,7 +753,6 @@ class TabColors extends Component {
       deckColor,
       fasciaColor,
       borderColor,
-      tabColor,
       crownStyle,
       ironStyle,
       ironPostStyle,
@@ -667,12 +768,7 @@ class TabColors extends Component {
                 key={idx}
                 onClick={() => handleTabColors(item.alt)}
               >
-                <img
-                  src={item.img}
-                  alt={item.alt}
-                  className="color"
-                  onClick={() => tabColor(activeTab, item.name)}
-                />
+                <img src={item.img} alt={item.alt} className="color" />
                 <p
                   className={!item.name.includes("Transcend") ? "name" : "name"}
                 >
@@ -707,9 +803,71 @@ class TabColors extends Component {
                         ? fasciaColor
                         : borderColor}
                     </p>
-
-                    {/*Add color swatch here */}
-                    {this.colorSwatch(capSkirtColor)}
+                    {item.name === "Cap/Skirt"
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capSkirtColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Post Sleeve"
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(postSleeveColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Rails"
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(railsColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Baluster"
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(balusterColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Cap Rail"
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capRailColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Deck"
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(deckColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Fascia"
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(fasciaColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Border"
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(borderColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : null}
                   </div>
                 );
               })}
@@ -728,23 +886,90 @@ class TabColors extends Component {
               )
               .map((item, idx) => {
                 return (
-                  <p key={idx} className="legend-item3">
+                  <div className="summary-items">
+                    <p key={idx} className="legend-item3">
+                      {item.name === "Cap/Skirt"
+                        ? capSkirtColor
+                        : item.name === "Post Sleeve"
+                        ? postSleeveColor
+                        : item.name === "Rails"
+                        ? railsColor
+                        : item.name === "Baluster"
+                        ? balusterColor
+                        : item.name === "Cap Rail"
+                        ? capRailColor
+                        : item.name === "Deck"
+                        ? deckColor
+                        : item.name === "Fascia"
+                        ? fasciaColor
+                        : borderColor}
+                    </p>
                     {item.name === "Cap/Skirt"
-                      ? capSkirtColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capSkirtColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Post Sleeve"
-                      ? postSleeveColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(postSleeveColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Rails"
-                      ? railsColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(railsColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Baluster"
-                      ? balusterColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(balusterColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Cap Rail"
-                      ? capRailColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capRailColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Deck"
-                      ? deckColor
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(deckColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Fascia"
-                      ? fasciaColor
-                      : borderColor}
-                  </p>
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(fasciaColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Border"
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(borderColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : null}
+                  </div>
                 );
               })}
           </div>
@@ -759,23 +984,90 @@ class TabColors extends Component {
               )
               .map((item, idx) => {
                 return (
-                  <p key={idx} className="legend-item4">
+                  <div className="summary-items">
+                    <p key={idx} className="legend-item4">
+                      {item.name === "Cap/Skirt"
+                        ? capSkirtColor
+                        : item.name === "Post Sleeve"
+                        ? postSleeveColor
+                        : item.name === "Rails"
+                        ? railsColor
+                        : item.name === "Baluster"
+                        ? balusterColor
+                        : item.name === "Cap Rail"
+                        ? capRailColor
+                        : item.name === "Deck"
+                        ? deckColor
+                        : item.name === "Fascia"
+                        ? fasciaColor
+                        : borderColor}
+                    </p>
                     {item.name === "Cap/Skirt"
-                      ? capSkirtColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capSkirtColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Post Sleeve"
-                      ? postSleeveColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(postSleeveColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Rails"
-                      ? railsColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(railsColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Baluster"
-                      ? balusterColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(balusterColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Cap Rail"
-                      ? capRailColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capRailColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Deck"
-                      ? deckColor
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(deckColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Fascia"
-                      ? fasciaColor
-                      : borderColor}
-                  </p>
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(fasciaColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Border"
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(borderColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : null}
+                  </div>
                 );
               })}
           </div>
@@ -792,23 +1084,90 @@ class TabColors extends Component {
               )
               .map((item, idx) => {
                 return (
-                  <p key={idx} className="legend-item5">
+                  <div className="summary-items">
+                    <p key={idx} className="legend-item5">
+                      {item.name === "Cap/Skirt"
+                        ? capSkirtColor
+                        : item.name === "Post Sleeve"
+                        ? postSleeveColor
+                        : item.name === "Rails"
+                        ? railsColor
+                        : item.name === "Baluster"
+                        ? balusterColor
+                        : item.name === "Cap Rail"
+                        ? capRailColor
+                        : item.name === "Deck"
+                        ? deckColor
+                        : item.name === "Fascia"
+                        ? fasciaColor
+                        : borderColor}
+                    </p>
                     {item.name === "Cap/Skirt"
-                      ? capSkirtColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capSkirtColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Post Sleeve"
-                      ? postSleeveColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(postSleeveColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Rails"
-                      ? railsColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(railsColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Baluster"
-                      ? balusterColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(balusterColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Cap Rail"
-                      ? capRailColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capRailColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Deck"
-                      ? deckColor
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(deckColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Fascia"
-                      ? fasciaColor
-                      : borderColor}
-                  </p>
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(fasciaColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Border"
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(borderColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : null}
+                  </div>
                 );
               })}
           </div>
@@ -818,23 +1177,90 @@ class TabColors extends Component {
               .filter(item => item.name !== "Summary")
               .map((item, idx) => {
                 return (
-                  <p key={idx} className="legend-item">
+                  <div className="summary-items">
+                    <p key={idx} className="legend-item">
+                      {item.name === "Cap/Skirt"
+                        ? capSkirtColor
+                        : item.name === "Post Sleeve"
+                        ? postSleeveColor
+                        : item.name === "Rails"
+                        ? railsColor
+                        : item.name === "Baluster"
+                        ? balusterColor
+                        : item.name === "Cap Rail"
+                        ? capRailColor
+                        : item.name === "Deck"
+                        ? deckColor
+                        : item.name === "Fascia"
+                        ? fasciaColor
+                        : borderColor}
+                    </p>
                     {item.name === "Cap/Skirt"
-                      ? capSkirtColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capSkirtColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Post Sleeve"
-                      ? postSleeveColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(postSleeveColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Rails"
-                      ? railsColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(railsColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Baluster"
-                      ? balusterColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(balusterColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Cap Rail"
-                      ? capRailColor
+                      ? TabColorsData.filter(tab =>
+                          tab.name.includes(capRailColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Deck"
-                      ? deckColor
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(deckColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
                       : item.name === "Fascia"
-                      ? fasciaColor
-                      : borderColor}
-                  </p>
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(fasciaColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : item.name === "Border"
+                      ? DeckColorsData.filter(tab =>
+                          tab.name.includes(borderColor)
+                        ).map(x => {
+                          return (
+                            <img src={x.img} alt={x.alt} className="color" />
+                          );
+                        })
+                      : null}
+                  </div>
                 );
               })}
           </div>
