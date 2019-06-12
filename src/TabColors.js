@@ -429,8 +429,7 @@ class TabColors extends Component {
               name: "(Transcend) Vintage Lantern",
               img: DeckVintagelanternColor,
               alt: "Vintagelantern"
-            },
-            { name: "No Border", img: DeckNoColor, alt: "NoBorder" }
+            }
           ];
         } else if (activeTab === "Border" && enhanceStyle) {
           return [
@@ -471,8 +470,7 @@ class TabColors extends Component {
               alt: "Toastedsand"
             },
 
-            { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" },
-            { name: "No Border", img: DeckNoColor, alt: "NoBorder" }
+            { name: "(Enhance) Saddle", img: DeckSaddleColor, alt: "Saddle" }
           ];
         } else if (activeTab === "Border" && selectStyle) {
           return [
@@ -493,8 +491,7 @@ class TabColors extends Component {
               name: "(Select) Woodland Brown",
               img: DeckWoodlandbrownColor,
               alt: "Woodlandbrown"
-            },
-            { name: "No Border", img: DeckNoColor, alt: "NoBorder" }
+            }
           ];
         }
 
